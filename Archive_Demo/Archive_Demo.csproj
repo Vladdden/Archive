@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.19\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,19 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="AddData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="AddData.Designer.cs">
+      <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
-    <Compile Include="IPSArchiveDataSet.cs">
-      <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>
+    <Compile Include="DB.cs" />
+    <Compile Include="Fund_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fund_table.Designer.cs">
+      <DependentUpon>Fund_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inv_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inv_table.Designer.cs">
+      <DependentUpon>Inv_table.cs</DependentUpon>
     </Compile>
     <Compile Include="IPSArchiveDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +88,21 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unit_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit_table.Designer.cs">
+      <DependentUpon>Unit_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_table.Designer.cs">
+      <DependentUpon>Users_table.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddData.resx">
+      <DependentUpon>AddData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

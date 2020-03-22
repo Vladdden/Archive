@@ -16,5 +16,25 @@ namespace Archive_Demo
         {
             InitializeComponent();
         }
+
+        private void addFund_btn_Click(object sender, EventArgs e)
+        {
+            addFund_btn.BackColor = Color.Khaki;
+        }
+
+        private void addInv_btn_Click(object sender, EventArgs e)
+        {
+            addInv_btn.BackColor = Color.Khaki;
+        }
+
+        private void addUnit_btn_Click(object sender, EventArgs e)
+        {
+            addUnit_btn.BackColor = Color.Khaki;
+        }
+
+        private void addUser_btn_Click(object sender, EventArgs e)
+        {
+            addUser_btn.BackColor = Color.Khaki;
+        }
     }
 }
