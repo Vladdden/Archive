@@ -16,5 +16,19 @@ namespace Archive_Demo
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddData addData = new AddData();
+            addData.Show();
+        }
+
+        private void Registration_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddData addData = new AddData();
+            addData.Show();
+        }
     }
 }

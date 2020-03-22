@@ -103,6 +103,12 @@
     <EmbeddedResource Include="AddData.resx">
       <DependentUpon>AddData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fund_table.resx">
+      <DependentUpon>Fund_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inv_table.resx">
+      <DependentUpon>Inv_table.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +123,12 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit_table.resx">
+      <DependentUpon>Unit_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_table.resx">
+      <DependentUpon>Users_table.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="IPSArchiveDataSet.xsc">
       <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>

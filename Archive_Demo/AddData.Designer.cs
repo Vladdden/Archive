@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddData));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.fundPage = new System.Windows.Forms.TabPage();
+            this.FundPage = new System.Windows.Forms.TabPage();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.checkFunds_btn = new System.Windows.Forms.Button();
             this.addFund_btn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,7 +59,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.checkInv_btn = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.addInv_btn = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.DocPage = new System.Windows.Forms.TabPage();
+            this.UnitPage = new System.Windows.Forms.TabPage();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -108,13 +108,15 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.checkUnits_btn = new System.Windows.Forms.Button();
             this.addUnit_btn = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.userPage = new System.Windows.Forms.TabPage();
+            this.UserPage = new System.Windows.Forms.TabPage();
+            this.checkUsers_btn = new System.Windows.Forms.Button();
+            this.addUser_btn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -128,33 +130,31 @@
             this.label50 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.reportPage = new System.Windows.Forms.TabPage();
+            this.ReportPage = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.addUser_btn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.fundPage.SuspendLayout();
+            this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.InvPage.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.DocPage.SuspendLayout();
+            this.UnitPage.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.userPage.SuspendLayout();
+            this.UserPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
-            this.reportPage.SuspendLayout();
+            this.ReportPage.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.fundPage);
+            this.tabControl1.Controls.Add(this.FundPage);
             this.tabControl1.Controls.Add(this.InvPage);
-            this.tabControl1.Controls.Add(this.DocPage);
-            this.tabControl1.Controls.Add(this.userPage);
-            this.tabControl1.Controls.Add(this.reportPage);
+            this.tabControl1.Controls.Add(this.UnitPage);
+            this.tabControl1.Controls.Add(this.UserPage);
+            this.tabControl1.Controls.Add(this.ReportPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -162,36 +162,36 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 450);
             this.tabControl1.TabIndex = 0;
             // 
-            // fundPage
+            // FundPage
             // 
-            this.fundPage.Controls.Add(this.dateTimePicker7);
-            this.fundPage.Controls.Add(this.dateTimePicker6);
-            this.fundPage.Controls.Add(this.label12);
-            this.fundPage.Controls.Add(this.label11);
-            this.fundPage.Controls.Add(this.label10);
-            this.fundPage.Controls.Add(this.button2);
-            this.fundPage.Controls.Add(this.addFund_btn);
-            this.fundPage.Controls.Add(this.label8);
-            this.fundPage.Controls.Add(this.panel1);
-            this.fundPage.Controls.Add(this.label7);
-            this.fundPage.Controls.Add(this.textBox7);
-            this.fundPage.Controls.Add(this.label6);
-            this.fundPage.Controls.Add(this.label5);
-            this.fundPage.Controls.Add(this.label4);
-            this.fundPage.Controls.Add(this.textBox4);
-            this.fundPage.Controls.Add(this.label3);
-            this.fundPage.Controls.Add(this.textBox3);
-            this.fundPage.Controls.Add(this.label2);
-            this.fundPage.Controls.Add(this.textBox2);
-            this.fundPage.Controls.Add(this.label1);
-            this.fundPage.Controls.Add(this.textBox1);
-            this.fundPage.Location = new System.Drawing.Point(4, 22);
-            this.fundPage.Name = "fundPage";
-            this.fundPage.Padding = new System.Windows.Forms.Padding(3);
-            this.fundPage.Size = new System.Drawing.Size(792, 424);
-            this.fundPage.TabIndex = 0;
-            this.fundPage.Text = "Фонды";
-            this.fundPage.UseVisualStyleBackColor = true;
+            this.FundPage.Controls.Add(this.dateTimePicker7);
+            this.FundPage.Controls.Add(this.dateTimePicker6);
+            this.FundPage.Controls.Add(this.label12);
+            this.FundPage.Controls.Add(this.label11);
+            this.FundPage.Controls.Add(this.label10);
+            this.FundPage.Controls.Add(this.checkFunds_btn);
+            this.FundPage.Controls.Add(this.addFund_btn);
+            this.FundPage.Controls.Add(this.label8);
+            this.FundPage.Controls.Add(this.panel1);
+            this.FundPage.Controls.Add(this.label7);
+            this.FundPage.Controls.Add(this.textBox7);
+            this.FundPage.Controls.Add(this.label6);
+            this.FundPage.Controls.Add(this.label5);
+            this.FundPage.Controls.Add(this.label4);
+            this.FundPage.Controls.Add(this.textBox4);
+            this.FundPage.Controls.Add(this.label3);
+            this.FundPage.Controls.Add(this.textBox3);
+            this.FundPage.Controls.Add(this.label2);
+            this.FundPage.Controls.Add(this.textBox2);
+            this.FundPage.Controls.Add(this.label1);
+            this.FundPage.Controls.Add(this.textBox1);
+            this.FundPage.Location = new System.Drawing.Point(4, 22);
+            this.FundPage.Name = "FundPage";
+            this.FundPage.Padding = new System.Windows.Forms.Padding(3);
+            this.FundPage.Size = new System.Drawing.Size(792, 424);
+            this.FundPage.TabIndex = 0;
+            this.FundPage.Text = "Фонды";
+            this.FundPage.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker7
             // 
@@ -240,16 +240,17 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "*";
             // 
-            // button2
+            // checkFunds_btn
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(449, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(318, 56);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Просмотреть имеющиеся";
-            this.button2.UseVisualStyleBackColor = true;
+            this.checkFunds_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkFunds_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkFunds_btn.Location = new System.Drawing.Point(449, 344);
+            this.checkFunds_btn.Name = "checkFunds_btn";
+            this.checkFunds_btn.Size = new System.Drawing.Size(318, 56);
+            this.checkFunds_btn.TabIndex = 18;
+            this.checkFunds_btn.Text = "Просмотреть имеющиеся";
+            this.checkFunds_btn.UseVisualStyleBackColor = true;
+            this.checkFunds_btn.Click += new System.EventHandler(this.checkFunds_btn_Click);
             // 
             // addFund_btn
             // 
@@ -414,7 +415,7 @@
             this.InvPage.Controls.Add(this.label31);
             this.InvPage.Controls.Add(this.label30);
             this.InvPage.Controls.Add(this.label29);
-            this.InvPage.Controls.Add(this.button3);
+            this.InvPage.Controls.Add(this.checkInv_btn);
             this.InvPage.Controls.Add(this.label17);
             this.InvPage.Controls.Add(this.addInv_btn);
             this.InvPage.Controls.Add(this.label28);
@@ -491,16 +492,17 @@
             this.label29.TabIndex = 41;
             this.label29.Text = "*";
             // 
-            // button3
+            // checkInv_btn
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(454, 352);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(318, 56);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Просмотреть имеющиеся";
-            this.button3.UseVisualStyleBackColor = true;
+            this.checkInv_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkInv_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInv_btn.Location = new System.Drawing.Point(454, 352);
+            this.checkInv_btn.Name = "checkInv_btn";
+            this.checkInv_btn.Size = new System.Drawing.Size(318, 56);
+            this.checkInv_btn.TabIndex = 40;
+            this.checkInv_btn.Text = "Просмотреть имеющиеся";
+            this.checkInv_btn.UseVisualStyleBackColor = true;
+            this.checkInv_btn.Click += new System.EventHandler(this.checkInv_btn_Click);
             // 
             // label17
             // 
@@ -713,44 +715,44 @@
             this.label13.Text = "Добавление Описи";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DocPage
+            // UnitPage
             // 
-            this.DocPage.Controls.Add(this.label46);
-            this.DocPage.Controls.Add(this.label45);
-            this.DocPage.Controls.Add(this.label44);
-            this.DocPage.Controls.Add(this.label43);
-            this.DocPage.Controls.Add(this.dateTimePicker3);
-            this.DocPage.Controls.Add(this.dateTimePicker2);
-            this.DocPage.Controls.Add(this.dateTimePicker1);
-            this.DocPage.Controls.Add(this.textBox26);
-            this.DocPage.Controls.Add(this.label42);
-            this.DocPage.Controls.Add(this.label41);
-            this.DocPage.Controls.Add(this.textBox24);
-            this.DocPage.Controls.Add(this.label40);
-            this.DocPage.Controls.Add(this.comboBox2);
-            this.DocPage.Controls.Add(this.label39);
-            this.DocPage.Controls.Add(this.textBox23);
-            this.DocPage.Controls.Add(this.label38);
-            this.DocPage.Controls.Add(this.textBox22);
-            this.DocPage.Controls.Add(this.label37);
-            this.DocPage.Controls.Add(this.textBox21);
-            this.DocPage.Controls.Add(this.label36);
-            this.DocPage.Controls.Add(this.textBox20);
-            this.DocPage.Controls.Add(this.label35);
-            this.DocPage.Controls.Add(this.label32);
-            this.DocPage.Controls.Add(this.label33);
-            this.DocPage.Controls.Add(this.label34);
-            this.DocPage.Controls.Add(this.button1);
-            this.DocPage.Controls.Add(this.addUnit_btn);
-            this.DocPage.Controls.Add(this.label24);
-            this.DocPage.Controls.Add(this.textBox17);
-            this.DocPage.Controls.Add(this.panel3);
-            this.DocPage.Location = new System.Drawing.Point(4, 22);
-            this.DocPage.Name = "DocPage";
-            this.DocPage.Size = new System.Drawing.Size(792, 424);
-            this.DocPage.TabIndex = 2;
-            this.DocPage.Text = "Документы";
-            this.DocPage.UseVisualStyleBackColor = true;
+            this.UnitPage.Controls.Add(this.label46);
+            this.UnitPage.Controls.Add(this.label45);
+            this.UnitPage.Controls.Add(this.label44);
+            this.UnitPage.Controls.Add(this.label43);
+            this.UnitPage.Controls.Add(this.dateTimePicker3);
+            this.UnitPage.Controls.Add(this.dateTimePicker2);
+            this.UnitPage.Controls.Add(this.dateTimePicker1);
+            this.UnitPage.Controls.Add(this.textBox26);
+            this.UnitPage.Controls.Add(this.label42);
+            this.UnitPage.Controls.Add(this.label41);
+            this.UnitPage.Controls.Add(this.textBox24);
+            this.UnitPage.Controls.Add(this.label40);
+            this.UnitPage.Controls.Add(this.comboBox2);
+            this.UnitPage.Controls.Add(this.label39);
+            this.UnitPage.Controls.Add(this.textBox23);
+            this.UnitPage.Controls.Add(this.label38);
+            this.UnitPage.Controls.Add(this.textBox22);
+            this.UnitPage.Controls.Add(this.label37);
+            this.UnitPage.Controls.Add(this.textBox21);
+            this.UnitPage.Controls.Add(this.label36);
+            this.UnitPage.Controls.Add(this.textBox20);
+            this.UnitPage.Controls.Add(this.label35);
+            this.UnitPage.Controls.Add(this.label32);
+            this.UnitPage.Controls.Add(this.label33);
+            this.UnitPage.Controls.Add(this.label34);
+            this.UnitPage.Controls.Add(this.checkUnits_btn);
+            this.UnitPage.Controls.Add(this.addUnit_btn);
+            this.UnitPage.Controls.Add(this.label24);
+            this.UnitPage.Controls.Add(this.textBox17);
+            this.UnitPage.Controls.Add(this.panel3);
+            this.UnitPage.Location = new System.Drawing.Point(4, 22);
+            this.UnitPage.Name = "UnitPage";
+            this.UnitPage.Size = new System.Drawing.Size(792, 424);
+            this.UnitPage.TabIndex = 2;
+            this.UnitPage.Text = "Документы";
+            this.UnitPage.UseVisualStyleBackColor = true;
             // 
             // label46
             // 
@@ -984,16 +986,17 @@
             this.label34.TabIndex = 47;
             this.label34.Text = "Дата заведения";
             // 
-            // button1
+            // checkUnits_btn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(454, 352);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(318, 56);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Просмотреть имеющиеся";
-            this.button1.UseVisualStyleBackColor = true;
+            this.checkUnits_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkUnits_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkUnits_btn.Location = new System.Drawing.Point(454, 352);
+            this.checkUnits_btn.Name = "checkUnits_btn";
+            this.checkUnits_btn.Size = new System.Drawing.Size(318, 56);
+            this.checkUnits_btn.TabIndex = 45;
+            this.checkUnits_btn.Text = "Просмотреть имеющиеся";
+            this.checkUnits_btn.UseVisualStyleBackColor = true;
+            this.checkUnits_btn.Click += new System.EventHandler(this.checkUnits_btn_Click);
             // 
             // addUnit_btn
             // 
@@ -1049,28 +1052,53 @@
             this.label14.Text = "Добавление Документа";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // userPage
+            // UserPage
             // 
-            this.userPage.Controls.Add(this.button4);
-            this.userPage.Controls.Add(this.addUser_btn);
-            this.userPage.Controls.Add(this.checkBox1);
-            this.userPage.Controls.Add(this.pictureBox4);
-            this.userPage.Controls.Add(this.pictureBox3);
-            this.userPage.Controls.Add(this.LoginField);
-            this.userPage.Controls.Add(this.PassField);
-            this.userPage.Controls.Add(this.SurField);
-            this.userPage.Controls.Add(this.NameField);
-            this.userPage.Controls.Add(this.label47);
-            this.userPage.Controls.Add(this.label48);
-            this.userPage.Controls.Add(this.label49);
-            this.userPage.Controls.Add(this.label50);
-            this.userPage.Controls.Add(this.panel6);
-            this.userPage.Location = new System.Drawing.Point(4, 22);
-            this.userPage.Name = "userPage";
-            this.userPage.Size = new System.Drawing.Size(792, 424);
-            this.userPage.TabIndex = 3;
-            this.userPage.Text = "Пользователи";
-            this.userPage.UseVisualStyleBackColor = true;
+            this.UserPage.Controls.Add(this.checkUsers_btn);
+            this.UserPage.Controls.Add(this.addUser_btn);
+            this.UserPage.Controls.Add(this.checkBox1);
+            this.UserPage.Controls.Add(this.pictureBox4);
+            this.UserPage.Controls.Add(this.pictureBox3);
+            this.UserPage.Controls.Add(this.LoginField);
+            this.UserPage.Controls.Add(this.PassField);
+            this.UserPage.Controls.Add(this.SurField);
+            this.UserPage.Controls.Add(this.NameField);
+            this.UserPage.Controls.Add(this.label47);
+            this.UserPage.Controls.Add(this.label48);
+            this.UserPage.Controls.Add(this.label49);
+            this.UserPage.Controls.Add(this.label50);
+            this.UserPage.Controls.Add(this.panel6);
+            this.UserPage.Location = new System.Drawing.Point(4, 22);
+            this.UserPage.Name = "UserPage";
+            this.UserPage.Size = new System.Drawing.Size(792, 424);
+            this.UserPage.TabIndex = 3;
+            this.UserPage.Text = "Пользователи";
+            this.UserPage.UseVisualStyleBackColor = true;
+            // 
+            // checkUsers_btn
+            // 
+            this.checkUsers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkUsers_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkUsers_btn.Location = new System.Drawing.Point(412, 328);
+            this.checkUsers_btn.Name = "checkUsers_btn";
+            this.checkUsers_btn.Size = new System.Drawing.Size(318, 56);
+            this.checkUsers_btn.TabIndex = 47;
+            this.checkUsers_btn.Text = "Просмотреть имеющихся";
+            this.checkUsers_btn.UseVisualStyleBackColor = true;
+            this.checkUsers_btn.Click += new System.EventHandler(this.checkUsers_btn_Click);
+            // 
+            // addUser_btn
+            // 
+            this.addUser_btn.BackColor = System.Drawing.Color.LemonChiffon;
+            this.addUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUser_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUser_btn.Location = new System.Drawing.Point(61, 328);
+            this.addUser_btn.Name = "addUser_btn";
+            this.addUser_btn.Size = new System.Drawing.Size(318, 56);
+            this.addUser_btn.TabIndex = 46;
+            this.addUser_btn.Text = "Добавить";
+            this.addUser_btn.UseVisualStyleBackColor = false;
+            this.addUser_btn.Click += new System.EventHandler(this.addUser_btn_Click);
             // 
             // checkBox1
             // 
@@ -1205,15 +1233,15 @@
             this.label15.Text = "Добавление Пользователя";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // reportPage
+            // ReportPage
             // 
-            this.reportPage.Controls.Add(this.panel4);
-            this.reportPage.Location = new System.Drawing.Point(4, 22);
-            this.reportPage.Name = "reportPage";
-            this.reportPage.Size = new System.Drawing.Size(792, 424);
-            this.reportPage.TabIndex = 4;
-            this.reportPage.Text = "Отчеты";
-            this.reportPage.UseVisualStyleBackColor = true;
+            this.ReportPage.Controls.Add(this.panel4);
+            this.ReportPage.Location = new System.Drawing.Point(4, 22);
+            this.ReportPage.Name = "ReportPage";
+            this.ReportPage.Size = new System.Drawing.Size(792, 424);
+            this.ReportPage.TabIndex = 4;
+            this.ReportPage.Text = "Отчеты";
+            this.ReportPage.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -1237,30 +1265,6 @@
             this.label16.Text = "Добавление Описи";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(412, 328);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(318, 56);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Просмотреть имеющихся";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // addUser_btn
-            // 
-            this.addUser_btn.BackColor = System.Drawing.Color.LemonChiffon;
-            this.addUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addUser_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUser_btn.Location = new System.Drawing.Point(61, 328);
-            this.addUser_btn.Name = "addUser_btn";
-            this.addUser_btn.Size = new System.Drawing.Size(318, 56);
-            this.addUser_btn.TabIndex = 46;
-            this.addUser_btn.Text = "Добавить";
-            this.addUser_btn.UseVisualStyleBackColor = false;
-            this.addUser_btn.Click += new System.EventHandler(this.addUser_btn_Click);
-            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1270,21 +1274,21 @@
             this.Name = "AddData";
             this.Text = "AddData";
             this.tabControl1.ResumeLayout(false);
-            this.fundPage.ResumeLayout(false);
-            this.fundPage.PerformLayout();
+            this.FundPage.ResumeLayout(false);
+            this.FundPage.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.InvPage.ResumeLayout(false);
             this.InvPage.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.DocPage.ResumeLayout(false);
-            this.DocPage.PerformLayout();
+            this.UnitPage.ResumeLayout(false);
+            this.UnitPage.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.userPage.ResumeLayout(false);
-            this.userPage.PerformLayout();
+            this.UserPage.ResumeLayout(false);
+            this.UserPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.reportPage.ResumeLayout(false);
+            this.ReportPage.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1293,11 +1297,11 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage fundPage;
+        private System.Windows.Forms.TabPage FundPage;
         private System.Windows.Forms.TabPage InvPage;
-        private System.Windows.Forms.TabPage DocPage;
-        private System.Windows.Forms.TabPage userPage;
-        private System.Windows.Forms.TabPage reportPage;
+        private System.Windows.Forms.TabPage UnitPage;
+        private System.Windows.Forms.TabPage UserPage;
+        private System.Windows.Forms.TabPage ReportPage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
@@ -1316,7 +1320,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button checkFunds_btn;
         private System.Windows.Forms.Button addFund_btn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox13;
@@ -1340,7 +1344,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button checkInv_btn;
         private System.Windows.Forms.Button addInv_btn;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBox16;
@@ -1353,7 +1357,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button checkUnits_btn;
         private System.Windows.Forms.Button addUnit_btn;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox17;
@@ -1394,7 +1398,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button checkUsers_btn;
         private System.Windows.Forms.Button addUser_btn;
     }
 }
