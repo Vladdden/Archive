@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Archive_Demo
 {
-    public partial class Form1 : Form
+    public partial class AddData : Form
     {
-        public Form1()
+        public AddData()
         {
             InitializeComponent();
         }
