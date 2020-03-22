@@ -30,5 +30,12 @@ namespace Archive_Demo
             AddData addData = new AddData();
             addData.Show();
         }
+
+        private void Users_table_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.users". При необходимости она может быть перемещена или удалена.
+            this.usersTableAdapter.Fill(this.iPSArchiveDataSet.users);
+
+        }
     }
 }
