@@ -30,5 +30,12 @@ namespace Archive_Demo
             AddData addData = new AddData();
             addData.Show();
         }
+
+        private void Inv_table_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Inventory". При необходимости она может быть перемещена или удалена.
+            this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
+
+        }
     }
 }
