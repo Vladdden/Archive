@@ -30,5 +30,12 @@ namespace Archive_Demo
             AddData addData = new AddData();
             addData.Show();
         }
+
+        private void Fund_table_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Fund". При необходимости она может быть перемещена или удалена.
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+
+        }
     }
 }
