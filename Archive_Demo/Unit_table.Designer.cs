@@ -28,15 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Unit_table));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Registration_back = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
+            this.unitIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.unitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearStDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -47,7 +68,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(800, 49);
+            this.panel4.Size = new System.Drawing.Size(1344, 49);
             this.panel4.TabIndex = 19;
             // 
             // panel3
@@ -90,23 +111,146 @@
             this.label16.ForeColor = System.Drawing.Color.DimGray;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(800, 49);
+            this.label16.Size = new System.Drawing.Size(1344, 49);
             this.label16.TabIndex = 0;
             this.label16.Text = "Документы";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.unitIDDataGridViewTextBoxColumn,
+            this.unitNumDataGridViewTextBoxColumn,
+            this.unitLitDataGridViewTextBoxColumn,
+            this.datesDataGridViewTextBoxColumn,
+            this.unitNameDataGridViewTextBoxColumn,
+            this.pCountDataGridViewTextBoxColumn,
+            this.dateCreateDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn,
+            this.invIDDataGridViewTextBoxColumn,
+            this.deletedDataGridViewCheckBoxColumn,
+            this.unitTypeDataGridViewTextBoxColumn,
+            this.yearStDataGridViewTextBoxColumn,
+            this.yearEndDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.unitBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 52);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1344, 398);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataMember = "Unit";
+            this.unitBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // unitTableAdapter
+            // 
+            this.unitTableAdapter.ClearBeforeFill = true;
+            // 
+            // unitIDDataGridViewTextBoxColumn
+            // 
+            this.unitIDDataGridViewTextBoxColumn.DataPropertyName = "Unit_ID";
+            this.unitIDDataGridViewTextBoxColumn.HeaderText = "Unit_ID";
+            this.unitIDDataGridViewTextBoxColumn.Name = "unitIDDataGridViewTextBoxColumn";
+            this.unitIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitNumDataGridViewTextBoxColumn
+            // 
+            this.unitNumDataGridViewTextBoxColumn.DataPropertyName = "Unit_Num";
+            this.unitNumDataGridViewTextBoxColumn.HeaderText = "Unit_Num";
+            this.unitNumDataGridViewTextBoxColumn.Name = "unitNumDataGridViewTextBoxColumn";
+            // 
+            // unitLitDataGridViewTextBoxColumn
+            // 
+            this.unitLitDataGridViewTextBoxColumn.DataPropertyName = "Unit_Lit";
+            this.unitLitDataGridViewTextBoxColumn.HeaderText = "Unit_Lit";
+            this.unitLitDataGridViewTextBoxColumn.Name = "unitLitDataGridViewTextBoxColumn";
+            // 
+            // datesDataGridViewTextBoxColumn
+            // 
+            this.datesDataGridViewTextBoxColumn.DataPropertyName = "Dates";
+            this.datesDataGridViewTextBoxColumn.HeaderText = "Dates";
+            this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
+            // 
+            // unitNameDataGridViewTextBoxColumn
+            // 
+            this.unitNameDataGridViewTextBoxColumn.DataPropertyName = "Unit_Name";
+            this.unitNameDataGridViewTextBoxColumn.HeaderText = "Unit_Name";
+            this.unitNameDataGridViewTextBoxColumn.Name = "unitNameDataGridViewTextBoxColumn";
+            // 
+            // pCountDataGridViewTextBoxColumn
+            // 
+            this.pCountDataGridViewTextBoxColumn.DataPropertyName = "P_Count";
+            this.pCountDataGridViewTextBoxColumn.HeaderText = "P_Count";
+            this.pCountDataGridViewTextBoxColumn.Name = "pCountDataGridViewTextBoxColumn";
+            // 
+            // dateCreateDataGridViewTextBoxColumn
+            // 
+            this.dateCreateDataGridViewTextBoxColumn.DataPropertyName = "DateCreate";
+            this.dateCreateDataGridViewTextBoxColumn.HeaderText = "DateCreate";
+            this.dateCreateDataGridViewTextBoxColumn.Name = "dateCreateDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // invIDDataGridViewTextBoxColumn
+            // 
+            this.invIDDataGridViewTextBoxColumn.DataPropertyName = "Inv_ID";
+            this.invIDDataGridViewTextBoxColumn.HeaderText = "Inv_ID";
+            this.invIDDataGridViewTextBoxColumn.Name = "invIDDataGridViewTextBoxColumn";
+            // 
+            // deletedDataGridViewCheckBoxColumn
+            // 
+            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
+            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Deleted";
+            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
+            // 
+            // unitTypeDataGridViewTextBoxColumn
+            // 
+            this.unitTypeDataGridViewTextBoxColumn.DataPropertyName = "Unit_Type";
+            this.unitTypeDataGridViewTextBoxColumn.HeaderText = "Unit_Type";
+            this.unitTypeDataGridViewTextBoxColumn.Name = "unitTypeDataGridViewTextBoxColumn";
+            // 
+            // yearStDataGridViewTextBoxColumn
+            // 
+            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
+            this.yearStDataGridViewTextBoxColumn.HeaderText = "Year_St";
+            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
+            // 
+            // yearEndDataGridViewTextBoxColumn
+            // 
+            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
+            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Year_End";
+            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
             // 
             // Unit_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1344, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel4);
             this.Name = "Unit_table";
             this.Text = "Unit_table";
+            this.Load += new System.EventHandler(this.Unit_table_Load);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -118,5 +262,22 @@
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private IPSArchiveDataSet iPSArchiveDataSet;
+        private System.Windows.Forms.BindingSource unitBindingSource;
+        private IPSArchiveDataSetTableAdapters.UnitTableAdapter unitTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitNumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitLitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCreateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn deletedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearStDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
     }
 }
