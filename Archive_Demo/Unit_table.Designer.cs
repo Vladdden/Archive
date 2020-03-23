@@ -68,7 +68,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1344, 49);
+            this.panel4.Size = new System.Drawing.Size(1350, 49);
             this.panel4.TabIndex = 19;
             // 
             // panel3
@@ -111,7 +111,7 @@
             this.label16.ForeColor = System.Drawing.Color.DimGray;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(1344, 49);
+            this.label16.Size = new System.Drawing.Size(1350, 49);
             this.label16.TabIndex = 0;
             this.label16.Text = "Документы";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,7 +138,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1344, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1350, 398);
             this.dataGridView1.TabIndex = 20;
             // 
             // iPSArchiveDataSet
@@ -238,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 450);
+            this.ClientSize = new System.Drawing.Size(1350, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel4);
             this.Name = "Unit_table";
