@@ -137,7 +137,7 @@ namespace Archive_Demo
 
                 //string sqlExpression ="SELECT * FROM users WHERE 'Login' = @uL AND 'Password'= @uP";
 
-                
+
                 SqlDataAdapter adapter = new SqlDataAdapter($"SELECT count(*) FROM users WHERE 'Login'='" + LoginField.Text + "' AND 'Password'='" + PassField.Text + "'", connection);
                 //SqlCommand command = new SqlCommand($"SELECT * FROM users WHERE 'Login'='"+ LoginField.Text +"' AND 'Password'='" + PassField.Text + "'", connection);
                 //command.Parameters.Add("@uL", SqlDbType.VarChar).Value = UserLogin;
@@ -147,11 +147,31 @@ namespace Archive_Demo
                 adapter.Fill(table);
 
                 if (table.Rows.Count > 0)
+                {
                     MessageBox.Show("Добро пожаловать!");
+                    string sql = "SELECT Status FROM users WHERE Login='" + LoginField.Text + "' AND Password='" + PassField.Text + "'";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (reader.GetValue(0).ToString() == "0")
+                        {
+                            this.Hide();
+                            WorkerForm workerForm = new WorkerForm();
+                            workerForm.Show();
+                        }
+                        if (reader.GetValue(0).ToString() == "1")
+                        {
+                            this.Hide();
+                            AddData addData = new AddData();
+                            addData.Show();
+                        }
+                    }
+                }
                 else
                     MessageBox.Show("Данный пользователь не обнаружен!");
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    string sqlExpression = "SELECT * FROM users";
+                   /* string sqlExpression = "SELECT * FROM users";
                     SqlCommand command2 = new SqlCommand(sqlExpression, connection);
                     SqlDataReader reader = command2.ExecuteReader();
 
@@ -173,7 +193,7 @@ namespace Archive_Demo
                         }
                     }
 
-                    reader.Close();
+                    reader.Close();*/
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
             }
             catch (SqlException ex)
