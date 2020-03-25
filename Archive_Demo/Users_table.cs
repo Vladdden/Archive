@@ -37,5 +37,10 @@ namespace Archive_Demo
             this.usersTableAdapter.Fill(this.iPSArchiveDataSet.users);
 
         }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            this.usersTableAdapter.Update(this.iPSArchiveDataSet.users);
+        }
     }
 }

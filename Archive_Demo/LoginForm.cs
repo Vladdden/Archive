@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Archive_Demo
 {
@@ -21,6 +23,35 @@ namespace Archive_Demo
             PassField.Text = "Введите пароль";
             PassField.ForeColor = Color.Gray;
             PassField.UseSystemPasswordChar = false;
+
+            /*
+            string connectionString = @"Data Source=ВЛАДИСЛАВ-ПК\SQLEXPRESS;Initial Catalog=IPSArchive;Integrated Security=True";
+           
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                // Открываем подключение
+                connection.Open();
+                Console.WriteLine("Подключение открыто");
+                Console.WriteLine("Свойства подключения:");
+                Console.WriteLine("\tСтрока подключения: {0}", connection.ConnectionString);
+                Console.WriteLine("\tБаза данных: {0}", connection.Database);
+                Console.WriteLine("\tСервер: {0}", connection.DataSource);
+                Console.WriteLine("\tВерсия сервера: {0}", connection.ServerVersion);
+                Console.WriteLine("\tСостояние: {0}", connection.State);
+                Console.WriteLine("\tWorkstationld: {0}", connection.WorkstationId);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // закрываем подключение
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+            */
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -81,6 +112,81 @@ namespace Archive_Demo
                 PassField.Text = "Введите пароль";
                 PassField.ForeColor = Color.Gray;
             }
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+
+            string UserLogin = LoginField.Text;
+            string UserPass = PassField.Text;
+
+            string connectionString = @"Data Source=ВЛАДИСЛАВ-ПК\SQLEXPRESS;Initial Catalog=IPSArchive;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                // Открываем подключение
+                connection.Open();
+                Console.WriteLine("Подключение открыто");
+                Console.WriteLine("Свойства подключения:");
+                Console.WriteLine("\tСтрока подключения: {0}", connection.ConnectionString);
+                Console.WriteLine("\tБаза данных: {0}", connection.Database);
+                Console.WriteLine("\tСервер: {0}", connection.DataSource);
+                Console.WriteLine("\tВерсия сервера: {0}", connection.ServerVersion);
+                Console.WriteLine("\tСостояние: {0}", connection.State);
+                Console.WriteLine("\tWorkstationld: {0}", connection.WorkstationId);
+
+                //string sqlExpression ="SELECT * FROM users WHERE 'Login' = @uL AND 'Password'= @uP";
+
+                
+                SqlDataAdapter adapter = new SqlDataAdapter($"SELECT count(*) FROM users WHERE 'Login'='" + LoginField.Text + "' AND 'Password'='" + PassField.Text + "'", connection);
+                //SqlCommand command = new SqlCommand($"SELECT * FROM users WHERE 'Login'='"+ LoginField.Text +"' AND 'Password'='" + PassField.Text + "'", connection);
+                //command.Parameters.Add("@uL", SqlDbType.VarChar).Value = UserLogin;
+                //command.Parameters.Add("@uP", SqlDbType.VarChar).Value = UserPass;
+                DataTable table = new DataTable();
+
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                    MessageBox.Show("Добро пожаловать!");
+                else
+                    MessageBox.Show("Данный пользователь не обнаружен!");
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    string sqlExpression = "SELECT * FROM users";
+                    SqlCommand command2 = new SqlCommand(sqlExpression, connection);
+                    SqlDataReader reader = command2.ExecuteReader();
+
+                    if (reader.HasRows) // если есть данные
+                    {
+                        // выводим названия столбцов
+                        Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}", reader.GetName(0), reader.GetName(1), reader.GetName(2), reader.GetName(3), reader.GetName(4), reader.GetName(5));
+
+                        while (reader.Read()) // построчно считываем данные
+                        {
+                            object id = reader.GetValue(0);
+                            object name = reader.GetValue(1);
+                            object surname = reader.GetValue(2);
+                            object login = reader.GetValue(3);
+                            object pass = reader.GetValue(4);
+                            object status = reader.GetValue(5);
+
+                        Console.WriteLine("{0} \t{1} \t{2} \t{3} \t{4} \t{5}", id, name, surname, login, pass, status);
+                        }
+                    }
+
+                    reader.Close();
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // закрываем подключение
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+
         }
     }
 }

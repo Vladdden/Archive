@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Archive_Demo.IPSArchiveDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,11 @@ namespace Archive_Demo
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Fund". При необходимости она может быть перемещена или удалена.
             this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
 
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            this.fundTableAdapter.Update(this.iPSArchiveDataSet.Fund);
         }
     }
 }

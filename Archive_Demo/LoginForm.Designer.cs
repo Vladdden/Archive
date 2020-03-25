@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.addUser = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Login = new System.Windows.Forms.Button();
             this.LoginField = new System.Windows.Forms.TextBox();
             this.PassField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel4.Controls.Add(this.linkLabel1);
-            this.panel4.Controls.Add(this.addUser);
+            this.panel4.Controls.Add(this.Login);
             this.panel4.Controls.Add(this.LoginField);
             this.panel4.Controls.Add(this.PassField);
             this.panel4.Controls.Add(this.pictureBox2);
@@ -73,14 +73,26 @@
             this.panel4.Size = new System.Drawing.Size(392, 333);
             this.panel4.TabIndex = 3;
             // 
-            // addUser
+            // linkLabel1
             // 
-            this.addUser.Location = new System.Drawing.Point(136, 263);
-            this.addUser.Name = "addUser";
-            this.addUser.Size = new System.Drawing.Size(135, 39);
-            this.addUser.TabIndex = 4;
-            this.addUser.Text = "Войти";
-            this.addUser.UseVisualStyleBackColor = true;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(136, 305);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(135, 13);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "У вас еще нет аккаунта?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // Login
+            // 
+            this.Login.Location = new System.Drawing.Point(136, 263);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(135, 39);
+            this.Login.TabIndex = 4;
+            this.Login.Text = "Войти";
+            this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // LoginField
             // 
@@ -158,17 +170,6 @@
             this.label2.Text = "Вход";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(136, 305);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(135, 13);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "У вас еще нет аккаунта?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +191,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button addUser;
+        private System.Windows.Forms.Button Login;
         private System.Windows.Forms.TextBox LoginField;
         private System.Windows.Forms.TextBox PassField;
         private System.Windows.Forms.PictureBox pictureBox2;

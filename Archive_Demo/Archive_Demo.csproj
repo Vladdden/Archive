@@ -38,6 +38,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.19\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -100,6 +101,12 @@
     <Compile Include="Users_table.Designer.cs">
       <DependentUpon>Users_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForm.Designer.cs">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddData.resx">
       <DependentUpon>AddData.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users_table.resx">
       <DependentUpon>Users_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForm.resx">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="IPSArchiveDataSet.xsc">
       <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>
