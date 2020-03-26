@@ -119,6 +119,7 @@
             this.addUser.TabIndex = 4;
             this.addUser.Text = "Регистрация";
             this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.Click += new System.EventHandler(this.addUser_Click);
             this.addUser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.addUser_MouseMove);
             // 
             // LoginField

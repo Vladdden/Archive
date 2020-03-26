@@ -35,7 +35,7 @@
             this.Registration_back = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Unit_dataGridView = new System.Windows.Forms.DataGridView();
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
             this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
@@ -56,7 +56,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Unit_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             this.SuspendLayout();
@@ -117,11 +117,11 @@
             this.label16.Text = "Документы";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // Unit_dataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Unit_dataGridView.AutoGenerateColumns = false;
+            this.Unit_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Unit_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.unitIDDataGridViewTextBoxColumn,
             this.unitNumDataGridViewTextBoxColumn,
             this.unitLitDataGridViewTextBoxColumn,
@@ -135,11 +135,12 @@
             this.unitTypeDataGridViewTextBoxColumn,
             this.yearStDataGridViewTextBoxColumn,
             this.yearEndDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.unitBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1350, 347);
-            this.dataGridView1.TabIndex = 20;
+            this.Unit_dataGridView.DataSource = this.unitBindingSource;
+            this.Unit_dataGridView.Location = new System.Drawing.Point(0, 52);
+            this.Unit_dataGridView.Name = "Unit_dataGridView";
+            this.Unit_dataGridView.Size = new System.Drawing.Size(1350, 347);
+            this.Unit_dataGridView.TabIndex = 20;
+            this.Unit_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Unit_dataGridView_UserDeletingRow);
             // 
             // unitBindingSource
             // 
@@ -250,7 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 450);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Unit_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Unit_table";
             this.Text = "Unit_table";
@@ -259,7 +260,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Unit_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -273,7 +274,7 @@
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Unit_dataGridView;
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource unitBindingSource;
         private IPSArchiveDataSetTableAdapters.UnitTableAdapter unitTableAdapter;

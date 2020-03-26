@@ -120,7 +120,7 @@ namespace Archive_Demo
             string UserLogin = LoginField.Text;
             string UserPass = PassField.Text;
 
-            string connectionString = @"Data Source=ВЛАДИСЛАВ-ПК\SQLEXPRESS;Initial Catalog=IPSArchive;Integrated Security=True";
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

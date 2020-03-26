@@ -42,5 +42,14 @@ namespace Archive_Demo
         {
             this.usersTableAdapter.Update(this.iPSArchiveDataSet.users);
         }
+
+        private void User_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

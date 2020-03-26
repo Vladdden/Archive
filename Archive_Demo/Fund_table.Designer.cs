@@ -35,11 +35,7 @@
             this.Registration_back = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
+            this.Fund_dataGridView = new System.Windows.Forms.DataGridView();
             this.fundIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +45,14 @@
             this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fund_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             this.SuspendLayout();
@@ -113,11 +113,11 @@
             this.label16.Text = "Фонды";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // Fund_dataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Fund_dataGridView.AutoGenerateColumns = false;
+            this.Fund_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Fund_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fundIDDataGridViewTextBoxColumn,
             this.fundNumDataGridViewTextBoxColumn,
             this.fundLitDataGridViewTextBoxColumn,
@@ -127,35 +127,12 @@
             this.yearEndDataGridViewTextBoxColumn,
             this.commentDataGridViewTextBoxColumn,
             this.deletedDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.fundBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(944, 348);
-            this.dataGridView1.TabIndex = 19;
-            // 
-            // fundBindingSource
-            // 
-            this.fundBindingSource.DataMember = "Fund";
-            this.fundBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
-            // iPSArchiveDataSet
-            // 
-            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
-            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fundTableAdapter
-            // 
-            this.fundTableAdapter.ClearBeforeFill = true;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(857, 415);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 20;
-            this.saveBtn.Text = "Сохранить";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.Fund_dataGridView.DataSource = this.fundBindingSource;
+            this.Fund_dataGridView.Location = new System.Drawing.Point(0, 52);
+            this.Fund_dataGridView.Name = "Fund_dataGridView";
+            this.Fund_dataGridView.Size = new System.Drawing.Size(944, 348);
+            this.Fund_dataGridView.TabIndex = 19;
+            this.Fund_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Fund_dataGridView_UserDeletingRow);
             // 
             // fundIDDataGridViewTextBoxColumn
             // 
@@ -212,13 +189,37 @@
             this.deletedDataGridViewCheckBoxColumn.HeaderText = "Удалено";
             this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
             // 
+            // fundBindingSource
+            // 
+            this.fundBindingSource.DataMember = "Fund";
+            this.fundBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fundTableAdapter
+            // 
+            this.fundTableAdapter.ClearBeforeFill = true;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(857, 415);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 20;
+            this.saveBtn.Text = "Сохранить";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // Fund_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Fund_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Fund_table";
             this.Text = "Fund_table";
@@ -227,7 +228,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fund_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Fund_dataGridView;
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource fundBindingSource;
         private IPSArchiveDataSetTableAdapters.FundTableAdapter fundTableAdapter;
