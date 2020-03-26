@@ -117,7 +117,7 @@
             this.UserPage = new System.Windows.Forms.TabPage();
             this.checkUsers_btn = new System.Windows.Forms.Button();
             this.addUser_btn = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Admin_checkBox = new System.Windows.Forms.CheckBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LoginField = new System.Windows.Forms.TextBox();
@@ -1056,7 +1056,7 @@
             // 
             this.UserPage.Controls.Add(this.checkUsers_btn);
             this.UserPage.Controls.Add(this.addUser_btn);
-            this.UserPage.Controls.Add(this.checkBox1);
+            this.UserPage.Controls.Add(this.Admin_checkBox);
             this.UserPage.Controls.Add(this.pictureBox4);
             this.UserPage.Controls.Add(this.pictureBox3);
             this.UserPage.Controls.Add(this.LoginField);
@@ -1100,16 +1100,16 @@
             this.addUser_btn.UseVisualStyleBackColor = false;
             this.addUser_btn.Click += new System.EventHandler(this.addUser_btn_Click);
             // 
-            // checkBox1
+            // Admin_checkBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(321, 274);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(150, 24);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Администратор";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Admin_checkBox.AutoSize = true;
+            this.Admin_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Admin_checkBox.Location = new System.Drawing.Point(321, 274);
+            this.Admin_checkBox.Name = "Admin_checkBox";
+            this.Admin_checkBox.Size = new System.Drawing.Size(150, 24);
+            this.Admin_checkBox.TabIndex = 28;
+            this.Admin_checkBox.Text = "Администратор";
+            this.Admin_checkBox.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
             // 
@@ -1387,7 +1387,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox Admin_checkBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox LoginField;

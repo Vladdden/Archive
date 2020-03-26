@@ -68,8 +68,12 @@ namespace Archive_Demo
         {
             addUser_btn.BackColor = Color.Khaki;
 
+            int flag;
+            if (Admin_checkBox.Checked) flag = 1;
+            else flag = 0;
+           
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO users VALUES ('6','" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', '0');";
+            string sql = "INSERT INTO users VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', '" + flag + "');";
             SqlConnection connection = new SqlConnection(connectionString);
              try
              {
