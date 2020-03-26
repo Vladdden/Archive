@@ -36,9 +36,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
             this.unitIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +49,16 @@
             this.unitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearStDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -135,25 +136,10 @@
             this.yearStDataGridViewTextBoxColumn,
             this.yearEndDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.unitBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1350, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1350, 347);
             this.dataGridView1.TabIndex = 20;
-            // 
-            // iPSArchiveDataSet
-            // 
-            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
-            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unitBindingSource
-            // 
-            this.unitBindingSource.DataMember = "Unit";
-            this.unitBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
-            // unitTableAdapter
-            // 
-            this.unitTableAdapter.ClearBeforeFill = true;
             // 
             // unitIDDataGridViewTextBoxColumn
             // 
@@ -234,11 +220,36 @@
             this.yearEndDataGridViewTextBoxColumn.HeaderText = "Year_End";
             this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
             // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataMember = "Unit";
+            this.unitBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // unitTableAdapter
+            // 
+            this.unitTableAdapter.ClearBeforeFill = true;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(1263, 415);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 22;
+            this.saveBtn.Text = "Сохранить";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // Unit_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 450);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel4);
             this.Name = "Unit_table";
@@ -249,8 +260,8 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearStDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button saveBtn;
     }
 }

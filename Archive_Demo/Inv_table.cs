@@ -37,5 +37,10 @@ namespace Archive_Demo
             this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
 
         }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            this.inventoryTableAdapter.Update(this.iPSArchiveDataSet.Inventory);
+        }
     }
 }
