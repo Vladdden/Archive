@@ -36,6 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.unitIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +53,6 @@
             this.unitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearStDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -141,85 +141,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1350, 347);
             this.dataGridView1.TabIndex = 20;
             // 
-            // unitIDDataGridViewTextBoxColumn
-            // 
-            this.unitIDDataGridViewTextBoxColumn.DataPropertyName = "Unit_ID";
-            this.unitIDDataGridViewTextBoxColumn.HeaderText = "Unit_ID";
-            this.unitIDDataGridViewTextBoxColumn.Name = "unitIDDataGridViewTextBoxColumn";
-            this.unitIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitNumDataGridViewTextBoxColumn
-            // 
-            this.unitNumDataGridViewTextBoxColumn.DataPropertyName = "Unit_Num";
-            this.unitNumDataGridViewTextBoxColumn.HeaderText = "Unit_Num";
-            this.unitNumDataGridViewTextBoxColumn.Name = "unitNumDataGridViewTextBoxColumn";
-            // 
-            // unitLitDataGridViewTextBoxColumn
-            // 
-            this.unitLitDataGridViewTextBoxColumn.DataPropertyName = "Unit_Lit";
-            this.unitLitDataGridViewTextBoxColumn.HeaderText = "Unit_Lit";
-            this.unitLitDataGridViewTextBoxColumn.Name = "unitLitDataGridViewTextBoxColumn";
-            // 
-            // datesDataGridViewTextBoxColumn
-            // 
-            this.datesDataGridViewTextBoxColumn.DataPropertyName = "Dates";
-            this.datesDataGridViewTextBoxColumn.HeaderText = "Dates";
-            this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
-            // 
-            // unitNameDataGridViewTextBoxColumn
-            // 
-            this.unitNameDataGridViewTextBoxColumn.DataPropertyName = "Unit_Name";
-            this.unitNameDataGridViewTextBoxColumn.HeaderText = "Unit_Name";
-            this.unitNameDataGridViewTextBoxColumn.Name = "unitNameDataGridViewTextBoxColumn";
-            // 
-            // pCountDataGridViewTextBoxColumn
-            // 
-            this.pCountDataGridViewTextBoxColumn.DataPropertyName = "P_Count";
-            this.pCountDataGridViewTextBoxColumn.HeaderText = "P_Count";
-            this.pCountDataGridViewTextBoxColumn.Name = "pCountDataGridViewTextBoxColumn";
-            // 
-            // dateCreateDataGridViewTextBoxColumn
-            // 
-            this.dateCreateDataGridViewTextBoxColumn.DataPropertyName = "DateCreate";
-            this.dateCreateDataGridViewTextBoxColumn.HeaderText = "DateCreate";
-            this.dateCreateDataGridViewTextBoxColumn.Name = "dateCreateDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // invIDDataGridViewTextBoxColumn
-            // 
-            this.invIDDataGridViewTextBoxColumn.DataPropertyName = "Inv_ID";
-            this.invIDDataGridViewTextBoxColumn.HeaderText = "Inv_ID";
-            this.invIDDataGridViewTextBoxColumn.Name = "invIDDataGridViewTextBoxColumn";
-            // 
-            // deletedDataGridViewCheckBoxColumn
-            // 
-            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
-            // 
-            // unitTypeDataGridViewTextBoxColumn
-            // 
-            this.unitTypeDataGridViewTextBoxColumn.DataPropertyName = "Unit_Type";
-            this.unitTypeDataGridViewTextBoxColumn.HeaderText = "Unit_Type";
-            this.unitTypeDataGridViewTextBoxColumn.Name = "unitTypeDataGridViewTextBoxColumn";
-            // 
-            // yearStDataGridViewTextBoxColumn
-            // 
-            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.HeaderText = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
-            // 
-            // yearEndDataGridViewTextBoxColumn
-            // 
-            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
-            // 
             // unitBindingSource
             // 
             this.unitBindingSource.DataMember = "Unit";
@@ -243,6 +164,85 @@
             this.saveBtn.Text = "Сохранить";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // unitIDDataGridViewTextBoxColumn
+            // 
+            this.unitIDDataGridViewTextBoxColumn.DataPropertyName = "Unit_ID";
+            this.unitIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.unitIDDataGridViewTextBoxColumn.Name = "unitIDDataGridViewTextBoxColumn";
+            this.unitIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitNumDataGridViewTextBoxColumn
+            // 
+            this.unitNumDataGridViewTextBoxColumn.DataPropertyName = "Unit_Num";
+            this.unitNumDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.unitNumDataGridViewTextBoxColumn.Name = "unitNumDataGridViewTextBoxColumn";
+            // 
+            // unitLitDataGridViewTextBoxColumn
+            // 
+            this.unitLitDataGridViewTextBoxColumn.DataPropertyName = "Unit_Lit";
+            this.unitLitDataGridViewTextBoxColumn.HeaderText = "Литерал";
+            this.unitLitDataGridViewTextBoxColumn.Name = "unitLitDataGridViewTextBoxColumn";
+            // 
+            // datesDataGridViewTextBoxColumn
+            // 
+            this.datesDataGridViewTextBoxColumn.DataPropertyName = "Dates";
+            this.datesDataGridViewTextBoxColumn.HeaderText = "Период ведения";
+            this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
+            // 
+            // unitNameDataGridViewTextBoxColumn
+            // 
+            this.unitNameDataGridViewTextBoxColumn.DataPropertyName = "Unit_Name";
+            this.unitNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.unitNameDataGridViewTextBoxColumn.Name = "unitNameDataGridViewTextBoxColumn";
+            // 
+            // pCountDataGridViewTextBoxColumn
+            // 
+            this.pCountDataGridViewTextBoxColumn.DataPropertyName = "P_Count";
+            this.pCountDataGridViewTextBoxColumn.HeaderText = "Кол-во документов";
+            this.pCountDataGridViewTextBoxColumn.Name = "pCountDataGridViewTextBoxColumn";
+            // 
+            // dateCreateDataGridViewTextBoxColumn
+            // 
+            this.dateCreateDataGridViewTextBoxColumn.DataPropertyName = "DateCreate";
+            this.dateCreateDataGridViewTextBoxColumn.HeaderText = "Дата создания";
+            this.dateCreateDataGridViewTextBoxColumn.Name = "dateCreateDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // invIDDataGridViewTextBoxColumn
+            // 
+            this.invIDDataGridViewTextBoxColumn.DataPropertyName = "Inv_ID";
+            this.invIDDataGridViewTextBoxColumn.HeaderText = "ID Описи";
+            this.invIDDataGridViewTextBoxColumn.Name = "invIDDataGridViewTextBoxColumn";
+            // 
+            // deletedDataGridViewCheckBoxColumn
+            // 
+            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
+            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Удалено";
+            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
+            // 
+            // unitTypeDataGridViewTextBoxColumn
+            // 
+            this.unitTypeDataGridViewTextBoxColumn.DataPropertyName = "Unit_Type";
+            this.unitTypeDataGridViewTextBoxColumn.HeaderText = "Тип";
+            this.unitTypeDataGridViewTextBoxColumn.Name = "unitTypeDataGridViewTextBoxColumn";
+            // 
+            // yearStDataGridViewTextBoxColumn
+            // 
+            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
+            this.yearStDataGridViewTextBoxColumn.HeaderText = "Дата заведения";
+            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
+            // 
+            // yearEndDataGridViewTextBoxColumn
+            // 
+            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
+            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Дата закрытия";
+            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
             // 
             // Unit_table
             // 
@@ -277,6 +277,7 @@
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource unitBindingSource;
         private IPSArchiveDataSetTableAdapters.UnitTableAdapter unitTableAdapter;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitLitDataGridViewTextBoxColumn;
@@ -290,6 +291,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearStDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button saveBtn;
     }
 }

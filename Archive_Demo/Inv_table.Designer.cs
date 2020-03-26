@@ -36,6 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.invIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +52,6 @@
             this.unitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,79 +139,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1244, 349);
             this.dataGridView1.TabIndex = 20;
             // 
-            // invIDDataGridViewTextBoxColumn
-            // 
-            this.invIDDataGridViewTextBoxColumn.DataPropertyName = "Inv_ID";
-            this.invIDDataGridViewTextBoxColumn.HeaderText = "Inv_ID";
-            this.invIDDataGridViewTextBoxColumn.Name = "invIDDataGridViewTextBoxColumn";
-            this.invIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fundIDDataGridViewTextBoxColumn
-            // 
-            this.fundIDDataGridViewTextBoxColumn.DataPropertyName = "Fund_ID";
-            this.fundIDDataGridViewTextBoxColumn.HeaderText = "Fund_ID";
-            this.fundIDDataGridViewTextBoxColumn.Name = "fundIDDataGridViewTextBoxColumn";
-            // 
-            // invNumDataGridViewTextBoxColumn
-            // 
-            this.invNumDataGridViewTextBoxColumn.DataPropertyName = "Inv_Num";
-            this.invNumDataGridViewTextBoxColumn.HeaderText = "Inv_Num";
-            this.invNumDataGridViewTextBoxColumn.Name = "invNumDataGridViewTextBoxColumn";
-            // 
-            // invLitDataGridViewTextBoxColumn
-            // 
-            this.invLitDataGridViewTextBoxColumn.DataPropertyName = "Inv_Lit";
-            this.invLitDataGridViewTextBoxColumn.HeaderText = "Inv_Lit";
-            this.invLitDataGridViewTextBoxColumn.Name = "invLitDataGridViewTextBoxColumn";
-            // 
-            // invVolDataGridViewTextBoxColumn
-            // 
-            this.invVolDataGridViewTextBoxColumn.DataPropertyName = "Inv_Vol";
-            this.invVolDataGridViewTextBoxColumn.HeaderText = "Inv_Vol";
-            this.invVolDataGridViewTextBoxColumn.Name = "invVolDataGridViewTextBoxColumn";
-            // 
-            // invNameDataGridViewTextBoxColumn
-            // 
-            this.invNameDataGridViewTextBoxColumn.DataPropertyName = "Inv_Name";
-            this.invNameDataGridViewTextBoxColumn.HeaderText = "Inv_Name";
-            this.invNameDataGridViewTextBoxColumn.Name = "invNameDataGridViewTextBoxColumn";
-            // 
-            // yearStDataGridViewTextBoxColumn
-            // 
-            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.HeaderText = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
-            // 
-            // yearEndDataGridViewTextBoxColumn
-            // 
-            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
-            // 
-            // datesDataGridViewTextBoxColumn
-            // 
-            this.datesDataGridViewTextBoxColumn.DataPropertyName = "Dates";
-            this.datesDataGridViewTextBoxColumn.HeaderText = "Dates";
-            this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
-            // 
-            // unitCountDataGridViewTextBoxColumn
-            // 
-            this.unitCountDataGridViewTextBoxColumn.DataPropertyName = "Unit_Count";
-            this.unitCountDataGridViewTextBoxColumn.HeaderText = "Unit_Count";
-            this.unitCountDataGridViewTextBoxColumn.Name = "unitCountDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // deletedDataGridViewCheckBoxColumn
-            // 
-            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
-            // 
             // inventoryBindingSource
             // 
             this.inventoryBindingSource.DataMember = "Inventory";
@@ -235,6 +162,79 @@
             this.saveBtn.Text = "Сохранить";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // invIDDataGridViewTextBoxColumn
+            // 
+            this.invIDDataGridViewTextBoxColumn.DataPropertyName = "Inv_ID";
+            this.invIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.invIDDataGridViewTextBoxColumn.Name = "invIDDataGridViewTextBoxColumn";
+            this.invIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fundIDDataGridViewTextBoxColumn
+            // 
+            this.fundIDDataGridViewTextBoxColumn.DataPropertyName = "Fund_ID";
+            this.fundIDDataGridViewTextBoxColumn.HeaderText = "ID Фонда";
+            this.fundIDDataGridViewTextBoxColumn.Name = "fundIDDataGridViewTextBoxColumn";
+            // 
+            // invNumDataGridViewTextBoxColumn
+            // 
+            this.invNumDataGridViewTextBoxColumn.DataPropertyName = "Inv_Num";
+            this.invNumDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.invNumDataGridViewTextBoxColumn.Name = "invNumDataGridViewTextBoxColumn";
+            // 
+            // invLitDataGridViewTextBoxColumn
+            // 
+            this.invLitDataGridViewTextBoxColumn.DataPropertyName = "Inv_Lit";
+            this.invLitDataGridViewTextBoxColumn.HeaderText = "Литер";
+            this.invLitDataGridViewTextBoxColumn.Name = "invLitDataGridViewTextBoxColumn";
+            // 
+            // invVolDataGridViewTextBoxColumn
+            // 
+            this.invVolDataGridViewTextBoxColumn.DataPropertyName = "Inv_Vol";
+            this.invVolDataGridViewTextBoxColumn.HeaderText = "Том";
+            this.invVolDataGridViewTextBoxColumn.Name = "invVolDataGridViewTextBoxColumn";
+            // 
+            // invNameDataGridViewTextBoxColumn
+            // 
+            this.invNameDataGridViewTextBoxColumn.DataPropertyName = "Inv_Name";
+            this.invNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.invNameDataGridViewTextBoxColumn.Name = "invNameDataGridViewTextBoxColumn";
+            // 
+            // yearStDataGridViewTextBoxColumn
+            // 
+            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
+            this.yearStDataGridViewTextBoxColumn.HeaderText = "Дата заведения";
+            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
+            // 
+            // yearEndDataGridViewTextBoxColumn
+            // 
+            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
+            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Дата закрытия";
+            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
+            // 
+            // datesDataGridViewTextBoxColumn
+            // 
+            this.datesDataGridViewTextBoxColumn.DataPropertyName = "Dates";
+            this.datesDataGridViewTextBoxColumn.HeaderText = "Период ведения";
+            this.datesDataGridViewTextBoxColumn.Name = "datesDataGridViewTextBoxColumn";
+            // 
+            // unitCountDataGridViewTextBoxColumn
+            // 
+            this.unitCountDataGridViewTextBoxColumn.DataPropertyName = "Unit_Count";
+            this.unitCountDataGridViewTextBoxColumn.HeaderText = "Кол-во входящих док-ов";
+            this.unitCountDataGridViewTextBoxColumn.Name = "unitCountDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // deletedDataGridViewCheckBoxColumn
+            // 
+            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
+            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Удалено";
+            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
             // 
             // Inv_table
             // 
@@ -269,6 +269,7 @@
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private IPSArchiveDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fundIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invNumDataGridViewTextBoxColumn;
@@ -281,6 +282,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitCountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn deletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button saveBtn;
     }
 }

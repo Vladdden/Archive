@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,17 @@ namespace Archive_Demo
         private void addFund_btn_Click(object sender, EventArgs e)
         {
             addFund_btn.BackColor = Color.Khaki;
+           /* int Fund_ID;
+            string Fund_Num = Fund_Num_btn.Text;
+            string Fund_Lit = Fund_Lit_btn.Text;
+            string Fund_Name = Fund_Name_btn.Text;
+            string Inv_Count = Fund_Inv_Count_btn.Text;
+            string Year_St = Fund_Year_St.Text;
+            string Year_End = Fund_Year_End.Text;
+            string comment = Fund_Comment_btn.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter($"INSERT INTO FUND VALUES FROM users WHERE 'Login'='" + LoginField.Text + "' AND 'Password'='" + PassField.Text + "'", connection);
+            */
         }
 
         private void addInv_btn_Click(object sender, EventArgs e)

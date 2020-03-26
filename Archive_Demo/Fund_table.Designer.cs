@@ -36,6 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.fundIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +49,6 @@
             this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,61 +133,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(944, 348);
             this.dataGridView1.TabIndex = 19;
             // 
-            // fundIDDataGridViewTextBoxColumn
-            // 
-            this.fundIDDataGridViewTextBoxColumn.DataPropertyName = "Fund_ID";
-            this.fundIDDataGridViewTextBoxColumn.HeaderText = "Fund_ID";
-            this.fundIDDataGridViewTextBoxColumn.Name = "fundIDDataGridViewTextBoxColumn";
-            this.fundIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fundNumDataGridViewTextBoxColumn
-            // 
-            this.fundNumDataGridViewTextBoxColumn.DataPropertyName = "Fund_Num";
-            this.fundNumDataGridViewTextBoxColumn.HeaderText = "Fund_Num";
-            this.fundNumDataGridViewTextBoxColumn.Name = "fundNumDataGridViewTextBoxColumn";
-            // 
-            // fundLitDataGridViewTextBoxColumn
-            // 
-            this.fundLitDataGridViewTextBoxColumn.DataPropertyName = "Fund_Lit";
-            this.fundLitDataGridViewTextBoxColumn.HeaderText = "Fund_Lit";
-            this.fundLitDataGridViewTextBoxColumn.Name = "fundLitDataGridViewTextBoxColumn";
-            // 
-            // fundNameDataGridViewTextBoxColumn
-            // 
-            this.fundNameDataGridViewTextBoxColumn.DataPropertyName = "Fund_Name";
-            this.fundNameDataGridViewTextBoxColumn.HeaderText = "Fund_Name";
-            this.fundNameDataGridViewTextBoxColumn.Name = "fundNameDataGridViewTextBoxColumn";
-            // 
-            // invCountDataGridViewTextBoxColumn
-            // 
-            this.invCountDataGridViewTextBoxColumn.DataPropertyName = "Inv_Count";
-            this.invCountDataGridViewTextBoxColumn.HeaderText = "Inv_Count";
-            this.invCountDataGridViewTextBoxColumn.Name = "invCountDataGridViewTextBoxColumn";
-            // 
-            // yearStDataGridViewTextBoxColumn
-            // 
-            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.HeaderText = "Year_St";
-            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
-            // 
-            // yearEndDataGridViewTextBoxColumn
-            // 
-            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Year_End";
-            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // deletedDataGridViewCheckBoxColumn
-            // 
-            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Deleted";
-            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
-            // 
             // fundBindingSource
             // 
             this.fundBindingSource.DataMember = "Fund";
@@ -204,13 +149,68 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(841, 415);
+            this.saveBtn.Location = new System.Drawing.Point(857, 415);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 20;
             this.saveBtn.Text = "Сохранить";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // fundIDDataGridViewTextBoxColumn
+            // 
+            this.fundIDDataGridViewTextBoxColumn.DataPropertyName = "Fund_ID";
+            this.fundIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.fundIDDataGridViewTextBoxColumn.Name = "fundIDDataGridViewTextBoxColumn";
+            this.fundIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fundNumDataGridViewTextBoxColumn
+            // 
+            this.fundNumDataGridViewTextBoxColumn.DataPropertyName = "Fund_Num";
+            this.fundNumDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.fundNumDataGridViewTextBoxColumn.Name = "fundNumDataGridViewTextBoxColumn";
+            // 
+            // fundLitDataGridViewTextBoxColumn
+            // 
+            this.fundLitDataGridViewTextBoxColumn.DataPropertyName = "Fund_Lit";
+            this.fundLitDataGridViewTextBoxColumn.HeaderText = "Литерал";
+            this.fundLitDataGridViewTextBoxColumn.Name = "fundLitDataGridViewTextBoxColumn";
+            // 
+            // fundNameDataGridViewTextBoxColumn
+            // 
+            this.fundNameDataGridViewTextBoxColumn.DataPropertyName = "Fund_Name";
+            this.fundNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.fundNameDataGridViewTextBoxColumn.Name = "fundNameDataGridViewTextBoxColumn";
+            // 
+            // invCountDataGridViewTextBoxColumn
+            // 
+            this.invCountDataGridViewTextBoxColumn.DataPropertyName = "Inv_Count";
+            this.invCountDataGridViewTextBoxColumn.HeaderText = "Кол-во описей";
+            this.invCountDataGridViewTextBoxColumn.Name = "invCountDataGridViewTextBoxColumn";
+            // 
+            // yearStDataGridViewTextBoxColumn
+            // 
+            this.yearStDataGridViewTextBoxColumn.DataPropertyName = "Year_St";
+            this.yearStDataGridViewTextBoxColumn.HeaderText = "Дата заведения";
+            this.yearStDataGridViewTextBoxColumn.Name = "yearStDataGridViewTextBoxColumn";
+            // 
+            // yearEndDataGridViewTextBoxColumn
+            // 
+            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "Year_End";
+            this.yearEndDataGridViewTextBoxColumn.HeaderText = "Дата закрытия";
+            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // deletedDataGridViewCheckBoxColumn
+            // 
+            this.deletedDataGridViewCheckBoxColumn.DataPropertyName = "Deleted";
+            this.deletedDataGridViewCheckBoxColumn.HeaderText = "Удалено";
+            this.deletedDataGridViewCheckBoxColumn.Name = "deletedDataGridViewCheckBoxColumn";
             // 
             // Fund_table
             // 
@@ -245,6 +245,7 @@
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource fundBindingSource;
         private IPSArchiveDataSetTableAdapters.FundTableAdapter fundTableAdapter;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fundIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fundNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fundLitDataGridViewTextBoxColumn;
@@ -254,6 +255,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn deletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button saveBtn;
     }
 }
