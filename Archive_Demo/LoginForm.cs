@@ -148,7 +148,7 @@ namespace Archive_Demo
 
                 if (table.Rows.Count > 0)
                 {
-                    MessageBox.Show("Добро пожаловать!");
+                    
                     string sql = "SELECT Status FROM users WHERE Login='" + LoginField.Text + "' AND Password='" + PassField.Text + "'";
                     SqlCommand command = new SqlCommand(sql, connection);
                     SqlDataReader reader = command.ExecuteReader();

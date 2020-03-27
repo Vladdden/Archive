@@ -56,5 +56,12 @@ namespace Archive_Demo
                 e.Cancel = true;
             }
         }
+
+        private void Fund_search_btn_Click(object sender, EventArgs e)
+        {
+            Unit_search sf = new Unit_search();
+            sf.Owner = this;
+            sf.Show();
+        }
     }
 }

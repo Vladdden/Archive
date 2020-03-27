@@ -52,6 +52,7 @@
             this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
             this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.Fund_search_btn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -237,11 +238,22 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // Fund_search_btn
+            // 
+            this.Fund_search_btn.Location = new System.Drawing.Point(12, 415);
+            this.Fund_search_btn.Name = "Fund_search_btn";
+            this.Fund_search_btn.Size = new System.Drawing.Size(75, 23);
+            this.Fund_search_btn.TabIndex = 22;
+            this.Fund_search_btn.Text = "Поиск";
+            this.Fund_search_btn.UseVisualStyleBackColor = true;
+            this.Fund_search_btn.Click += new System.EventHandler(this.Fund_search_btn_Click);
+            // 
             // Inv_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 450);
+            this.Controls.Add(this.Fund_search_btn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.Inv_dataGridView);
             this.Controls.Add(this.panel4);
@@ -266,7 +278,7 @@
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView Inv_dataGridView;
+        public System.Windows.Forms.DataGridView Inv_dataGridView;
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private IPSArchiveDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
@@ -283,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitCountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn deletedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button Fund_search_btn;
     }
 }

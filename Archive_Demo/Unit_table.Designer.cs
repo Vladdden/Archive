@@ -36,10 +36,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.Unit_dataGridView = new System.Windows.Forms.DataGridView();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.unitIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitLitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +49,11 @@
             this.unitTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearStDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.Fund_search_btn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,30 +143,6 @@
             this.Unit_dataGridView.TabIndex = 20;
             this.Unit_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Unit_dataGridView_UserDeletingRow);
             // 
-            // unitBindingSource
-            // 
-            this.unitBindingSource.DataMember = "Unit";
-            this.unitBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
-            // iPSArchiveDataSet
-            // 
-            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
-            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unitTableAdapter
-            // 
-            this.unitTableAdapter.ClearBeforeFill = true;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(1263, 415);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 22;
-            this.saveBtn.Text = "Сохранить";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // unitIDDataGridViewTextBoxColumn
             // 
             this.unitIDDataGridViewTextBoxColumn.DataPropertyName = "Unit_ID";
@@ -245,11 +222,46 @@
             this.yearEndDataGridViewTextBoxColumn.HeaderText = "Дата закрытия";
             this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
             // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataMember = "Unit";
+            this.unitBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // unitTableAdapter
+            // 
+            this.unitTableAdapter.ClearBeforeFill = true;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(1263, 415);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 22;
+            this.saveBtn.Text = "Сохранить";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // Fund_search_btn
+            // 
+            this.Fund_search_btn.Location = new System.Drawing.Point(12, 415);
+            this.Fund_search_btn.Name = "Fund_search_btn";
+            this.Fund_search_btn.Size = new System.Drawing.Size(75, 23);
+            this.Fund_search_btn.TabIndex = 23;
+            this.Fund_search_btn.Text = "Поиск";
+            this.Fund_search_btn.UseVisualStyleBackColor = true;
+            this.Fund_search_btn.Click += new System.EventHandler(this.Fund_search_btn_Click);
+            // 
             // Unit_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 450);
+            this.Controls.Add(this.Fund_search_btn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.Unit_dataGridView);
             this.Controls.Add(this.panel4);
@@ -274,7 +286,7 @@
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView Unit_dataGridView;
+        public System.Windows.Forms.DataGridView Unit_dataGridView;
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource unitBindingSource;
         private IPSArchiveDataSetTableAdapters.UnitTableAdapter unitTableAdapter;
@@ -292,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearStDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button Fund_search_btn;
     }
 }

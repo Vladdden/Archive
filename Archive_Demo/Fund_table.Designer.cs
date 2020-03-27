@@ -49,6 +49,7 @@
             this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
             this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.Fund_search_btn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -213,11 +214,22 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // Fund_search_btn
+            // 
+            this.Fund_search_btn.Location = new System.Drawing.Point(12, 415);
+            this.Fund_search_btn.Name = "Fund_search_btn";
+            this.Fund_search_btn.Size = new System.Drawing.Size(75, 23);
+            this.Fund_search_btn.TabIndex = 21;
+            this.Fund_search_btn.Text = "Поиск";
+            this.Fund_search_btn.UseVisualStyleBackColor = true;
+            this.Fund_search_btn.Click += new System.EventHandler(this.Fund_search_btn_Click);
+            // 
             // Fund_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
+            this.Controls.Add(this.Fund_search_btn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.Fund_dataGridView);
             this.Controls.Add(this.panel4);
@@ -242,7 +254,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label Registration_back;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView Fund_dataGridView;
+        public System.Windows.Forms.DataGridView Fund_dataGridView;
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource fundBindingSource;
         private IPSArchiveDataSetTableAdapters.FundTableAdapter fundTableAdapter;
@@ -256,5 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn deletedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button Fund_search_btn;
     }
 }

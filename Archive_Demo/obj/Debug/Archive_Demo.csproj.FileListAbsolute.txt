@@ -22,3 +22,6 @@ C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Arc
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Unit_table.resources
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Users_table.resources
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.WorkerForm.resources
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Fund_search.resources
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Inv_search.resources
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Unit_search.resources
