@@ -35,10 +35,12 @@ namespace Archive_Demo
                 SqlCommand command = new SqlCommand(sql, connection);
                 int number = command.ExecuteNonQuery();
                 Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -46,7 +48,7 @@ namespace Archive_Demo
                 Console.WriteLine("Подключение закрыто...");
             }
 
-            MessageBox.Show("Данные успешно добавлены.");
+            
             Fund_Num_btn.Text = "";
             Fund_Lit_btn.Text = "";
             Fund_Name_btn.Text = "";
@@ -55,6 +57,9 @@ namespace Archive_Demo
             Fund_Year_End.Value = DateTime.Today.AddDays(365);
             Fund_Comment_btn.Text = "";
 
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+            Inv_Fund_ID_comboBox.SelectedItem = null;
+            Inv_Fund_ID_comboBox.Text = "----Выберите----";
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addInv_btn_Click(object sender, EventArgs e)
@@ -71,18 +76,21 @@ namespace Archive_Demo
                 SqlCommand command = new SqlCommand(sql, connection);
                 int number = command.ExecuteNonQuery();
                 Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
+                
             }
 
-            MessageBox.Show("Данные успешно добавлены.");
+            
             Inv_Fund_ID_comboBox.SelectedItem = null;
             Inv_Fund_ID_comboBox.Text = "----Выберите----";
             Inv_Num.Text = "";
@@ -95,6 +103,9 @@ namespace Archive_Demo
             Inv_Unit_Count.Text = "";
             Inv_Comment.Text = "";
 
+            this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
+            Unit_Inv_comboBox.SelectedItem = null;
+            Unit_Inv_comboBox.Text = "-----Выберите-----";
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -116,10 +127,12 @@ namespace Archive_Demo
                 command.Parameters.Add("@Unit_Date_Create_dateTimePicker", SqlDbType.Date).Value = Unit_Date_Create_dateTimePicker.Value.Date;
                 int number = command.ExecuteNonQuery();
                 Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -127,7 +140,7 @@ namespace Archive_Demo
                 Console.WriteLine("Подключение закрыто...");
             }
 
-            MessageBox.Show("Данные успешно добавлены.");
+            
             Unit_Num.Text = "";
             Unit_Lit.Text = "";
             Unit_Dates.Text = "";
@@ -162,18 +175,20 @@ namespace Archive_Demo
                  SqlCommand command = new SqlCommand(sql, connection);
                  int number = command.ExecuteNonQuery();
                  Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
             }
              catch (SqlException ex)
              {
                  Console.WriteLine(ex.Message);
-             }
+                MessageBox.Show(ex.Message);
+            }
              finally
              {
                  connection.Close();
                  Console.WriteLine("Подключение закрыто...");
              }
 
-            MessageBox.Show("Данные успешно добавлены.");
+            
             NameField.Text = "";
             SurField.Text = "";
             LoginField.Text = "";
@@ -252,6 +267,62 @@ namespace Archive_Demo
         {
             if (Inv_Fund_ID_comboBox.Text == "")
                 Inv_Fund_ID_comboBox.Text = "----Выберите----";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
         }
     }
 }
