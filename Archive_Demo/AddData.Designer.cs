@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddData));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.FundPage = new System.Windows.Forms.TabPage();
@@ -54,8 +55,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Fund_Num_btn = new System.Windows.Forms.TextBox();
             this.InvPage = new System.Windows.Forms.TabPage();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.Inv_Year_End_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Inv_Year_St_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -63,23 +64,23 @@
             this.label17 = new System.Windows.Forms.Label();
             this.addInv_btn = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.Inv_Comment = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.Inv_Dates = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.Inv_Name = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.Inv_Vol = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.Inv_Lit = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.Inv_Num = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Inv_Fund_ID_comboBox = new System.Windows.Forms.ComboBox();
+            this.Inv_Unit_Count = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.UnitPage = new System.Windows.Forms.TabPage();
@@ -87,23 +88,22 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.Unit_Date_Create_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Unit_Year_End_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Unit_Year_St_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Unit_Name = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Unit_Inv_comboBox = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.Unit_P_Count = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.Unit_Dates = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.Unit_Lit = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.Unit_Num = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             this.checkUnits_btn = new System.Windows.Forms.Button();
             this.addUnit_btn = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.Unit_Comment = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.UserPage = new System.Windows.Forms.TabPage();
@@ -133,6 +133,15 @@
             this.ReportPage = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
+            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
+            this.unitTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
+            this.Unit_Type = new System.Windows.Forms.ComboBox();
+            this.unitTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,6 +155,11 @@
             this.panel6.SuspendLayout();
             this.ReportPage.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -195,6 +209,8 @@
             // 
             // Fund_Year_End
             // 
+            this.Fund_Year_End.CustomFormat = "yyyy";
+            this.Fund_Year_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Fund_Year_End.Location = new System.Drawing.Point(488, 194);
             this.Fund_Year_End.Name = "Fund_Year_End";
             this.Fund_Year_End.Size = new System.Drawing.Size(168, 20);
@@ -202,6 +218,8 @@
             // 
             // Fund_Year_St
             // 
+            this.Fund_Year_St.CustomFormat = "yyyy";
+            this.Fund_Year_St.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Fund_Year_St.Location = new System.Drawing.Point(289, 194);
             this.Fund_Year_St.Name = "Fund_Year_St";
             this.Fund_Year_St.Size = new System.Drawing.Size(168, 20);
@@ -410,8 +428,8 @@
             // 
             // InvPage
             // 
-            this.InvPage.Controls.Add(this.dateTimePicker5);
-            this.InvPage.Controls.Add(this.dateTimePicker4);
+            this.InvPage.Controls.Add(this.Inv_Year_End_dateTimePicker);
+            this.InvPage.Controls.Add(this.Inv_Year_St_dateTimePicker);
             this.InvPage.Controls.Add(this.label31);
             this.InvPage.Controls.Add(this.label30);
             this.InvPage.Controls.Add(this.label29);
@@ -419,23 +437,23 @@
             this.InvPage.Controls.Add(this.label17);
             this.InvPage.Controls.Add(this.addInv_btn);
             this.InvPage.Controls.Add(this.label28);
-            this.InvPage.Controls.Add(this.textBox16);
+            this.InvPage.Controls.Add(this.Inv_Comment);
             this.InvPage.Controls.Add(this.label25);
             this.InvPage.Controls.Add(this.label26);
             this.InvPage.Controls.Add(this.label27);
-            this.InvPage.Controls.Add(this.textBox13);
+            this.InvPage.Controls.Add(this.Inv_Dates);
             this.InvPage.Controls.Add(this.label23);
-            this.InvPage.Controls.Add(this.textBox12);
+            this.InvPage.Controls.Add(this.Inv_Name);
             this.InvPage.Controls.Add(this.label22);
-            this.InvPage.Controls.Add(this.textBox11);
+            this.InvPage.Controls.Add(this.Inv_Vol);
             this.InvPage.Controls.Add(this.label21);
-            this.InvPage.Controls.Add(this.textBox10);
+            this.InvPage.Controls.Add(this.Inv_Lit);
             this.InvPage.Controls.Add(this.label20);
-            this.InvPage.Controls.Add(this.textBox9);
+            this.InvPage.Controls.Add(this.Inv_Num);
             this.InvPage.Controls.Add(this.label19);
             this.InvPage.Controls.Add(this.label18);
-            this.InvPage.Controls.Add(this.comboBox1);
-            this.InvPage.Controls.Add(this.textBox8);
+            this.InvPage.Controls.Add(this.Inv_Fund_ID_comboBox);
+            this.InvPage.Controls.Add(this.Inv_Unit_Count);
             this.InvPage.Controls.Add(this.panel2);
             this.InvPage.Location = new System.Drawing.Point(4, 22);
             this.InvPage.Name = "InvPage";
@@ -445,19 +463,23 @@
             this.InvPage.Text = "Описи";
             this.InvPage.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker5
+            // Inv_Year_End_dateTimePicker
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(636, 237);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker5.TabIndex = 69;
+            this.Inv_Year_End_dateTimePicker.CustomFormat = "yyyy";
+            this.Inv_Year_End_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Inv_Year_End_dateTimePicker.Location = new System.Drawing.Point(636, 237);
+            this.Inv_Year_End_dateTimePicker.Name = "Inv_Year_End_dateTimePicker";
+            this.Inv_Year_End_dateTimePicker.Size = new System.Drawing.Size(136, 20);
+            this.Inv_Year_End_dateTimePicker.TabIndex = 69;
             // 
-            // dateTimePicker4
+            // Inv_Year_St_dateTimePicker
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(454, 237);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker4.TabIndex = 68;
+            this.Inv_Year_St_dateTimePicker.CustomFormat = "yyyy";
+            this.Inv_Year_St_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Inv_Year_St_dateTimePicker.Location = new System.Drawing.Point(454, 237);
+            this.Inv_Year_St_dateTimePicker.Name = "Inv_Year_St_dateTimePicker";
+            this.Inv_Year_St_dateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.Inv_Year_St_dateTimePicker.TabIndex = 68;
             // 
             // label31
             // 
@@ -537,14 +559,14 @@
             this.label28.TabIndex = 38;
             this.label28.Text = "Комментарий";
             // 
-            // textBox16
+            // Inv_Comment
             // 
-            this.textBox16.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox16.Location = new System.Drawing.Point(18, 280);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(405, 128);
-            this.textBox16.TabIndex = 37;
+            this.Inv_Comment.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Inv_Comment.Location = new System.Drawing.Point(18, 280);
+            this.Inv_Comment.Multiline = true;
+            this.Inv_Comment.Name = "Inv_Comment";
+            this.Inv_Comment.Size = new System.Drawing.Size(405, 128);
+            this.Inv_Comment.TabIndex = 37;
             // 
             // label25
             // 
@@ -576,13 +598,13 @@
             this.label27.TabIndex = 32;
             this.label27.Text = "Дата заведения";
             // 
-            // textBox13
+            // Inv_Dates
             // 
-            this.textBox13.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox13.Location = new System.Drawing.Point(198, 242);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(225, 32);
-            this.textBox13.TabIndex = 30;
+            this.Inv_Dates.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Dates.Location = new System.Drawing.Point(198, 242);
+            this.Inv_Dates.Name = "Inv_Dates";
+            this.Inv_Dates.Size = new System.Drawing.Size(225, 32);
+            this.Inv_Dates.TabIndex = 30;
             // 
             // label23
             // 
@@ -594,13 +616,13 @@
             this.label23.TabIndex = 29;
             this.label23.Text = "Период ведения";
             // 
-            // textBox12
+            // Inv_Name
             // 
-            this.textBox12.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox12.Location = new System.Drawing.Point(198, 103);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(175, 32);
-            this.textBox12.TabIndex = 28;
+            this.Inv_Name.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Name.Location = new System.Drawing.Point(198, 103);
+            this.Inv_Name.Name = "Inv_Name";
+            this.Inv_Name.Size = new System.Drawing.Size(175, 32);
+            this.Inv_Name.TabIndex = 28;
             // 
             // label22
             // 
@@ -612,13 +634,13 @@
             this.label22.TabIndex = 27;
             this.label22.Text = "Имя описи";
             // 
-            // textBox11
+            // Inv_Vol
             // 
-            this.textBox11.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox11.Location = new System.Drawing.Point(18, 174);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(153, 32);
-            this.textBox11.TabIndex = 26;
+            this.Inv_Vol.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Vol.Location = new System.Drawing.Point(18, 174);
+            this.Inv_Vol.Name = "Inv_Vol";
+            this.Inv_Vol.Size = new System.Drawing.Size(153, 32);
+            this.Inv_Vol.TabIndex = 26;
             // 
             // label21
             // 
@@ -630,13 +652,13 @@
             this.label21.TabIndex = 25;
             this.label21.Text = "Том описи";
             // 
-            // textBox10
+            // Inv_Lit
             // 
-            this.textBox10.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox10.Location = new System.Drawing.Point(198, 178);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(225, 32);
-            this.textBox10.TabIndex = 24;
+            this.Inv_Lit.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Lit.Location = new System.Drawing.Point(198, 178);
+            this.Inv_Lit.Name = "Inv_Lit";
+            this.Inv_Lit.Size = new System.Drawing.Size(225, 32);
+            this.Inv_Lit.TabIndex = 24;
             // 
             // label20
             // 
@@ -648,13 +670,13 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Номер литера описи";
             // 
-            // textBox9
+            // Inv_Num
             // 
-            this.textBox9.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox9.Location = new System.Drawing.Point(405, 103);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(168, 32);
-            this.textBox9.TabIndex = 22;
+            this.Inv_Num.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Num.Location = new System.Drawing.Point(405, 103);
+            this.Inv_Num.Name = "Inv_Num";
+            this.Inv_Num.Size = new System.Drawing.Size(168, 32);
+            this.Inv_Num.TabIndex = 22;
             // 
             // label19
             // 
@@ -676,22 +698,25 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "Фонд";
             // 
-            // comboBox1
+            // Inv_Fund_ID_comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 33);
-            this.comboBox1.TabIndex = 19;
+            this.Inv_Fund_ID_comboBox.DataSource = this.fundBindingSource;
+            this.Inv_Fund_ID_comboBox.DisplayMember = "Fund_Name";
+            this.Inv_Fund_ID_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Fund_ID_comboBox.FormattingEnabled = true;
+            this.Inv_Fund_ID_comboBox.Location = new System.Drawing.Point(15, 103);
+            this.Inv_Fund_ID_comboBox.Name = "Inv_Fund_ID_comboBox";
+            this.Inv_Fund_ID_comboBox.Size = new System.Drawing.Size(156, 33);
+            this.Inv_Fund_ID_comboBox.TabIndex = 19;
+            this.Inv_Fund_ID_comboBox.ValueMember = "Fund_ID";
             // 
-            // textBox8
+            // Inv_Unit_Count
             // 
-            this.textBox8.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox8.Location = new System.Drawing.Point(604, 141);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(153, 32);
-            this.textBox8.TabIndex = 18;
+            this.Inv_Unit_Count.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Inv_Unit_Count.Location = new System.Drawing.Point(604, 141);
+            this.Inv_Unit_Count.Name = "Inv_Unit_Count";
+            this.Inv_Unit_Count.Size = new System.Drawing.Size(153, 32);
+            this.Inv_Unit_Count.TabIndex = 18;
             // 
             // panel2
             // 
@@ -717,27 +742,27 @@
             // 
             // UnitPage
             // 
+            this.UnitPage.Controls.Add(this.Unit_Type);
             this.UnitPage.Controls.Add(this.label46);
             this.UnitPage.Controls.Add(this.label45);
             this.UnitPage.Controls.Add(this.label44);
             this.UnitPage.Controls.Add(this.label43);
-            this.UnitPage.Controls.Add(this.dateTimePicker3);
-            this.UnitPage.Controls.Add(this.dateTimePicker2);
-            this.UnitPage.Controls.Add(this.dateTimePicker1);
-            this.UnitPage.Controls.Add(this.textBox26);
+            this.UnitPage.Controls.Add(this.Unit_Date_Create_dateTimePicker);
+            this.UnitPage.Controls.Add(this.Unit_Year_End_dateTimePicker);
+            this.UnitPage.Controls.Add(this.Unit_Year_St_dateTimePicker);
+            this.UnitPage.Controls.Add(this.Unit_Name);
             this.UnitPage.Controls.Add(this.label42);
             this.UnitPage.Controls.Add(this.label41);
-            this.UnitPage.Controls.Add(this.textBox24);
             this.UnitPage.Controls.Add(this.label40);
-            this.UnitPage.Controls.Add(this.comboBox2);
+            this.UnitPage.Controls.Add(this.Unit_Inv_comboBox);
             this.UnitPage.Controls.Add(this.label39);
-            this.UnitPage.Controls.Add(this.textBox23);
+            this.UnitPage.Controls.Add(this.Unit_P_Count);
             this.UnitPage.Controls.Add(this.label38);
-            this.UnitPage.Controls.Add(this.textBox22);
+            this.UnitPage.Controls.Add(this.Unit_Dates);
             this.UnitPage.Controls.Add(this.label37);
-            this.UnitPage.Controls.Add(this.textBox21);
+            this.UnitPage.Controls.Add(this.Unit_Lit);
             this.UnitPage.Controls.Add(this.label36);
-            this.UnitPage.Controls.Add(this.textBox20);
+            this.UnitPage.Controls.Add(this.Unit_Num);
             this.UnitPage.Controls.Add(this.label35);
             this.UnitPage.Controls.Add(this.label32);
             this.UnitPage.Controls.Add(this.label33);
@@ -745,7 +770,7 @@
             this.UnitPage.Controls.Add(this.checkUnits_btn);
             this.UnitPage.Controls.Add(this.addUnit_btn);
             this.UnitPage.Controls.Add(this.label24);
-            this.UnitPage.Controls.Add(this.textBox17);
+            this.UnitPage.Controls.Add(this.Unit_Comment);
             this.UnitPage.Controls.Add(this.panel3);
             this.UnitPage.Location = new System.Drawing.Point(4, 22);
             this.UnitPage.Name = "UnitPage";
@@ -798,34 +823,40 @@
             this.label43.TabIndex = 70;
             this.label43.Text = "*";
             // 
-            // dateTimePicker3
+            // Unit_Date_Create_dateTimePicker
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(272, 235);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker3.TabIndex = 69;
+            this.Unit_Date_Create_dateTimePicker.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.Unit_Date_Create_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Unit_Date_Create_dateTimePicker.Location = new System.Drawing.Point(272, 235);
+            this.Unit_Date_Create_dateTimePicker.Name = "Unit_Date_Create_dateTimePicker";
+            this.Unit_Date_Create_dateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.Unit_Date_Create_dateTimePicker.TabIndex = 69;
             // 
-            // dateTimePicker2
+            // Unit_Year_End_dateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(631, 233);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker2.TabIndex = 68;
+            this.Unit_Year_End_dateTimePicker.CustomFormat = "yyyy";
+            this.Unit_Year_End_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Unit_Year_End_dateTimePicker.Location = new System.Drawing.Point(631, 233);
+            this.Unit_Year_End_dateTimePicker.Name = "Unit_Year_End_dateTimePicker";
+            this.Unit_Year_End_dateTimePicker.Size = new System.Drawing.Size(141, 20);
+            this.Unit_Year_End_dateTimePicker.TabIndex = 68;
             // 
-            // dateTimePicker1
+            // Unit_Year_St_dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(450, 233);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 67;
+            this.Unit_Year_St_dateTimePicker.CustomFormat = "yyyy";
+            this.Unit_Year_St_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Unit_Year_St_dateTimePicker.Location = new System.Drawing.Point(450, 233);
+            this.Unit_Year_St_dateTimePicker.Name = "Unit_Year_St_dateTimePicker";
+            this.Unit_Year_St_dateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.Unit_Year_St_dateTimePicker.TabIndex = 67;
             // 
-            // textBox26
+            // Unit_Name
             // 
-            this.textBox26.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox26.Location = new System.Drawing.Point(204, 94);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(219, 32);
-            this.textBox26.TabIndex = 66;
+            this.Unit_Name.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Name.Location = new System.Drawing.Point(204, 94);
+            this.Unit_Name.Name = "Unit_Name";
+            this.Unit_Name.Size = new System.Drawing.Size(219, 32);
+            this.Unit_Name.TabIndex = 66;
             // 
             // label42
             // 
@@ -847,14 +878,6 @@
             this.label41.TabIndex = 63;
             this.label41.Text = "Дата создания";
             // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox24.Location = new System.Drawing.Point(631, 94);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(141, 32);
-            this.textBox24.TabIndex = 62;
-            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -865,14 +888,17 @@
             this.label40.TabIndex = 61;
             this.label40.Text = "Тип";
             // 
-            // comboBox2
+            // Unit_Inv_comboBox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(18, 163);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(168, 33);
-            this.comboBox2.TabIndex = 60;
+            this.Unit_Inv_comboBox.DataSource = this.inventoryBindingSource;
+            this.Unit_Inv_comboBox.DisplayMember = "Inv_Name";
+            this.Unit_Inv_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Inv_comboBox.FormattingEnabled = true;
+            this.Unit_Inv_comboBox.Location = new System.Drawing.Point(18, 163);
+            this.Unit_Inv_comboBox.Name = "Unit_Inv_comboBox";
+            this.Unit_Inv_comboBox.Size = new System.Drawing.Size(168, 33);
+            this.Unit_Inv_comboBox.TabIndex = 60;
+            this.Unit_Inv_comboBox.ValueMember = "Inv_ID";
             // 
             // label39
             // 
@@ -884,13 +910,13 @@
             this.label39.TabIndex = 59;
             this.label39.Text = "Опись";
             // 
-            // textBox23
+            // Unit_P_Count
             // 
-            this.textBox23.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox23.Location = new System.Drawing.Point(450, 94);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(151, 32);
-            this.textBox23.TabIndex = 58;
+            this.Unit_P_Count.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_P_Count.Location = new System.Drawing.Point(450, 94);
+            this.Unit_P_Count.Name = "Unit_P_Count";
+            this.Unit_P_Count.Size = new System.Drawing.Size(151, 32);
+            this.Unit_P_Count.TabIndex = 58;
             // 
             // label38
             // 
@@ -902,13 +928,13 @@
             this.label38.TabIndex = 57;
             this.label38.Text = "Кол-во файлов";
             // 
-            // textBox22
+            // Unit_Dates
             // 
-            this.textBox22.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox22.Location = new System.Drawing.Point(450, 163);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(322, 32);
-            this.textBox22.TabIndex = 56;
+            this.Unit_Dates.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Dates.Location = new System.Drawing.Point(450, 163);
+            this.Unit_Dates.Name = "Unit_Dates";
+            this.Unit_Dates.Size = new System.Drawing.Size(322, 32);
+            this.Unit_Dates.TabIndex = 56;
             // 
             // label37
             // 
@@ -920,13 +946,13 @@
             this.label37.TabIndex = 55;
             this.label37.Text = "Даты";
             // 
-            // textBox21
+            // Unit_Lit
             // 
-            this.textBox21.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox21.Location = new System.Drawing.Point(204, 163);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(219, 32);
-            this.textBox21.TabIndex = 54;
+            this.Unit_Lit.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Lit.Location = new System.Drawing.Point(204, 163);
+            this.Unit_Lit.Name = "Unit_Lit";
+            this.Unit_Lit.Size = new System.Drawing.Size(219, 32);
+            this.Unit_Lit.TabIndex = 54;
             // 
             // label36
             // 
@@ -938,13 +964,13 @@
             this.label36.TabIndex = 53;
             this.label36.Text = "Номер литера документа";
             // 
-            // textBox20
+            // Unit_Num
             // 
-            this.textBox20.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.textBox20.Location = new System.Drawing.Point(18, 94);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(168, 32);
-            this.textBox20.TabIndex = 52;
+            this.Unit_Num.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Num.Location = new System.Drawing.Point(18, 94);
+            this.Unit_Num.Name = "Unit_Num";
+            this.Unit_Num.Size = new System.Drawing.Size(168, 32);
+            this.Unit_Num.TabIndex = 52;
             // 
             // label35
             // 
@@ -1021,14 +1047,14 @@
             this.label24.TabIndex = 43;
             this.label24.Text = "Комментарий";
             // 
-            // textBox17
+            // Unit_Comment
             // 
-            this.textBox17.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox17.Location = new System.Drawing.Point(18, 280);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(405, 128);
-            this.textBox17.TabIndex = 42;
+            this.Unit_Comment.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Unit_Comment.Location = new System.Drawing.Point(18, 280);
+            this.Unit_Comment.Multiline = true;
+            this.Unit_Comment.Name = "Unit_Comment";
+            this.Unit_Comment.Size = new System.Drawing.Size(405, 128);
+            this.Unit_Comment.TabIndex = 42;
             // 
             // panel3
             // 
@@ -1265,6 +1291,55 @@
             this.label16.Text = "Добавление Описи";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fundBindingSource
+            // 
+            this.fundBindingSource.DataMember = "Fund";
+            this.fundBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // fundTableAdapter
+            // 
+            this.fundTableAdapter.ClearBeforeFill = true;
+            // 
+            // unitTypesBindingSource
+            // 
+            this.unitTypesBindingSource.DataMember = "UnitTypes";
+            this.unitTypesBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // unitTypesTableAdapter
+            // 
+            this.unitTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // Unit_Type
+            // 
+            this.Unit_Type.DataSource = this.unitTypesBindingSource1;
+            this.Unit_Type.DisplayMember = "Name";
+            this.Unit_Type.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Type.FormattingEnabled = true;
+            this.Unit_Type.Location = new System.Drawing.Point(631, 94);
+            this.Unit_Type.Name = "Unit_Type";
+            this.Unit_Type.Size = new System.Drawing.Size(141, 33);
+            this.Unit_Type.TabIndex = 75;
+            this.Unit_Type.ValueMember = "ID";
+            // 
+            // unitTypesBindingSource1
+            // 
+            this.unitTypesBindingSource1.DataMember = "UnitTypes";
+            this.unitTypesBindingSource1.DataSource = this.iPSArchiveDataSet;
+            // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // inventoryTableAdapter
+            // 
+            this.inventoryTableAdapter.ClearBeforeFill = true;
+            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1273,6 +1348,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AddData";
             this.Text = "AddData";
+            this.Load += new System.EventHandler(this.AddData_Load);
             this.tabControl1.ResumeLayout(false);
             this.FundPage.ResumeLayout(false);
             this.FundPage.PerformLayout();
@@ -1290,6 +1366,11 @@
             this.panel6.ResumeLayout(false);
             this.ReportPage.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1323,19 +1404,19 @@
         private System.Windows.Forms.Button checkFunds_btn;
         private System.Windows.Forms.Button addFund_btn;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox Inv_Dates;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox Inv_Name;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox Inv_Vol;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox Inv_Lit;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox Inv_Num;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox Inv_Fund_ID_comboBox;
+        private System.Windows.Forms.TextBox Inv_Unit_Count;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel3;
@@ -1347,7 +1428,7 @@
         private System.Windows.Forms.Button checkInv_btn;
         private System.Windows.Forms.Button addInv_btn;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox Inv_Comment;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -1360,32 +1441,31 @@
         private System.Windows.Forms.Button checkUnits_btn;
         private System.Windows.Forms.Button addUnit_btn;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox Unit_Comment;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Unit_Inv_comboBox;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox Unit_P_Count;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox Unit_Dates;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox Unit_Lit;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox Unit_Num;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DateTimePicker Fund_Year_End;
         private System.Windows.Forms.DateTimePicker Fund_Year_St;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker Inv_Year_End_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Inv_Year_St_dateTimePicker;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.DateTimePicker Unit_Date_Create_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Unit_Year_End_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker Unit_Year_St_dateTimePicker;
+        private System.Windows.Forms.TextBox Unit_Name;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.CheckBox Admin_checkBox;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -1400,5 +1480,14 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button checkUsers_btn;
         private System.Windows.Forms.Button addUser_btn;
+        private IPSArchiveDataSet iPSArchiveDataSet;
+        private System.Windows.Forms.BindingSource fundBindingSource;
+        private IPSArchiveDataSetTableAdapters.FundTableAdapter fundTableAdapter;
+        private System.Windows.Forms.BindingSource unitTypesBindingSource;
+        private IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter unitTypesTableAdapter;
+        private System.Windows.Forms.ComboBox Unit_Type;
+        private System.Windows.Forms.BindingSource unitTypesBindingSource1;
+        private System.Windows.Forms.BindingSource inventoryBindingSource;
+        private IPSArchiveDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
     }
 }

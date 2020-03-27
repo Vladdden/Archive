@@ -473,6 +473,7 @@
             this.addInv_btn.TabIndex = 39;
             this.addInv_btn.Text = "Добавить";
             this.addInv_btn.UseVisualStyleBackColor = false;
+
             // 
             // label28
             // 

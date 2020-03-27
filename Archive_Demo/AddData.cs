@@ -17,53 +17,94 @@ namespace Archive_Demo
         public AddData()
         {
             InitializeComponent();
+            Inv_Fund_ID_comboBox.SelectedItem = null;
+            Inv_Fund_ID_comboBox.SelectedText = "--Выберите--";
         }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addFund_btn_Click(object sender, EventArgs e)
         {
             addFund_btn.BackColor = Color.Khaki;
-            int Fund_ID = 8;
-            string Fund_Num = Fund_Num_btn.Text;
-            string Fund_Lit = Fund_Lit_btn.Text;
-            string Fund_Name = Fund_Name_btn.Text;
-            string Inv_Count = Fund_Inv_Count_btn.Text;
-            string Year_St = Fund_Year_St.Text;
-            string Year_End = Fund_Year_End.Text;
-            string comment = Fund_Comment_btn.Text;
-
+            
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0)";
             SqlConnection connection = new SqlConnection(connectionString);
             try
-            { 
+            {
                 connection.Open();
-                Console.WriteLine("Connection: yes");
-                string sql = "INSERT INTO Fund (Fund_Num, Fund_Lit ,Fund_Name, Inv_Count, Year_St, Year_End, Comment) VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0)";
+                Console.WriteLine("Подключение: Да");
                 SqlCommand command = new SqlCommand(sql, connection);
-                
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-    }
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+            }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
             finally
             {
-                // закрываем подключение
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void addInv_btn_Click(object sender, EventArgs e)
+        {
+            addInv_btn.BackColor = Color.Khaki;
+
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Inventory (Fund_ID, Inv_Num, Inv_Lit, Inv_Vol, Inv_Name, Year_St, Year_End, Dates, Unit_Count, Comment, Deleted) VALUES ('" + Inv_Fund_ID_comboBox.SelectedValue + "','" + Inv_Num.Text + "','" + Inv_Lit.Text + "','" + Inv_Vol.Text + "','" + Inv_Name.Text + "','" + Inv_Year_St_dateTimePicker.Text + "','" + Inv_Year_End_dateTimePicker.Text + "','" + Inv_Dates.Text + "','" + Inv_Unit_Count.Text + "','" + Inv_Comment.Text + "', 0)";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
             }
         }
 
-        private void addInv_btn_Click(object sender, EventArgs e)
-        {
-            addInv_btn.BackColor = Color.Khaki;
-        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void addUnit_btn_Click(object sender, EventArgs e)
         {
             addUnit_btn.BackColor = Color.Khaki;
-        }
 
+            
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Unit (Unit_Num, Unit_Lit, Dates, Unit_Name, P_Count, DateCreate, Comment, Inv_ID, Deleted, Unit_Type, Year_St, Year_End) VALUES ('" + Unit_Num.Text + "','" + Unit_Lit.Text + "','" + Unit_Dates.Text + "','" + Unit_Name.Text + "','" + Unit_P_Count.Text + "', @Unit_Date_Create_dateTimePicker,'" + Unit_Comment.Text + "','" + Unit_Inv_comboBox.SelectedValue + "',0,'" + Unit_Type.SelectedValue + "','" + Unit_Year_St_dateTimePicker.Text + "','" + Unit_Year_End_dateTimePicker.Text + "')";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.Add("@Unit_Date_Create_dateTimePicker", SqlDbType.Date).Value = Unit_Date_Create_dateTimePicker.Value.Date;
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addUser_btn_Click(object sender, EventArgs e)
         {
             addUser_btn.BackColor = Color.Khaki;
@@ -93,7 +134,7 @@ namespace Archive_Demo
                  Console.WriteLine("Подключение закрыто...");
              }
         }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void checkFunds_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -120,6 +161,17 @@ namespace Archive_Demo
             this.Hide();
             Users_table users_Table = new Users_table();
             users_Table.Show();
+        }
+
+        private void AddData_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Inventory". При необходимости она может быть перемещена или удалена.
+            this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.UnitTypes". При необходимости она может быть перемещена или удалена.
+            this.unitTypesTableAdapter.Fill(this.iPSArchiveDataSet.UnitTypes);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Fund". При необходимости она может быть перемещена или удалена.
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+
         }
     }
 }

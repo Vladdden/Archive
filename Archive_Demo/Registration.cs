@@ -124,14 +124,15 @@ namespace Archive_Demo
         private void addUser_Click(object sender, EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO users VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', 0);";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
-                Console.WriteLine("Connection: yes");
-                string sql = "INSERT INTO users VALUES (4,'" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', 0)";
+                Console.WriteLine("Подключение: Да");
                 SqlCommand command = new SqlCommand(sql, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
             }
             catch (SqlException ex)
             {
