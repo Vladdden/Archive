@@ -230,7 +230,9 @@ namespace Archive_Demo
 
         private void AddData_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Unit". При необходимости она может быть перемещена или удалена.
+            this.unitTableAdapter.Fill(this.iPSArchiveDataSet.Unit);
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Inventory". При необходимости она может быть перемещена или удалена.
             this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.UnitTypes". При необходимости она может быть перемещена или удалена.
@@ -323,6 +325,11 @@ namespace Archive_Demo
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
