@@ -329,7 +329,53 @@ namespace Archive_Demo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "SELECT * FROM Unit WHERE (DateCreate >= @X1) AND (DateCreate <= @X2)";
+            SqlConnection connection = new SqlConnection(connectionString);
 
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.Add("@X1", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                command.Parameters.Add("@X2", SqlDbType.Date).Value = dateTimePicker2.Value.Date;
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string[]> data = new List<string[]>();
+
+                while (reader.Read())
+                {
+                    data.Add(new string[9]);
+
+                    data[data.Count - 1][0] = reader[0].ToString();
+                    data[data.Count - 1][1] = reader[1].ToString();
+                    data[data.Count - 1][2] = reader[2].ToString();
+                    data[data.Count - 1][3] = reader[3].ToString();
+                    data[data.Count - 1][4] = reader[4].ToString();
+                    data[data.Count - 1][5] = reader[5].ToString();
+                    data[data.Count - 1][6] = reader[6].ToString();
+                    data[data.Count - 1][7] = reader[7].ToString();
+                    data[data.Count - 1][8] = reader[8].ToString();
+                }
+
+                reader.Close();
+
+                connection.Close();
+
+                foreach (string[] s in data)
+                    dataGridView1.Rows.Add(s);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
         }
     }
 }

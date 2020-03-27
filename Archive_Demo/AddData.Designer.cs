@@ -154,6 +154,17 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -193,7 +204,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1245, 450);
+            this.tabControl1.Size = new System.Drawing.Size(967, 450);
             this.tabControl1.TabIndex = 0;
             // 
             // FundPage
@@ -1364,6 +1375,8 @@
             // 
             // ReportPage
             // 
+            this.ReportPage.Controls.Add(this.label52);
+            this.ReportPage.Controls.Add(this.label51);
             this.ReportPage.Controls.Add(this.button1);
             this.ReportPage.Controls.Add(this.dateTimePicker2);
             this.ReportPage.Controls.Add(this.dateTimePicker1);
@@ -1371,7 +1384,7 @@
             this.ReportPage.Controls.Add(this.panel4);
             this.ReportPage.Location = new System.Drawing.Point(4, 22);
             this.ReportPage.Name = "ReportPage";
-            this.ReportPage.Size = new System.Drawing.Size(1237, 424);
+            this.ReportPage.Size = new System.Drawing.Size(959, 424);
             this.ReportPage.TabIndex = 4;
             this.ReportPage.Text = "Отчеты";
             this.ReportPage.UseVisualStyleBackColor = true;
@@ -1384,7 +1397,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1237, 58);
+            this.panel4.Size = new System.Drawing.Size(959, 58);
             this.panel4.TabIndex = 17;
             // 
             // pictureBox7
@@ -1392,7 +1405,7 @@
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1188, 0);
+            this.pictureBox7.Location = new System.Drawing.Point(910, 0);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(49, 58);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1407,9 +1420,9 @@
             this.label16.ForeColor = System.Drawing.Color.DimGray;
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(1237, 58);
+            this.label16.Size = new System.Drawing.Size(959, 58);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Добавление Описи";
+            this.label16.Text = "Отчёт";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fundTableAdapter
@@ -1432,9 +1445,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
             this.dataGridView1.Location = new System.Drawing.Point(0, 104);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1241, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(952, 266);
             this.dataGridView1.TabIndex = 18;
             // 
             // iPSArchiveDataSetBindingSource
@@ -1453,21 +1476,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(142, 78);
+            this.dateTimePicker1.Location = new System.Drawing.Point(193, 78);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(441, 78);
+            this.dateTimePicker2.Location = new System.Drawing.Point(424, 78);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 20;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(688, 75);
+            this.button1.Location = new System.Drawing.Point(644, 76);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
@@ -1475,11 +1498,76 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Номер";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Литерал";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Имя";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Количество док-ов";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Дата создания";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Комментарий";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "ID описи";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Тип документа";
+            this.Column9.Name = "Column9";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label51.Location = new System.Drawing.Point(18, 78);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(169, 16);
+            this.label51.TabIndex = 22;
+            this.label51.Text = "Временной промежуток:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label52.Location = new System.Drawing.Point(399, 73);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(19, 25);
+            this.label52.TabIndex = 23;
+            this.label52.Text = "-";
+            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 450);
+            this.ClientSize = new System.Drawing.Size(967, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "AddData";
             this.Text = "AddData";
@@ -1508,6 +1596,7 @@
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ReportPage.ResumeLayout(false);
+            this.ReportPage.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).EndInit();
@@ -1644,5 +1733,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
     }
 }
