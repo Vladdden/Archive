@@ -14,11 +14,11 @@ namespace Archive_Demo
 {
     public partial class AddData : Form
     {
+        TabPage t;
         public AddData()
         {
             InitializeComponent();
-            Inv_Fund_ID_comboBox.SelectedItem = null;
-            Inv_Fund_ID_comboBox.SelectedText = "--Выберите--";
+            
         }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addFund_btn_Click(object sender, EventArgs e)
@@ -45,8 +45,18 @@ namespace Archive_Demo
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
             }
+
+            MessageBox.Show("Данные успешно добавлены.");
+            Fund_Num_btn.Text = "";
+            Fund_Lit_btn.Text = "";
+            Fund_Name_btn.Text = "";
+            Fund_Inv_Count_btn.Text = "";
+            Fund_Year_St.Value = DateTime.Today;
+            Fund_Year_End.Value = DateTime.Today.AddDays(365);
+            Fund_Comment_btn.Text = "";
+
         }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addInv_btn_Click(object sender, EventArgs e)
         {
             addInv_btn.BackColor = Color.Khaki;
@@ -71,9 +81,23 @@ namespace Archive_Demo
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
             }
+
+            MessageBox.Show("Данные успешно добавлены.");
+            Inv_Fund_ID_comboBox.SelectedItem = null;
+            Inv_Fund_ID_comboBox.Text = "----Выберите----";
+            Inv_Num.Text = "";
+            Inv_Lit.Text = "";
+            Inv_Vol.Text = "";
+            Inv_Name.Text = "";
+            Inv_Year_St_dateTimePicker.Value = DateTime.Today;
+            Inv_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+            Inv_Dates.Text = "";
+            Inv_Unit_Count.Text = "";
+            Inv_Comment.Text = "";
+
         }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void addUnit_btn_Click(object sender, EventArgs e)
         {
@@ -103,8 +127,23 @@ namespace Archive_Demo
                 Console.WriteLine("Подключение закрыто...");
             }
 
+            MessageBox.Show("Данные успешно добавлены.");
+            Unit_Num.Text = "";
+            Unit_Lit.Text = "";
+            Unit_Dates.Text = "";
+            Unit_Name.Text = "";
+            Unit_P_Count.Text = "";
+            Unit_Date_Create_dateTimePicker.Value = DateTime.Now;
+            Unit_Comment.Text = "";
+            Unit_Inv_comboBox.SelectedItem = null;
+            Unit_Inv_comboBox.Text = "-----Выберите-----";
+            Unit_Type.SelectedItem = null;
+            Unit_Type.Text = "---Выберите---";
+            Unit_Year_St_dateTimePicker.Value = DateTime.Today;
+            Unit_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+
         }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void addUser_btn_Click(object sender, EventArgs e)
         {
             addUser_btn.BackColor = Color.Khaki;
@@ -133,10 +172,18 @@ namespace Archive_Demo
                  connection.Close();
                  Console.WriteLine("Подключение закрыто...");
              }
+
+            MessageBox.Show("Данные успешно добавлены.");
+            NameField.Text = "";
+            SurField.Text = "";
+            LoginField.Text = "";
+            PassField.Text = "";
+
         }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void checkFunds_btn_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Fund_table fund_Table = new Fund_table();
             fund_Table.Show();
@@ -144,6 +191,7 @@ namespace Archive_Demo
 
         private void checkInv_btn_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Inv_table inv_Table = new Inv_table();
             inv_Table.Show();
@@ -151,6 +199,7 @@ namespace Archive_Demo
 
         private void checkUnits_btn_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Unit_table unit_Table = new Unit_table();
             unit_Table.Show();
@@ -158,6 +207,7 @@ namespace Archive_Demo
 
         private void checkUsers_btn_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Users_table users_Table = new Users_table();
             users_Table.Show();
@@ -165,13 +215,43 @@ namespace Archive_Demo
 
         private void AddData_Load(object sender, EventArgs e)
         {
+            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Inventory". При необходимости она может быть перемещена или удалена.
             this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.UnitTypes". При необходимости она может быть перемещена или удалена.
             this.unitTypesTableAdapter.Fill(this.iPSArchiveDataSet.UnitTypes);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Fund". При необходимости она может быть перемещена или удалена.
             this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+            Fund_Year_St.Value = DateTime.Today;
+            Fund_Year_End.Value = DateTime.Today.AddDays(365);
+            Inv_Year_St_dateTimePicker.Value = DateTime.Today;
+            Inv_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+            Unit_Year_St_dateTimePicker.Value = DateTime.Today;
+            Unit_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+            Inv_Fund_ID_comboBox.SelectedItem = null;
+            Inv_Fund_ID_comboBox.Text = "----Выберите----";
+            Unit_Inv_comboBox.SelectedItem = null;
+            Unit_Inv_comboBox.Text = "-----Выберите-----";
+            Unit_Type.SelectedItem = null;
+            Unit_Type.Text = "---Выберите---";
+        }
 
+        private void Unit_Inv_comboBox_Leave(object sender, EventArgs e)
+        {
+            if (Unit_Inv_comboBox.Text == "")
+                Unit_Inv_comboBox.Text = "-----Выберите-----";
+        }
+
+        private void Unit_Type_Leave(object sender, EventArgs e)
+        {
+            if (Unit_Type.Text == "")
+                Unit_Type.Text = "---Выберите---";
+        }
+
+        private void Inv_Fund_ID_comboBox_Leave(object sender, EventArgs e)
+        {
+            if (Inv_Fund_ID_comboBox.Text == "")
+                Inv_Fund_ID_comboBox.Text = "----Выберите----";
         }
     }
 }

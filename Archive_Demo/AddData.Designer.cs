@@ -80,10 +80,14 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.Inv_Fund_ID_comboBox = new System.Windows.Forms.ComboBox();
+            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
             this.Inv_Unit_Count = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.UnitPage = new System.Windows.Forms.TabPage();
+            this.Unit_Type = new System.Windows.Forms.ComboBox();
+            this.unitTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -96,6 +100,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.Unit_Inv_comboBox = new System.Windows.Forms.ComboBox();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label39 = new System.Windows.Forms.Label();
             this.Unit_P_Count = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -133,21 +138,20 @@
             this.ReportPage = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
-            this.fundBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
             this.unitTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
-            this.Unit_Type = new System.Windows.Forms.ComboBox();
-            this.unitTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.InvPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.UnitPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.UserPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -155,11 +159,7 @@
             this.panel6.SuspendLayout();
             this.ReportPage.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -709,6 +709,17 @@
             this.Inv_Fund_ID_comboBox.Size = new System.Drawing.Size(156, 33);
             this.Inv_Fund_ID_comboBox.TabIndex = 19;
             this.Inv_Fund_ID_comboBox.ValueMember = "Fund_ID";
+            this.Inv_Fund_ID_comboBox.Leave += new System.EventHandler(this.Inv_Fund_ID_comboBox_Leave);
+            // 
+            // fundBindingSource
+            // 
+            this.fundBindingSource.DataMember = "Fund";
+            this.fundBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // iPSArchiveDataSet
+            // 
+            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
+            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Inv_Unit_Count
             // 
@@ -778,6 +789,24 @@
             this.UnitPage.TabIndex = 2;
             this.UnitPage.Text = "Документы";
             this.UnitPage.UseVisualStyleBackColor = true;
+            // 
+            // Unit_Type
+            // 
+            this.Unit_Type.DataSource = this.unitTypesBindingSource1;
+            this.Unit_Type.DisplayMember = "Name";
+            this.Unit_Type.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Type.FormattingEnabled = true;
+            this.Unit_Type.Location = new System.Drawing.Point(631, 94);
+            this.Unit_Type.Name = "Unit_Type";
+            this.Unit_Type.Size = new System.Drawing.Size(141, 33);
+            this.Unit_Type.TabIndex = 75;
+            this.Unit_Type.ValueMember = "ID";
+            this.Unit_Type.Leave += new System.EventHandler(this.Unit_Type_Leave);
+            // 
+            // unitTypesBindingSource1
+            // 
+            this.unitTypesBindingSource1.DataMember = "UnitTypes";
+            this.unitTypesBindingSource1.DataSource = this.iPSArchiveDataSet;
             // 
             // label46
             // 
@@ -899,6 +928,12 @@
             this.Unit_Inv_comboBox.Size = new System.Drawing.Size(168, 33);
             this.Unit_Inv_comboBox.TabIndex = 60;
             this.Unit_Inv_comboBox.ValueMember = "Inv_ID";
+            this.Unit_Inv_comboBox.Leave += new System.EventHandler(this.Unit_Inv_comboBox_Leave);
+            // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.iPSArchiveDataSet;
             // 
             // label39
             // 
@@ -1160,42 +1195,38 @@
             // LoginField
             // 
             this.LoginField.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginField.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.LoginField.ForeColor = System.Drawing.Color.Black;
             this.LoginField.Location = new System.Drawing.Point(461, 128);
             this.LoginField.Name = "LoginField";
             this.LoginField.Size = new System.Drawing.Size(176, 32);
             this.LoginField.TabIndex = 25;
-            this.LoginField.Text = "Введите логин";
             // 
             // PassField
             // 
             this.PassField.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PassField.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.PassField.ForeColor = System.Drawing.Color.Black;
             this.PassField.Location = new System.Drawing.Point(459, 214);
             this.PassField.Name = "PassField";
             this.PassField.Size = new System.Drawing.Size(178, 32);
             this.PassField.TabIndex = 24;
-            this.PassField.Text = "Введите пароль";
             // 
             // SurField
             // 
             this.SurField.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurField.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.SurField.ForeColor = System.Drawing.Color.Black;
             this.SurField.Location = new System.Drawing.Point(177, 214);
             this.SurField.Name = "SurField";
             this.SurField.Size = new System.Drawing.Size(176, 32);
             this.SurField.TabIndex = 23;
-            this.SurField.Text = "Введите фамилию";
             // 
             // NameField
             // 
             this.NameField.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameField.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.NameField.ForeColor = System.Drawing.Color.Black;
             this.NameField.Location = new System.Drawing.Point(177, 129);
             this.NameField.Name = "NameField";
             this.NameField.Size = new System.Drawing.Size(176, 32);
             this.NameField.TabIndex = 22;
-            this.NameField.Text = "Введите имя";
             // 
             // label47
             // 
@@ -1291,16 +1322,6 @@
             this.label16.Text = "Добавление Описи";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // iPSArchiveDataSet
-            // 
-            this.iPSArchiveDataSet.DataSetName = "IPSArchiveDataSet";
-            this.iPSArchiveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fundBindingSource
-            // 
-            this.fundBindingSource.DataMember = "Fund";
-            this.fundBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
             // fundTableAdapter
             // 
             this.fundTableAdapter.ClearBeforeFill = true;
@@ -1313,28 +1334,6 @@
             // unitTypesTableAdapter
             // 
             this.unitTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // Unit_Type
-            // 
-            this.Unit_Type.DataSource = this.unitTypesBindingSource1;
-            this.Unit_Type.DisplayMember = "Name";
-            this.Unit_Type.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.Unit_Type.FormattingEnabled = true;
-            this.Unit_Type.Location = new System.Drawing.Point(631, 94);
-            this.Unit_Type.Name = "Unit_Type";
-            this.Unit_Type.Size = new System.Drawing.Size(141, 33);
-            this.Unit_Type.TabIndex = 75;
-            this.Unit_Type.ValueMember = "ID";
-            // 
-            // unitTypesBindingSource1
-            // 
-            this.unitTypesBindingSource1.DataMember = "UnitTypes";
-            this.unitTypesBindingSource1.DataSource = this.iPSArchiveDataSet;
-            // 
-            // inventoryBindingSource
-            // 
-            this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.iPSArchiveDataSet;
             // 
             // inventoryTableAdapter
             // 
@@ -1355,9 +1354,13 @@
             this.panel1.ResumeLayout(false);
             this.InvPage.ResumeLayout(false);
             this.InvPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.UnitPage.ResumeLayout(false);
             this.UnitPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.UserPage.ResumeLayout(false);
             this.UserPage.PerformLayout();
@@ -1366,11 +1369,7 @@
             this.panel6.ResumeLayout(false);
             this.ReportPage.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
