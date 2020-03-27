@@ -38,11 +38,6 @@ namespace Archive_Demo
 
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
-        {
-            this.usersTableAdapter.Update(this.iPSArchiveDataSet.users);
-        }
-
         private void User_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);

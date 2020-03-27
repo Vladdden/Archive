@@ -40,7 +40,12 @@ namespace Archive_Demo
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            this.unitTableAdapter.Update(this.iPSArchiveDataSet.Unit);
+            DialogResult dr = MessageBox.Show("Сохранить изменения?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Yes)
+                this.unitTableAdapter.Update(this.iPSArchiveDataSet.Unit);
+            if (dr == DialogResult.No)
+                this.unitTableAdapter.Fill(this.iPSArchiveDataSet.Unit);
+
         }
 
         private void Unit_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)

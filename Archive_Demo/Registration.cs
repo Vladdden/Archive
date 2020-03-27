@@ -133,6 +133,13 @@ namespace Archive_Demo
                 SqlCommand command = new SqlCommand(sql, connection);
                 int number = command.ExecuteNonQuery();
                 Console.WriteLine("Добавлено объектов: {0}", number);
+                DialogResult dr = MessageBox.Show("Пользователь успешно зарегистрирован. Перейти к авторизации?", "Регистрация", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                if (dr == DialogResult.Yes)
+                {
+                    this.Hide();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+                }
             }
             catch (SqlException ex)
             {

@@ -45,7 +45,6 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iPSArchiveDataSet = new Archive_Demo.IPSArchiveDataSet();
             this.usersTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.usersTableAdapter();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,22 +177,11 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(557, 415);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 21;
-            this.saveBtn.Text = "Сохранить";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // Users_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 450);
-            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.User_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Users_table";
@@ -221,7 +209,6 @@
         private IPSArchiveDataSet iPSArchiveDataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private IPSArchiveDataSetTableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
