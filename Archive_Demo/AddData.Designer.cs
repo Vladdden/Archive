@@ -165,6 +165,9 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.sql_field = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1375,6 +1378,9 @@
             // 
             // ReportPage
             // 
+            this.ReportPage.Controls.Add(this.button2);
+            this.ReportPage.Controls.Add(this.sql_field);
+            this.ReportPage.Controls.Add(this.label53);
             this.ReportPage.Controls.Add(this.label52);
             this.ReportPage.Controls.Add(this.label51);
             this.ReportPage.Controls.Add(this.button1);
@@ -1563,6 +1569,32 @@
             this.label52.TabIndex = 23;
             this.label52.Text = "-";
             // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(9, 389);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(73, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "SQL-запрос: ";
+            // 
+            // sql_field
+            // 
+            this.sql_field.Location = new System.Drawing.Point(89, 389);
+            this.sql_field.Name = "sql_field";
+            this.sql_field.Size = new System.Drawing.Size(781, 20);
+            this.sql_field.TabIndex = 25;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(876, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Выполнить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1744,5 +1776,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox sql_field;
+        private System.Windows.Forms.Label label53;
     }
 }
