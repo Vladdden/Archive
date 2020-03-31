@@ -266,6 +266,7 @@
             this.Controls.Add(this.Unit_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Unit_table";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unit_table";
             this.Load += new System.EventHandler(this.Unit_table_Load);
             this.panel4.ResumeLayout(false);

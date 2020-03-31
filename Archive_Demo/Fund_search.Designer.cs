@@ -46,7 +46,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
-
             // 
             // label1
             // 
@@ -95,6 +94,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Fund_search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fund_search";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -258,6 +258,7 @@
             this.Controls.Add(this.Inv_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Inv_table";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inv_table";
             this.Load += new System.EventHandler(this.Inv_table_Load);
             this.panel4.ResumeLayout(false);

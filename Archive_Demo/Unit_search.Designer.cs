@@ -94,6 +94,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Unit_search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unit_search";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -234,6 +234,7 @@
             this.Controls.Add(this.Fund_dataGridView);
             this.Controls.Add(this.panel4);
             this.Name = "Fund_table";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fund_table";
             this.Load += new System.EventHandler(this.Fund_table_Load);
             this.panel4.ResumeLayout(false);

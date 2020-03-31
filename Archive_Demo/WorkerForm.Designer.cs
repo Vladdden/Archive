@@ -1106,6 +1106,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "WorkerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkerForm";
             this.Load += new System.EventHandler(this.WorkerForm_Load);
             this.tabControl1.ResumeLayout(false);

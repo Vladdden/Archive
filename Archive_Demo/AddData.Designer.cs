@@ -140,20 +140,15 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.ReportPage = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
-            this.unitTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
-            this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iPSArchiveDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.sql_field = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,11 +158,16 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.sql_field = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
+            this.unitTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
+            this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
+            this.iPSArchiveDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -188,10 +188,10 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.ReportPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -236,7 +236,7 @@
             this.FundPage.Location = new System.Drawing.Point(4, 22);
             this.FundPage.Name = "FundPage";
             this.FundPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FundPage.Size = new System.Drawing.Size(792, 424);
+            this.FundPage.Size = new System.Drawing.Size(959, 424);
             this.FundPage.TabIndex = 0;
             this.FundPage.Text = "Фонды";
             this.FundPage.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(786, 58);
+            this.panel1.Size = new System.Drawing.Size(953, 58);
             this.panel1.TabIndex = 15;
             // 
             // pictureBox1
@@ -357,7 +357,7 @@
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(786, 58);
+            this.label9.Size = new System.Drawing.Size(953, 58);
             this.label9.TabIndex = 0;
             this.label9.Text = "Добавление Фонда";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -505,7 +505,7 @@
             this.InvPage.Location = new System.Drawing.Point(4, 22);
             this.InvPage.Name = "InvPage";
             this.InvPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InvPage.Size = new System.Drawing.Size(792, 424);
+            this.InvPage.Size = new System.Drawing.Size(959, 424);
             this.InvPage.TabIndex = 1;
             this.InvPage.Text = "Описи";
             this.InvPage.UseVisualStyleBackColor = true;
@@ -784,7 +784,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 58);
+            this.panel2.Size = new System.Drawing.Size(953, 58);
             this.panel2.TabIndex = 16;
             // 
             // pictureBox2
@@ -806,7 +806,7 @@
             this.label13.ForeColor = System.Drawing.Color.DimGray;
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(786, 58);
+            this.label13.Size = new System.Drawing.Size(953, 58);
             this.label13.TabIndex = 0;
             this.label13.Text = "Добавление Описи";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -845,7 +845,7 @@
             this.UnitPage.Controls.Add(this.panel3);
             this.UnitPage.Location = new System.Drawing.Point(4, 22);
             this.UnitPage.Name = "UnitPage";
-            this.UnitPage.Size = new System.Drawing.Size(792, 424);
+            this.UnitPage.Size = new System.Drawing.Size(959, 424);
             this.UnitPage.TabIndex = 2;
             this.UnitPage.Text = "Документы";
             this.UnitPage.UseVisualStyleBackColor = true;
@@ -1159,7 +1159,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(792, 58);
+            this.panel3.Size = new System.Drawing.Size(959, 58);
             this.panel3.TabIndex = 17;
             // 
             // pictureBox5
@@ -1181,7 +1181,7 @@
             this.label14.ForeColor = System.Drawing.Color.DimGray;
             this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(792, 58);
+            this.label14.Size = new System.Drawing.Size(959, 58);
             this.label14.TabIndex = 0;
             this.label14.Text = "Добавление Документа";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1204,7 +1204,7 @@
             this.UserPage.Controls.Add(this.panel6);
             this.UserPage.Location = new System.Drawing.Point(4, 22);
             this.UserPage.Name = "UserPage";
-            this.UserPage.Size = new System.Drawing.Size(792, 424);
+            this.UserPage.Size = new System.Drawing.Size(959, 424);
             this.UserPage.TabIndex = 3;
             this.UserPage.Text = "Пользователи";
             this.UserPage.UseVisualStyleBackColor = true;
@@ -1349,7 +1349,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(792, 58);
+            this.panel6.Size = new System.Drawing.Size(959, 58);
             this.panel6.TabIndex = 17;
             // 
             // pictureBox6
@@ -1371,7 +1371,7 @@
             this.label15.ForeColor = System.Drawing.Color.DimGray;
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(792, 58);
+            this.label15.Size = new System.Drawing.Size(959, 58);
             this.label15.TabIndex = 0;
             this.label15.Text = "Добавление Пользователя";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1394,6 +1394,139 @@
             this.ReportPage.TabIndex = 4;
             this.ReportPage.Text = "Отчеты";
             this.ReportPage.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(876, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Выполнить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // sql_field
+            // 
+            this.sql_field.Location = new System.Drawing.Point(89, 389);
+            this.sql_field.Name = "sql_field";
+            this.sql_field.Size = new System.Drawing.Size(781, 20);
+            this.sql_field.TabIndex = 25;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(9, 389);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(73, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "SQL-запрос: ";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label52.Location = new System.Drawing.Point(399, 73);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(19, 25);
+            this.label52.TabIndex = 23;
+            this.label52.Text = "-";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label51.Location = new System.Drawing.Point(18, 78);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(169, 16);
+            this.label51.TabIndex = 22;
+            this.label51.Text = "Временной промежуток:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(644, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Показать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(424, 78);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 20;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(193, 78);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 104);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(952, 266);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Номер";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Литерал";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Имя";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Количество док-ов";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Дата создания";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Комментарий";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "ID описи";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Тип документа";
+            this.Column9.Name = "Column9";
             // 
             // panel4
             // 
@@ -1448,24 +1581,6 @@
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(952, 266);
-            this.dataGridView1.TabIndex = 18;
-            // 
             // iPSArchiveDataSetBindingSource
             // 
             this.iPSArchiveDataSetBindingSource.DataSource = this.iPSArchiveDataSet;
@@ -1480,121 +1595,6 @@
             // 
             this.unitTableAdapter.ClearBeforeFill = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(193, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 19;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(424, 78);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 20;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(644, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Показать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Номер";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Литерал";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Имя";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Количество док-ов";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Дата создания";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Комментарий";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "ID описи";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Тип документа";
-            this.Column9.Name = "Column9";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label51.Location = new System.Drawing.Point(18, 78);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(169, 16);
-            this.label51.TabIndex = 22;
-            this.label51.Text = "Временной промежуток:";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label52.Location = new System.Drawing.Point(399, 73);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(19, 25);
-            this.label52.TabIndex = 23;
-            this.label52.Text = "-";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(9, 389);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(73, 13);
-            this.label53.TabIndex = 24;
-            this.label53.Text = "SQL-запрос: ";
-            // 
-            // sql_field
-            // 
-            this.sql_field.Location = new System.Drawing.Point(89, 389);
-            this.sql_field.Name = "sql_field";
-            this.sql_field.Size = new System.Drawing.Size(781, 20);
-            this.sql_field.TabIndex = 25;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(876, 387);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Выполнить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1602,6 +1602,7 @@
             this.ClientSize = new System.Drawing.Size(967, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "AddData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddData";
             this.Load += new System.EventHandler(this.AddData_Load);
             this.tabControl1.ResumeLayout(false);
@@ -1629,10 +1630,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ReportPage.ResumeLayout(false);
             this.ReportPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.ResumeLayout(false);
