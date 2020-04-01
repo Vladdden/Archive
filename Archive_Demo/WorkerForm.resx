@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="fKInventoryFundBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>374, 56</value>
+  </metadata>
+  <metadata name="unitTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>474, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsOAAALDgFAvuFBAAAUyElEQVR4Xu3db6j/Z13Hccea
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAUyElEQVR4Xu3db6j/Z13Hccea
         xTJbm1NppIQh0T/IWphYEhYUFEjRnRXMwD9LIpXMoIhuyIL+3VCCumHSX7CCoAKpjCgpapR/SNoob9Qi
         o0hMSpttunp/du03z367zjnf7/dcn8/nel/X4wHPO8fz++2O194vfufsd54GpPKR6P8k6Yp9KgISMQAk
         tcgAgGQMAEktMgAgGQNAUosMAEjGAJDUIgMAkjEAJLXIAIBkDABJLTIAIBkDQFKLDABIxgCQ1CIDAJIx
@@ -216,13 +222,19 @@
   <metadata name="fundBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>168, 17</value>
   </metadata>
+  <metadata name="fundBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>168, 17</value>
+  </metadata>
+  <metadata name="iPSArchiveDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="iPSArchiveDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsOAAALDgFAvuFBAAAUyElEQVR4Xu3db6j/Z13Hccea
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAUyElEQVR4Xu3db6j/Z13Hccea
         xTJbm1NppIQh0T/IWphYEhYUFEjRnRXMwD9LIpXMoIhuyIL+3VCCumHSX7CCoAKpjCgpapR/SNoob9Qi
         o0hMSpttunp/du03z367zjnf7/dcn8/nel/X4wHPO8fz++2O194vfufsd54GpPKR6P8k6Yp9KgISMQAk
         tcgAgGQMAEktMgAgGQNAUosMAEjGAJDUIgMAkjEAJLXIAIBkDABJLTIAIBkDQFKLDABIxgCQ1CIDAJIx
@@ -317,13 +329,10 @@
   <metadata name="unitTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>474, 17</value>
   </metadata>
-  <metadata name="inventoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsOAAALDgFAvuFBAAAUyElEQVR4Xu3db6j/Z13Hccea
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAUyElEQVR4Xu3db6j/Z13Hccea
         xTJbm1NppIQh0T/IWphYEhYUFEjRnRXMwD9LIpXMoIhuyIL+3VCCumHSX7CCoAKpjCgpapR/SNoob9Qi
         o0hMSpttunp/du03z367zjnf7/dcn8/nel/X4wHPO8fz++2O194vfufsd54GpPKR6P8k6Yp9KgISMQAk
         tcgAgGQMAEktMgAgGQNAUosMAEjGAJDUIgMAkjEAJLXIAIBkDABJLTIAIBkDQFKLDABIxgCQ1CIDAJIx
@@ -415,6 +424,9 @@
         gKQWGQCQjAEgqUUGACRjAEhq0NM+9f+BI8QLHkHknwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="inventoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="fundTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>324, 17</value>
   </metadata>

@@ -14,7 +14,6 @@ namespace Archive_Demo
 {
     public partial class AddData : Form
     {
-        TabPage t;
         public AddData()
         {
             InitializeComponent();
