@@ -343,7 +343,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 25);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Количесвто описей";
+            this.label4.Text = "Количество описей";
             // 
             // Fund_Inv_Count_btn
             // 

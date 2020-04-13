@@ -100,7 +100,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Unit_P_Count = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.Unit_Dates = new System.Windows.Forms.TextBox();
@@ -114,11 +113,19 @@
             this.label34 = new System.Windows.Forms.Label();
             this.checkUnits_btn = new System.Windows.Forms.Button();
             this.addUnit_btn = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
             this.Unit_Comment = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Unit_Inv_comboBox = new System.Windows.Forms.ComboBox();
+            this.fKInventoryFundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Unit_Fund_comboBox = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.UserPage = new System.Windows.Forms.TabPage();
             this.checkUsers_btn = new System.Windows.Forms.Button();
             this.addUser_btn = new System.Windows.Forms.Button();
@@ -158,6 +165,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
             this.unitTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
@@ -165,14 +173,6 @@
             this.iPSArchiveDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Unit_Inv_comboBox = new System.Windows.Forms.ComboBox();
-            this.Unit_Fund_comboBox = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.fKInventoryFundBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -184,9 +184,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.UnitPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fKInventoryFundBindingSource)).BeginInit();
             this.UserPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -196,11 +197,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fKInventoryFundBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -416,7 +416,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 25);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Количесвто описей";
+            this.label4.Text = "Количество описей";
             // 
             // Fund_Inv_Count_btn
             // 
@@ -971,11 +971,6 @@
             this.label40.TabIndex = 61;
             this.label40.Text = "Тип";
             // 
-            // inventoryBindingSource
-            // 
-            this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
             // Unit_P_Count
             // 
             this.Unit_P_Count.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
@@ -1103,16 +1098,6 @@
             this.addUnit_btn.UseVisualStyleBackColor = false;
             this.addUnit_btn.Click += new System.EventHandler(this.addUnit_btn_Click);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.label24.Location = new System.Drawing.Point(3, 252);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(124, 25);
-            this.label24.TabIndex = 43;
-            this.label24.Text = "Комментарий";
-            // 
             // Unit_Comment
             // 
             this.Unit_Comment.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1156,6 +1141,103 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Добавление Документа";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Unit_Inv_comboBox);
+            this.groupBox1.Controls.Add(this.Unit_Fund_comboBox);
+            this.groupBox1.Controls.Add(this.label39);
+            this.groupBox1.Controls.Add(this.label43);
+            this.groupBox1.Controls.Add(this.label54);
+            this.groupBox1.Controls.Add(this.label55);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(8, 135);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(256, 120);
+            this.groupBox1.TabIndex = 82;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор описи";
+            // 
+            // Unit_Inv_comboBox
+            // 
+            this.Unit_Inv_comboBox.DataSource = this.fKInventoryFundBindingSource;
+            this.Unit_Inv_comboBox.DisplayMember = "Inv_Name";
+            this.Unit_Inv_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Inv_comboBox.FormattingEnabled = true;
+            this.Unit_Inv_comboBox.Location = new System.Drawing.Point(71, 67);
+            this.Unit_Inv_comboBox.Name = "Unit_Inv_comboBox";
+            this.Unit_Inv_comboBox.Size = new System.Drawing.Size(179, 33);
+            this.Unit_Inv_comboBox.TabIndex = 60;
+            this.Unit_Inv_comboBox.ValueMember = "Inv_ID";
+            // 
+            // fKInventoryFundBindingSource
+            // 
+            this.fKInventoryFundBindingSource.DataMember = "FK_Inventory_Fund";
+            this.fKInventoryFundBindingSource.DataSource = this.fundBindingSource;
+            // 
+            // Unit_Fund_comboBox
+            // 
+            this.Unit_Fund_comboBox.DataSource = this.fundBindingSource;
+            this.Unit_Fund_comboBox.DisplayMember = "Fund_Name";
+            this.Unit_Fund_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Unit_Fund_comboBox.FormattingEnabled = true;
+            this.Unit_Fund_comboBox.Location = new System.Drawing.Point(71, 27);
+            this.Unit_Fund_comboBox.Name = "Unit_Fund_comboBox";
+            this.Unit_Fund_comboBox.Size = new System.Drawing.Size(108, 33);
+            this.Unit_Fund_comboBox.TabIndex = 78;
+            this.Unit_Fund_comboBox.ValueMember = "Fund_ID";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label39.Location = new System.Drawing.Point(3, 30);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(55, 25);
+            this.label39.TabIndex = 79;
+            this.label39.Text = "Фонд";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(53, 30);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(19, 25);
+            this.label43.TabIndex = 80;
+            this.label43.Text = "*";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label54.Location = new System.Drawing.Point(1, 70);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(62, 25);
+            this.label54.TabIndex = 59;
+            this.label54.Text = "Опись";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label55.ForeColor = System.Drawing.Color.Red;
+            this.label55.Location = new System.Drawing.Point(57, 70);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(19, 25);
+            this.label55.TabIndex = 70;
+            this.label55.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label24.Location = new System.Drawing.Point(3, 252);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(124, 25);
+            this.label24.TabIndex = 43;
+            this.label24.Text = "Комментарий";
             // 
             // UserPage
             // 
@@ -1535,6 +1617,11 @@
             this.label16.Text = "Отчёт";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
             // fundTableAdapter
             // 
             this.fundTableAdapter.ClearBeforeFill = true;
@@ -1566,93 +1653,6 @@
             // 
             this.unitTableAdapter.ClearBeforeFill = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Unit_Inv_comboBox);
-            this.groupBox1.Controls.Add(this.Unit_Fund_comboBox);
-            this.groupBox1.Controls.Add(this.label39);
-            this.groupBox1.Controls.Add(this.label43);
-            this.groupBox1.Controls.Add(this.label54);
-            this.groupBox1.Controls.Add(this.label55);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 135);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(256, 120);
-            this.groupBox1.TabIndex = 82;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выбор описи";
-            // 
-            // Unit_Inv_comboBox
-            // 
-            this.Unit_Inv_comboBox.DataSource = this.fKInventoryFundBindingSource;
-            this.Unit_Inv_comboBox.DisplayMember = "Inv_Name";
-            this.Unit_Inv_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.Unit_Inv_comboBox.FormattingEnabled = true;
-            this.Unit_Inv_comboBox.Location = new System.Drawing.Point(71, 67);
-            this.Unit_Inv_comboBox.Name = "Unit_Inv_comboBox";
-            this.Unit_Inv_comboBox.Size = new System.Drawing.Size(179, 33);
-            this.Unit_Inv_comboBox.TabIndex = 60;
-            this.Unit_Inv_comboBox.ValueMember = "Inv_ID";
-            // 
-            // Unit_Fund_comboBox
-            // 
-            this.Unit_Fund_comboBox.DataSource = this.fundBindingSource;
-            this.Unit_Fund_comboBox.DisplayMember = "Fund_Name";
-            this.Unit_Fund_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.Unit_Fund_comboBox.FormattingEnabled = true;
-            this.Unit_Fund_comboBox.Location = new System.Drawing.Point(71, 27);
-            this.Unit_Fund_comboBox.Name = "Unit_Fund_comboBox";
-            this.Unit_Fund_comboBox.Size = new System.Drawing.Size(108, 33);
-            this.Unit_Fund_comboBox.TabIndex = 78;
-            this.Unit_Fund_comboBox.ValueMember = "Fund_ID";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.label39.Location = new System.Drawing.Point(3, 30);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(55, 25);
-            this.label39.TabIndex = 79;
-            this.label39.Text = "Фонд";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(53, 30);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(19, 25);
-            this.label43.TabIndex = 80;
-            this.label43.Text = "*";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.label54.Location = new System.Drawing.Point(1, 70);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(62, 25);
-            this.label54.TabIndex = 59;
-            this.label54.Text = "Опись";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
-            this.label55.ForeColor = System.Drawing.Color.Red;
-            this.label55.Location = new System.Drawing.Point(57, 70);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(19, 25);
-            this.label55.TabIndex = 70;
-            this.label55.Text = "*";
-            // 
-            // fKInventoryFundBindingSource
-            // 
-            this.fKInventoryFundBindingSource.DataMember = "FK_Inventory_Fund";
-            this.fKInventoryFundBindingSource.DataSource = this.fundBindingSource;
-            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1677,9 +1677,11 @@
             this.UnitPage.ResumeLayout(false);
             this.UnitPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fKInventoryFundBindingSource)).EndInit();
             this.UserPage.ResumeLayout(false);
             this.UserPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1691,12 +1693,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fKInventoryFundBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
