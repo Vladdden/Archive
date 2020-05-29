@@ -425,5 +425,22 @@ namespace Archive_Demo
                 Console.WriteLine("Подключение закрыто...");
             }
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadFile_Btn_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = openFileDialog1.FileName;
+            // читаем файл в строку
+            string fileText = System.IO.File.ReadAllText(filename);
+            textBox1.Text = fileText;
+            MessageBox.Show("Файл загружен");
+        }
     }
 }
