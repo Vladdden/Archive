@@ -43,9 +43,24 @@
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
             this.IPSPage = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.LoadFile_Btn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Connect_IPS_btn = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.User_Pass_IPS = new System.Windows.Forms.TextBox();
+            this.User_Login_IPS = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Admin_Pass_IPS = new System.Windows.Forms.TextBox();
+            this.Admin_Login_IPS = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.Company_ID_IPS = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.Company_Name_IPS = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.Create_IPS_btn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label56 = new System.Windows.Forms.Label();
@@ -182,7 +197,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
@@ -192,6 +206,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.IPSPage.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.ReportPage.SuspendLayout();
@@ -214,7 +231,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // fundBindingSource
@@ -275,50 +291,198 @@
             // 
             // IPSPage
             // 
+            this.IPSPage.Controls.Add(this.Connect_IPS_btn);
+            this.IPSPage.Controls.Add(this.groupBox4);
+            this.IPSPage.Controls.Add(this.groupBox3);
+            this.IPSPage.Controls.Add(this.label61);
+            this.IPSPage.Controls.Add(this.Company_ID_IPS);
+            this.IPSPage.Controls.Add(this.label57);
+            this.IPSPage.Controls.Add(this.Company_Name_IPS);
             this.IPSPage.Controls.Add(this.groupBox2);
-            this.IPSPage.Controls.Add(this.button3);
+            this.IPSPage.Controls.Add(this.Create_IPS_btn);
             this.IPSPage.Controls.Add(this.panel7);
             this.IPSPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.IPSPage.Location = new System.Drawing.Point(4, 22);
             this.IPSPage.Name = "IPSPage";
-            this.IPSPage.Size = new System.Drawing.Size(959, 424);
+            this.IPSPage.Size = new System.Drawing.Size(959, 387);
             this.IPSPage.TabIndex = 5;
             this.IPSPage.Text = "Генерация ИПС";
             this.IPSPage.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Connect_IPS_btn
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(57, 69);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 34);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.Text = "Прикрепите файл-образ";
+            this.Connect_IPS_btn.BackColor = System.Drawing.Color.Moccasin;
+            this.Connect_IPS_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Connect_IPS_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Connect_IPS_btn.Location = new System.Drawing.Point(674, 314);
+            this.Connect_IPS_btn.Name = "Connect_IPS_btn";
+            this.Connect_IPS_btn.Size = new System.Drawing.Size(277, 56);
+            this.Connect_IPS_btn.TabIndex = 61;
+            this.Connect_IPS_btn.Text = "Передать данные";
+            this.Connect_IPS_btn.UseVisualStyleBackColor = false;
+            this.Connect_IPS_btn.Click += new System.EventHandler(this.Connect_IPS_btn_Click);
             // 
-            // LoadFile_Btn
+            // groupBox4
             // 
-            this.LoadFile_Btn.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LoadFile_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoadFile_Btn.Location = new System.Drawing.Point(79, 121);
-            this.LoadFile_Btn.Name = "LoadFile_Btn";
-            this.LoadFile_Btn.Size = new System.Drawing.Size(180, 32);
-            this.LoadFile_Btn.TabIndex = 48;
-            this.LoadFile_Btn.Text = "Загрузить";
-            this.LoadFile_Btn.UseVisualStyleBackColor = false;
-            this.LoadFile_Btn.Click += new System.EventHandler(this.LoadFile_Btn_Click);
+            this.groupBox4.Controls.Add(this.User_Pass_IPS);
+            this.groupBox4.Controls.Add(this.User_Login_IPS);
+            this.groupBox4.Controls.Add(this.label60);
+            this.groupBox4.Controls.Add(this.label62);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox4.Location = new System.Drawing.Point(674, 143);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(277, 148);
+            this.groupBox4.TabIndex = 60;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Пользователь";
             // 
-            // button3
+            // User_Pass_IPS
             // 
-            this.button3.BackColor = System.Drawing.Color.LemonChiffon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(310, 336);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(318, 56);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "Создать";
-            this.button3.UseVisualStyleBackColor = false;
+            this.User_Pass_IPS.Location = new System.Drawing.Point(79, 86);
+            this.User_Pass_IPS.Name = "User_Pass_IPS";
+            this.User_Pass_IPS.Size = new System.Drawing.Size(169, 26);
+            this.User_Pass_IPS.TabIndex = 55;
+            // 
+            // User_Login_IPS
+            // 
+            this.User_Login_IPS.Location = new System.Drawing.Point(79, 45);
+            this.User_Login_IPS.Name = "User_Login_IPS";
+            this.User_Login_IPS.Size = new System.Drawing.Size(169, 26);
+            this.User_Login_IPS.TabIndex = 53;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label60.Location = new System.Drawing.Point(18, 45);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(55, 20);
+            this.label60.TabIndex = 54;
+            this.label60.Text = "Логин";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label62.Location = new System.Drawing.Point(6, 89);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(67, 20);
+            this.label62.TabIndex = 56;
+            this.label62.Text = "Пароль";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Admin_Pass_IPS);
+            this.groupBox3.Controls.Add(this.Admin_Login_IPS);
+            this.groupBox3.Controls.Add(this.label58);
+            this.groupBox3.Controls.Add(this.label59);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox3.Location = new System.Drawing.Point(376, 143);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(277, 148);
+            this.groupBox3.TabIndex = 59;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Администратор";
+            // 
+            // Admin_Pass_IPS
+            // 
+            this.Admin_Pass_IPS.Location = new System.Drawing.Point(79, 86);
+            this.Admin_Pass_IPS.Name = "Admin_Pass_IPS";
+            this.Admin_Pass_IPS.Size = new System.Drawing.Size(169, 26);
+            this.Admin_Pass_IPS.TabIndex = 55;
+            // 
+            // Admin_Login_IPS
+            // 
+            this.Admin_Login_IPS.Location = new System.Drawing.Point(79, 45);
+            this.Admin_Login_IPS.Name = "Admin_Login_IPS";
+            this.Admin_Login_IPS.Size = new System.Drawing.Size(169, 26);
+            this.Admin_Login_IPS.TabIndex = 53;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label58.Location = new System.Drawing.Point(18, 45);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(55, 20);
+            this.label58.TabIndex = 54;
+            this.label58.Text = "Логин";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label59.Location = new System.Drawing.Point(6, 89);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(67, 20);
+            this.label59.TabIndex = 56;
+            this.label59.Text = "Пароль";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label61.Location = new System.Drawing.Point(670, 74);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(204, 20);
+            this.label61.TabIndex = 58;
+            this.label61.Text = "Идентификатор Клиента";
+            // 
+            // Company_ID_IPS
+            // 
+            this.Company_ID_IPS.Location = new System.Drawing.Point(674, 97);
+            this.Company_ID_IPS.Name = "Company_ID_IPS";
+            this.Company_ID_IPS.Size = new System.Drawing.Size(277, 31);
+            this.Company_ID_IPS.TabIndex = 57;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(372, 74);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(142, 20);
+            this.label57.TabIndex = 52;
+            this.label57.Text = "Название Фирмы";
+            // 
+            // Company_Name_IPS
+            // 
+            this.Company_Name_IPS.Location = new System.Drawing.Point(376, 97);
+            this.Company_Name_IPS.Name = "Company_Name_IPS";
+            this.Company_Name_IPS.Size = new System.Drawing.Size(277, 31);
+            this.Company_Name_IPS.TabIndex = 51;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label63);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Location = new System.Drawing.Point(17, 74);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(336, 296);
+            this.groupBox2.TabIndex = 50;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Правила генерации ИПС";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(6, 128);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(748, 24);
+            this.label63.TabIndex = 0;
+            this.label63.Text = "Функционал админа и пользователя и правила и порядок действий для создания";
+            // 
+            // Create_IPS_btn
+            // 
+            this.Create_IPS_btn.BackColor = System.Drawing.Color.LemonChiffon;
+            this.Create_IPS_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Create_IPS_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Create_IPS_btn.Location = new System.Drawing.Point(376, 314);
+            this.Create_IPS_btn.Name = "Create_IPS_btn";
+            this.Create_IPS_btn.Size = new System.Drawing.Size(277, 56);
+            this.Create_IPS_btn.TabIndex = 47;
+            this.Create_IPS_btn.Text = "Создать";
+            this.Create_IPS_btn.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -368,7 +532,7 @@
             this.ReportPage.Controls.Add(this.panel4);
             this.ReportPage.Location = new System.Drawing.Point(4, 22);
             this.ReportPage.Name = "ReportPage";
-            this.ReportPage.Size = new System.Drawing.Size(959, 424);
+            this.ReportPage.Size = new System.Drawing.Size(959, 387);
             this.ReportPage.TabIndex = 4;
             this.ReportPage.Text = "Отчеты";
             this.ReportPage.UseVisualStyleBackColor = true;
@@ -560,7 +724,7 @@
             this.UserPage.Controls.Add(this.panel6);
             this.UserPage.Location = new System.Drawing.Point(4, 22);
             this.UserPage.Name = "UserPage";
-            this.UserPage.Size = new System.Drawing.Size(959, 424);
+            this.UserPage.Size = new System.Drawing.Size(959, 387);
             this.UserPage.TabIndex = 3;
             this.UserPage.Text = "Пользователи";
             this.UserPage.UseVisualStyleBackColor = true;
@@ -764,7 +928,7 @@
             this.UnitPage.Controls.Add(this.label24);
             this.UnitPage.Location = new System.Drawing.Point(4, 22);
             this.UnitPage.Name = "UnitPage";
-            this.UnitPage.Size = new System.Drawing.Size(959, 424);
+            this.UnitPage.Size = new System.Drawing.Size(959, 387);
             this.UnitPage.TabIndex = 2;
             this.UnitPage.Text = "Документы";
             this.UnitPage.UseVisualStyleBackColor = true;
@@ -1175,7 +1339,7 @@
             this.InvPage.Location = new System.Drawing.Point(4, 22);
             this.InvPage.Name = "InvPage";
             this.InvPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InvPage.Size = new System.Drawing.Size(959, 424);
+            this.InvPage.Size = new System.Drawing.Size(959, 387);
             this.InvPage.TabIndex = 1;
             this.InvPage.Text = "Описи";
             this.InvPage.UseVisualStyleBackColor = true;
@@ -1497,7 +1661,7 @@
             this.FundPage.Location = new System.Drawing.Point(4, 22);
             this.FundPage.Name = "FundPage";
             this.FundPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FundPage.Size = new System.Drawing.Size(959, 424);
+            this.FundPage.Size = new System.Drawing.Size(959, 387);
             this.FundPage.TabIndex = 0;
             this.FundPage.Text = "Фонды";
             this.FundPage.UseVisualStyleBackColor = true;
@@ -1746,30 +1910,18 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(967, 450);
+            this.tabControl1.Size = new System.Drawing.Size(967, 413);
             this.tabControl1.TabIndex = 0;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.LoadFile_Btn);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 74);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(336, 211);
-            this.groupBox2.TabIndex = 50;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Файл образа БД";
-            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 450);
+            this.ClientSize = new System.Drawing.Size(967, 413);
             this.Controls.Add(this.tabControl1);
             this.Name = "AddData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1784,6 +1936,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.IPSPage.ResumeLayout(false);
+            this.IPSPage.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ReportPage.ResumeLayout(false);
@@ -1812,8 +1971,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1832,7 +1989,7 @@
         private IPSArchiveDataSetTableAdapters.UnitTableAdapter unitTableAdapter;
         private System.Windows.Forms.BindingSource fKInventoryFundBindingSource;
         private System.Windows.Forms.TabPage IPSPage;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Create_IPS_btn;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label56;
@@ -1967,10 +2124,24 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button LoadFile_Btn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox Company_Name_IPS;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox Company_ID_IPS;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox Admin_Pass_IPS;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox Admin_Login_IPS;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox User_Pass_IPS;
+        private System.Windows.Forms.TextBox User_Login_IPS;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Connect_IPS_btn;
+        private System.Windows.Forms.Label label63;
     }
 }

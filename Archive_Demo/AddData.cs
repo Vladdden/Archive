@@ -9,11 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Net.Sockets;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Net;
+using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 namespace Archive_Demo
 {
     public partial class AddData : Form
     {
+        public static TcpClient client;
+        const int port = 8888;
+        static TcpListener listener;
+        public static void ClientObject(TcpClient tcpClient)
+        {
+            client = tcpClient;
+        }
+
         public AddData()
         {
             InitializeComponent();
@@ -250,6 +264,15 @@ namespace Archive_Demo
             Unit_Inv_comboBox.Text = "-----Выберите-----";
             Unit_Type.SelectedItem = null;
             Unit_Type.Text = "---Выберите---";
+
+
+            UserInfo usrInfo = new UserInfo("111", "222", "333", "444", "555", "666");
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("db.bin", FileMode.Create))
+            {
+                formatter.Serialize(fs, usrInfo);
+                Console.WriteLine("Объект сериализован");
+            }
         }
 
         private void Unit_Inv_comboBox_Leave(object sender, EventArgs e)
@@ -426,21 +449,108 @@ namespace Archive_Demo
             }
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void Connect_IPS_btn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
+                listener.Start();
+                Console.WriteLine("Ожидание подключений...");
 
+                while (true)
+                {
+                    TcpClient client = listener.AcceptTcpClient();
+                    ClientObject(client);
+                    ConnectionToIPS();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (listener != null)
+                    listener.Stop();
+            }
         }
 
-        private void LoadFile_Btn_Click(object sender, EventArgs e)
+        private void ConnectionToIPS()
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            // получаем выбранный файл
-            string filename = openFileDialog1.FileName;
-            // читаем файл в строку
-            string fileText = System.IO.File.ReadAllText(filename);
-            textBox1.Text = fileText;
-            MessageBox.Show("Файл загружен");
+            NetworkStream stream = null;
+            try
+            {
+                stream = client.GetStream();
+                byte[] data = new byte[1024]; // буфер для получаемых данных
+                StringBuilder builder = new StringBuilder();
+                int bytes = 0;
+                do
+                {
+                    bytes = stream.Read(data, 0, data.Length);
+                    builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                }
+                while (stream.DataAvailable);
+                string message = builder.ToString();
+                Console.WriteLine(message);
+                UserInfo usrInfo = new UserInfo(Company_Name_IPS.Text, Company_ID_IPS.Text, Admin_Login_IPS.Text, Admin_Pass_IPS.Text, User_Login_IPS.Text, User_Pass_IPS.Text);
+                //BinaryFormatter formatter = new BinaryFormatter();
+                //XmlSerializer formatter = new XmlSerializer(typeof(UserInfo));
+                // получаем поток, куда будем записывать сериализованный объект
+                using (FileStream fs = new FileStream("db.xml", FileMode.Create))
+                {
+                    //formatter.Serialize(fs, usrInfo);
+                    DataContractSerializer ser = new DataContractSerializer(typeof(UserInfo));
+                    ser.WriteObject(fs, usrInfo);
+                    Console.WriteLine("Объект сериализован");
+                }
+
+                FileStream file1 = new FileStream("db.xml", FileMode.Open); //создаем файловый поток
+                file1.Position = 0;
+                StreamReader reader = new StreamReader(file1); // создаем «потоковый читатель» и связываем его с файловым потоком
+                string result = reader.ReadToEnd(); //считываем все данные с потока и выводим на экран
+                reader.Close(); //закрываем поток
+                data = Encoding.Unicode.GetBytes(result);
+                stream.Write(data, 0, data.Length);
+                Console.WriteLine("Данные отправлены");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (stream != null)
+                    stream.Close();
+                if (client != null)
+                    client.Close();
+            }
+        }
+    }
+    [DataContract]
+    public class UserInfo
+    {
+        [DataMember]
+        public string CompanyName;
+        [DataMember]
+        public string CompanyID;
+        [DataMember]
+        public string AdmLogin;
+        [DataMember]
+        public string AdmPass;
+        [DataMember]
+        public string UsrLogin;
+        [DataMember]
+        public string UsrPass;
+
+        public UserInfo(string companyName, string companyID, string admLogin, string admPass, string usrLogin, string usrPass)
+        {
+            CompanyName = companyName;
+            CompanyID = companyID;
+            AdmLogin = admLogin;
+            AdmPass = admPass;
+            UsrLogin = usrLogin;
+            UsrPass = usrPass;
         }
     }
 }
+
