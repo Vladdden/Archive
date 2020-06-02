@@ -120,7 +120,7 @@ namespace Archive_Demo
             string UserLogin = LoginField.Text;
             string UserPass = PassField.Text;
 
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -138,32 +138,36 @@ namespace Archive_Demo
                 //string sqlExpression ="SELECT * FROM users WHERE 'Login' = @uL AND 'Password'= @uP";
 
 
-                SqlDataAdapter adapter = new SqlDataAdapter($"SELECT count(*) FROM users WHERE 'Login'='" + LoginField.Text + "' AND 'Password'='" + PassField.Text + "'", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ID FROM Users WHERE Login='" + LoginField.Text + "' AND Password='" + PassField.Text + "'", connection);
                 //SqlCommand command = new SqlCommand($"SELECT * FROM users WHERE 'Login'='"+ LoginField.Text +"' AND 'Password'='" + PassField.Text + "'", connection);
                 //command.Parameters.Add("@uL", SqlDbType.VarChar).Value = UserLogin;
                 //command.Parameters.Add("@uP", SqlDbType.VarChar).Value = UserPass;
                 DataTable table = new DataTable();
-
                 adapter.Fill(table);
-
                 if (table.Rows.Count > 0)
                 {
-                    
-                    string sql = "SELECT Status FROM users WHERE Login='" + LoginField.Text + "' AND Password='" + PassField.Text + "'";
+                    int s = table.Rows[0].Field<int>(0);
+                    string sql = $"UPDATE Users SET Log_Time = '{DateTime.Now}' WHERE Login = '" + LoginField.Text + "' AND Password = '" + PassField.Text + "'";
                     SqlCommand command = new SqlCommand(sql, connection);
+                    int number = command.ExecuteNonQuery();
+                    Console.WriteLine("Добавлено объектов: {0}", number);
+                    Console.WriteLine("Сеанс записан в базу: {0}", s);
+
+                    sql = "SELECT Status FROM users WHERE Login='" + LoginField.Text + "' AND Password='" + PassField.Text + "'";
+                    command = new SqlCommand(sql, connection);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         if (reader.GetValue(0).ToString() == "0")
                         {
                             this.Hide();
-                            WorkerForm workerForm = new WorkerForm();
+                            WorkerForm workerForm = new WorkerForm(s);
                             workerForm.Show();
                         }
                         if (reader.GetValue(0).ToString() == "1")
                         {
                             this.Hide();
-                            AddData addData = new AddData();
+                            AddData addData = new AddData(s);
                             addData.Show();
                         }
                     }

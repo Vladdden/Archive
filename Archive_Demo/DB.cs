@@ -10,7 +10,7 @@ namespace Archive_Demo
 {
     class DB
     {
-        SqlConnection connection = new SqlConnection("server=localhost;port=3306;username=Владислав-ПК\\Владислав;password=;database=IPSArchive;");
+        SqlConnection connection = new SqlConnection("server=localhost;port=3306;username=Владислав-ПК\\Владислав;password=;database=Archive;");
 
         public void openConnection()
         {

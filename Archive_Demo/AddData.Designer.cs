@@ -483,6 +483,7 @@
             this.Create_IPS_btn.TabIndex = 47;
             this.Create_IPS_btn.Text = "Создать";
             this.Create_IPS_btn.UseVisualStyleBackColor = false;
+            this.Create_IPS_btn.Click += new System.EventHandler(this.Create_IPS_btn_Click);
             // 
             // panel7
             // 
@@ -1926,6 +1927,7 @@
             this.Name = "AddData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddData";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddData_FormClosed);
             this.Load += new System.EventHandler(this.AddData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).EndInit();

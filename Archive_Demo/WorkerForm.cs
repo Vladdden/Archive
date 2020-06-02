@@ -14,8 +14,10 @@ namespace Archive_Demo
 {
     public partial class WorkerForm : Form
     {
-        public WorkerForm()
+        static int ID_User;
+        public WorkerForm(int ID_Usr)
         {
+            ID_User = ID_Usr;
             InitializeComponent();
         }
 
@@ -179,46 +181,22 @@ namespace Archive_Demo
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void Inv_Fund_ID_comboBox_Leave(object sender, EventArgs e)
@@ -240,5 +218,24 @@ namespace Archive_Demo
                 Unit_Type.Text = "---Выберите---";
         }
 
+        private void Disconnect()
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+                SqlConnection connection = new SqlConnection(connectionString);
+                string sql = $"UPDATE Users SET Exit_Time = '{DateTime.Now}' WHERE ID = '" + ID_User + "'";
+                connection.Open();
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+                connection.Close();
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+
+        }
     }
 }

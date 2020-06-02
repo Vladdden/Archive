@@ -27,9 +27,10 @@ namespace Archive_Demo
         {
             client = tcpClient;
         }
-
-        public AddData()
+        int ID_User;
+        public AddData(int id_User = 2)
         {
+            ID_User = Convert.ToInt32(id_User);
             InitializeComponent();
             
         }
@@ -38,7 +39,7 @@ namespace Archive_Demo
         {
             addFund_btn.BackColor = Color.Khaki;
             
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0)";
             SqlConnection connection = new SqlConnection(connectionString);
             try
@@ -79,7 +80,7 @@ namespace Archive_Demo
         {
             addInv_btn.BackColor = Color.Khaki;
 
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO Inventory (Fund_ID, Inv_Num, Inv_Lit, Inv_Vol, Inv_Name, Year_St, Year_End, Dates, Unit_Count, Comment, Deleted) VALUES ('" + Inv_Fund_ID_comboBox.SelectedValue + "','" + Inv_Num.Text + "','" + Inv_Lit.Text + "','" + Inv_Vol.Text + "','" + Inv_Name.Text + "','" + Inv_Year_St_dateTimePicker.Text + "','" + Inv_Year_End_dateTimePicker.Text + "','" + Inv_Dates.Text + "','" + Inv_Unit_Count.Text + "','" + Inv_Comment.Text + "', 0)";
             SqlConnection connection = new SqlConnection(connectionString);
             try
@@ -128,7 +129,7 @@ namespace Archive_Demo
             addUnit_btn.BackColor = Color.Khaki;
 
             
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO Unit (Unit_Num, Unit_Lit, Dates, Unit_Name, P_Count, DateCreate, Comment, Inv_ID, Deleted, Unit_Type, Year_St, Year_End) VALUES ('" + Unit_Num.Text + "','" + Unit_Lit.Text + "','" + Unit_Dates.Text + "','" + Unit_Name.Text + "','" + Unit_P_Count.Text + "', @Unit_Date_Create_dateTimePicker,'" + Unit_Comment.Text + "','" + Unit_Inv_comboBox.SelectedValue + "',0,'" + Unit_Type.SelectedValue + "','" + Unit_Year_St_dateTimePicker.Text + "','" + Unit_Year_End_dateTimePicker.Text + "')";
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -178,7 +179,7 @@ namespace Archive_Demo
             if (Admin_checkBox.Checked) flag = 1;
             else flag = 0;
            
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO users VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', '" + flag + "');";
             SqlConnection connection = new SqlConnection(connectionString);
              try
@@ -295,63 +296,32 @@ namespace Archive_Demo
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
-            
+            Disconnect();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                this.Hide();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-            }
+            Disconnect();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = "SELECT * FROM Unit WHERE (DateCreate >= @X1) AND (DateCreate <= @X2)";
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -402,7 +372,7 @@ namespace Archive_Demo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
             string sql = sql_field.Text;
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -524,6 +494,57 @@ namespace Archive_Demo
                 if (client != null)
                     client.Close();
             }
+        }
+
+        private void Create_IPS_btn_Click(object sender, EventArgs e)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            string sql = $"INSERT INTO IPS_Clients VALUES ('" + Company_Name_IPS.Text + "','" + Company_ID_IPS.Text + "','" + Admin_Login_IPS.Text + "','" + Admin_Pass_IPS.Text + "','" + User_Login_IPS.Text + "','" + User_Pass_IPS.Text + "','" + DateTime.Now + "','" + ID_User + "');";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+        }
+
+        private void AddData_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Disconnect();
+        }
+
+        private void Disconnect()
+        {
+            DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.OK)
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+                SqlConnection connection = new SqlConnection(connectionString);
+                string sql = $"UPDATE Users SET Exit_Time = '{DateTime.Now}' WHERE ID = '" + ID_User + "'";
+                connection.Open();
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+                connection.Close();
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+
         }
     }
     [DataContract]
