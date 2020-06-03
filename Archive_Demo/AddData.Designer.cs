@@ -43,6 +43,8 @@
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.unitTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTableAdapter();
             this.IPSPage = new System.Windows.Forms.TabPage();
+            this.GenIPS_comboBox = new System.Windows.Forms.ComboBox();
+            this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Connect_IPS_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.User_Pass_IPS = new System.Windows.Forms.TextBox();
@@ -57,7 +59,6 @@
             this.label61 = new System.Windows.Forms.Label();
             this.Company_ID_IPS = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.Company_Name_IPS = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label63 = new System.Windows.Forms.Label();
             this.Create_IPS_btn = new System.Windows.Forms.Button();
@@ -174,7 +175,6 @@
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.Fund_comboBox_Comp = new System.Windows.Forms.ComboBox();
-            this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Fund_Year_End = new System.Windows.Forms.DateTimePicker();
             this.Fund_Year_St = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
@@ -203,6 +203,9 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.Company_dataGridView_Funds = new System.Windows.Forms.DataGridView();
+            this.fundNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fundNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fundBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label71 = new System.Windows.Forms.Label();
             this.CompSelect = new System.Windows.Forms.ComboBox();
@@ -219,9 +222,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.companiesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.CompaniesTableAdapter();
-            this.fundNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fundNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
@@ -231,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.IPSPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -253,7 +254,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.FundPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -325,13 +325,13 @@
             // 
             // IPSPage
             // 
+            this.IPSPage.Controls.Add(this.GenIPS_comboBox);
             this.IPSPage.Controls.Add(this.Connect_IPS_btn);
             this.IPSPage.Controls.Add(this.groupBox4);
             this.IPSPage.Controls.Add(this.groupBox3);
             this.IPSPage.Controls.Add(this.label61);
             this.IPSPage.Controls.Add(this.Company_ID_IPS);
             this.IPSPage.Controls.Add(this.label57);
-            this.IPSPage.Controls.Add(this.Company_Name_IPS);
             this.IPSPage.Controls.Add(this.groupBox2);
             this.IPSPage.Controls.Add(this.Create_IPS_btn);
             this.IPSPage.Controls.Add(this.panel7);
@@ -342,6 +342,23 @@
             this.IPSPage.TabIndex = 5;
             this.IPSPage.Text = "Генерация ИПС";
             this.IPSPage.UseVisualStyleBackColor = true;
+            // 
+            // GenIPS_comboBox
+            // 
+            this.GenIPS_comboBox.DataSource = this.companiesBindingSource;
+            this.GenIPS_comboBox.DisplayMember = "Comp_Name";
+            this.GenIPS_comboBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.GenIPS_comboBox.FormattingEnabled = true;
+            this.GenIPS_comboBox.Location = new System.Drawing.Point(368, 119);
+            this.GenIPS_comboBox.Name = "GenIPS_comboBox";
+            this.GenIPS_comboBox.Size = new System.Drawing.Size(277, 33);
+            this.GenIPS_comboBox.TabIndex = 71;
+            this.GenIPS_comboBox.ValueMember = "Comp_ID";
+            // 
+            // companiesBindingSource
+            // 
+            this.companiesBindingSource.DataMember = "Companies";
+            this.companiesBindingSource.DataSource = this.iPSArchiveDataSet;
             // 
             // Connect_IPS_btn
             // 
@@ -464,6 +481,7 @@
             // 
             // Company_ID_IPS
             // 
+            this.Company_ID_IPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.Company_ID_IPS.Location = new System.Drawing.Point(666, 119);
             this.Company_ID_IPS.Name = "Company_ID_IPS";
             this.Company_ID_IPS.Size = new System.Drawing.Size(277, 31);
@@ -478,13 +496,6 @@
             this.label57.Size = new System.Drawing.Size(142, 20);
             this.label57.TabIndex = 52;
             this.label57.Text = "Название Фирмы";
-            // 
-            // Company_Name_IPS
-            // 
-            this.Company_Name_IPS.Location = new System.Drawing.Point(368, 119);
-            this.Company_Name_IPS.Name = "Company_Name_IPS";
-            this.Company_Name_IPS.Size = new System.Drawing.Size(277, 31);
-            this.Company_Name_IPS.TabIndex = 51;
             // 
             // groupBox2
             // 
@@ -541,6 +552,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 2;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // label56
             // 
@@ -1741,11 +1753,6 @@
             this.Fund_comboBox_Comp.TabIndex = 70;
             this.Fund_comboBox_Comp.ValueMember = "Comp_ID";
             // 
-            // companiesBindingSource
-            // 
-            this.companiesBindingSource.DataMember = "Companies";
-            this.companiesBindingSource.DataSource = this.iPSArchiveDataSet;
-            // 
             // Fund_Year_End
             // 
             this.Fund_Year_End.CustomFormat = "yyyy";
@@ -2050,6 +2057,30 @@
             this.Company_dataGridView_Funds.Size = new System.Drawing.Size(360, 284);
             this.Company_dataGridView_Funds.TabIndex = 75;
             // 
+            // fundNumDataGridViewTextBoxColumn
+            // 
+            this.fundNumDataGridViewTextBoxColumn.DataPropertyName = "Fund_Num";
+            this.fundNumDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.fundNumDataGridViewTextBoxColumn.Name = "fundNumDataGridViewTextBoxColumn";
+            this.fundNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fundNumDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // fundNameDataGridViewTextBoxColumn
+            // 
+            this.fundNameDataGridViewTextBoxColumn.DataPropertyName = "Fund_Name";
+            this.fundNameDataGridViewTextBoxColumn.HeaderText = "Имя Фонда";
+            this.fundNameDataGridViewTextBoxColumn.Name = "fundNameDataGridViewTextBoxColumn";
+            this.fundNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fundNameDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.commentDataGridViewTextBoxColumn.Width = 125;
+            // 
             // fundBindingSource1
             // 
             this.fundBindingSource1.DataMember = "Fund";
@@ -2199,30 +2230,6 @@
             // 
             this.companiesTableAdapter.ClearBeforeFill = true;
             // 
-            // fundNumDataGridViewTextBoxColumn
-            // 
-            this.fundNumDataGridViewTextBoxColumn.DataPropertyName = "Fund_Num";
-            this.fundNumDataGridViewTextBoxColumn.HeaderText = "Номер";
-            this.fundNumDataGridViewTextBoxColumn.Name = "fundNumDataGridViewTextBoxColumn";
-            this.fundNumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fundNumDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // fundNameDataGridViewTextBoxColumn
-            // 
-            this.fundNameDataGridViewTextBoxColumn.DataPropertyName = "Fund_Name";
-            this.fundNameDataGridViewTextBoxColumn.HeaderText = "Имя Фонда";
-            this.fundNameDataGridViewTextBoxColumn.Name = "fundNameDataGridViewTextBoxColumn";
-            this.fundNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fundNameDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.commentDataGridViewTextBoxColumn.Width = 125;
-            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2244,6 +2251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.IPSPage.ResumeLayout(false);
             this.IPSPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2275,7 +2283,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.FundPage.ResumeLayout(false);
             this.FundPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -2446,7 +2453,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox Company_Name_IPS;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TextBox Company_ID_IPS;
         private System.Windows.Forms.Label label59;
@@ -2486,5 +2492,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fundNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fundNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox GenIPS_comboBox;
     }
 }

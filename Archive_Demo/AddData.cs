@@ -323,6 +323,11 @@ namespace Archive_Demo
             Disconnect();
         }
 
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Disconnect();
+        }
+
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             Disconnect();
@@ -469,7 +474,7 @@ namespace Archive_Demo
                 while (stream.DataAvailable);
                 string message = builder.ToString();
                 Console.WriteLine(message);
-                UserInfo usrInfo = new UserInfo(Company_Name_IPS.Text, Company_ID_IPS.Text, Admin_Login_IPS.Text, Admin_Pass_IPS.Text, User_Login_IPS.Text, User_Pass_IPS.Text);
+                UserInfo usrInfo = new UserInfo(GenIPS_comboBox.Text, Company_ID_IPS.Text, Admin_Login_IPS.Text, Admin_Pass_IPS.Text, User_Login_IPS.Text, User_Pass_IPS.Text);
                 //BinaryFormatter formatter = new BinaryFormatter();
                 //XmlSerializer formatter = new XmlSerializer(typeof(UserInfo));
                 // получаем поток, куда будем записывать сериализованный объект
@@ -506,7 +511,10 @@ namespace Archive_Demo
         private void Create_IPS_btn_Click(object sender, EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = $"INSERT INTO IPS_Clients VALUES ('" + Company_Name_IPS.Text + "','" + Company_ID_IPS.Text + "','" + Admin_Login_IPS.Text + "','" + Admin_Pass_IPS.Text + "','" + User_Login_IPS.Text + "','" + User_Pass_IPS.Text + "','" + DateTime.Now + "','" + ID_User + "');";
+            string sql = $"INSERT INTO IPS_Clients(CompanyName,Comp_ID,Clients_Name,AdminLogin,AdminPass,UserLogin,UserPass,DateCreate, Author) VALUES ('" + GenIPS_comboBox.Text + "','" + GenIPS_comboBox.SelectedValue + "','" + Company_ID_IPS.Text + "','" + Admin_Login_IPS.Text + "','" + Admin_Pass_IPS.Text + "','" + User_Login_IPS.Text + "','" + User_Pass_IPS.Text + "','" + DateTime.Now + "','" + ID_User + "')";
+            Console.WriteLine(GenIPS_comboBox.Text);
+            Console.WriteLine(GenIPS_comboBox.SelectedValue);
+            
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -606,7 +614,9 @@ namespace Archive_Demo
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             Fund_comboBox_Comp.SelectedItem = null;
+            GenIPS_comboBox.SelectedItem = null;
         }
+
     }
     [DataContract]
     public class UserInfo
