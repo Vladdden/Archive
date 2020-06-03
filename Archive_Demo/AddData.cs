@@ -494,6 +494,7 @@ namespace Archive_Demo
                 data = Encoding.Unicode.GetBytes(result);
                 stream.Write(data, 0, data.Length);
                 Console.WriteLine("Данные отправлены");
+                return;
             }
             catch (Exception ex)
             {
@@ -535,6 +536,15 @@ namespace Archive_Demo
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
             }
+
+            string path = @"C:\Users\Владислав\source\repos\IPS\IPS\bin\Debug\IPS.exe";
+            string newPath = @"C:\диплом\IPS.exe";
+            FileInfo fileInf = new FileInfo(path);
+            if (fileInf.Exists)
+            {
+                fileInf.CopyTo(newPath, true);
+            }
+            return;
         }
 
         private void AddData_FormClosed(object sender, FormClosedEventArgs e)
