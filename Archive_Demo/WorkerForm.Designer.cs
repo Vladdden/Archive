@@ -32,28 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.FundPage = new System.Windows.Forms.TabPage();
-            this.Fund_Year_End = new System.Windows.Forms.DateTimePicker();
-            this.Fund_Year_St = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.addFund_btn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Fund_Comment_btn = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Fund_Inv_Count_btn = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Fund_Name_btn = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Fund_Lit_btn = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Fund_Num_btn = new System.Windows.Forms.TextBox();
             this.InvPage = new System.Windows.Forms.TabPage();
             this.Inv_Year_End_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Inv_Year_St_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -127,6 +111,37 @@
             this.fundTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.FundTableAdapter();
             this.unitTypesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.UnitTypesTableAdapter();
             this.inventoryTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.InventoryTableAdapter();
+            this.CompPage = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label69 = new System.Windows.Forms.Label();
+            this.CompComment = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.CompName = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Fund_Num_btn = new System.Windows.Forms.TextBox();
+            this.Fund_Lit_btn = new System.Windows.Forms.TextBox();
+            this.Fund_Name_btn = new System.Windows.Forms.TextBox();
+            this.Fund_Inv_Count_btn = new System.Windows.Forms.TextBox();
+            this.Fund_comboBox_Comp = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Fund_Year_St = new System.Windows.Forms.DateTimePicker();
+            this.Fund_Year_End = new System.Windows.Forms.DateTimePicker();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companiesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.CompaniesTableAdapter();
             this.tabControl1.SuspendLayout();
             this.FundPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,10 +158,15 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
+            this.CompPage.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.CompPage);
             this.tabControl1.Controls.Add(this.FundPage);
             this.tabControl1.Controls.Add(this.InvPage);
             this.tabControl1.Controls.Add(this.UnitPage);
@@ -156,29 +176,33 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 450);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // FundPage
             // 
+            this.FundPage.Controls.Add(this.label64);
+            this.FundPage.Controls.Add(this.label65);
+            this.FundPage.Controls.Add(this.Fund_comboBox_Comp);
             this.FundPage.Controls.Add(this.Fund_Year_End);
             this.FundPage.Controls.Add(this.Fund_Year_St);
             this.FundPage.Controls.Add(this.label12);
             this.FundPage.Controls.Add(this.label11);
             this.FundPage.Controls.Add(this.label10);
-            this.FundPage.Controls.Add(this.addFund_btn);
             this.FundPage.Controls.Add(this.label8);
-            this.FundPage.Controls.Add(this.panel1);
-            this.FundPage.Controls.Add(this.label7);
-            this.FundPage.Controls.Add(this.Fund_Comment_btn);
+            this.FundPage.Controls.Add(this.Fund_Inv_Count_btn);
+            this.FundPage.Controls.Add(this.Fund_Name_btn);
+            this.FundPage.Controls.Add(this.Fund_Lit_btn);
+            this.FundPage.Controls.Add(this.Fund_Num_btn);
             this.FundPage.Controls.Add(this.label6);
             this.FundPage.Controls.Add(this.label5);
             this.FundPage.Controls.Add(this.label4);
-            this.FundPage.Controls.Add(this.Fund_Inv_Count_btn);
             this.FundPage.Controls.Add(this.label3);
-            this.FundPage.Controls.Add(this.Fund_Name_btn);
             this.FundPage.Controls.Add(this.label2);
-            this.FundPage.Controls.Add(this.Fund_Lit_btn);
-            this.FundPage.Controls.Add(this.label1);
-            this.FundPage.Controls.Add(this.Fund_Num_btn);
+            this.FundPage.Controls.Add(this.label48);
+            this.FundPage.Controls.Add(this.addFund_btn);
+            this.FundPage.Controls.Add(this.panel1);
+            this.FundPage.Controls.Add(this.label7);
+            this.FundPage.Controls.Add(this.Fund_Comment_btn);
             this.FundPage.Location = new System.Drawing.Point(4, 22);
             this.FundPage.Name = "FundPage";
             this.FundPage.Padding = new System.Windows.Forms.Padding(3);
@@ -186,57 +210,6 @@
             this.FundPage.TabIndex = 0;
             this.FundPage.Text = "Фонды";
             this.FundPage.UseVisualStyleBackColor = true;
-            // 
-            // Fund_Year_End
-            // 
-            this.Fund_Year_End.CustomFormat = "yyyy";
-            this.Fund_Year_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Fund_Year_End.Location = new System.Drawing.Point(488, 194);
-            this.Fund_Year_End.Name = "Fund_Year_End";
-            this.Fund_Year_End.Size = new System.Drawing.Size(168, 20);
-            this.Fund_Year_End.TabIndex = 69;
-            // 
-            // Fund_Year_St
-            // 
-            this.Fund_Year_St.CustomFormat = "yyyy";
-            this.Fund_Year_St.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Fund_Year_St.Location = new System.Drawing.Point(289, 194);
-            this.Fund_Year_St.Name = "Fund_Year_St";
-            this.Fund_Year_St.Size = new System.Drawing.Size(168, 20);
-            this.Fund_Year_St.TabIndex = 68;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(422, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 25);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "*";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(125, 160);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 25);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "*";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(147, 85);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 25);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "*";
             // 
             // addFund_btn
             // 
@@ -250,16 +223,6 @@
             this.addFund_btn.Text = "Добавить";
             this.addFund_btn.UseVisualStyleBackColor = false;
             this.addFund_btn.Click += new System.EventHandler(this.addFund_btn_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(463, 188);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 25);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "-";
             // 
             // panel1
             // 
@@ -275,10 +238,11 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(733, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(737, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(49, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -314,98 +278,6 @@
             this.Fund_Comment_btn.Name = "Fund_Comment_btn";
             this.Fund_Comment_btn.Size = new System.Drawing.Size(392, 128);
             this.Fund_Comment_btn.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(483, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 25);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Дата закрытия";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(284, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 25);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Дата заведения";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(284, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Количество описей";
-            // 
-            // Fund_Inv_Count_btn
-            // 
-            this.Fund_Inv_Count_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Fund_Inv_Count_btn.Location = new System.Drawing.Point(289, 113);
-            this.Fund_Inv_Count_btn.Name = "Fund_Inv_Count_btn";
-            this.Fund_Inv_Count_btn.Size = new System.Drawing.Size(168, 32);
-            this.Fund_Inv_Count_btn.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(26, 160);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Имя Фонда";
-            // 
-            // Fund_Name_btn
-            // 
-            this.Fund_Name_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Fund_Name_btn.Location = new System.Drawing.Point(31, 188);
-            this.Fund_Name_btn.Name = "Fund_Name_btn";
-            this.Fund_Name_btn.Size = new System.Drawing.Size(201, 32);
-            this.Fund_Name_btn.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(483, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Литер Фонда";
-            // 
-            // Fund_Lit_btn
-            // 
-            this.Fund_Lit_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Fund_Lit_btn.Location = new System.Drawing.Point(488, 113);
-            this.Fund_Lit_btn.Name = "Fund_Lit_btn";
-            this.Fund_Lit_btn.Size = new System.Drawing.Size(168, 32);
-            this.Fund_Lit_btn.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(26, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Номер Фонда";
-            // 
-            // Fund_Num_btn
-            // 
-            this.Fund_Num_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Fund_Num_btn.Location = new System.Drawing.Point(31, 113);
-            this.Fund_Num_btn.Name = "Fund_Num_btn";
-            this.Fund_Num_btn.Size = new System.Drawing.Size(201, 32);
-            this.Fund_Num_btn.TabIndex = 0;
             // 
             // InvPage
             // 
@@ -711,10 +583,11 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(732, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(737, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -1120,10 +993,11 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(738, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(743, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 44);
+            this.pictureBox3.Size = new System.Drawing.Size(49, 58);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -1158,6 +1032,313 @@
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
+            // CompPage
+            // 
+            this.CompPage.Controls.Add(this.button3);
+            this.CompPage.Controls.Add(this.label69);
+            this.CompPage.Controls.Add(this.panel4);
+            this.CompPage.Controls.Add(this.CompComment);
+            this.CompPage.Controls.Add(this.label67);
+            this.CompPage.Controls.Add(this.label68);
+            this.CompPage.Controls.Add(this.CompName);
+            this.CompPage.Location = new System.Drawing.Point(4, 22);
+            this.CompPage.Name = "CompPage";
+            this.CompPage.Size = new System.Drawing.Size(792, 424);
+            this.CompPage.TabIndex = 3;
+            this.CompPage.Text = "Компания";
+            this.CompPage.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.label47);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(792, 58);
+            this.panel4.TabIndex = 16;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(743, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(49, 58);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label47
+            // 
+            this.label47.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label47.ForeColor = System.Drawing.Color.DimGray;
+            this.label47.Location = new System.Drawing.Point(0, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(792, 58);
+            this.label47.TabIndex = 0;
+            this.label47.Text = "Добавление Компании";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(248, 334);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(318, 56);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Добавить";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label69.Location = new System.Drawing.Point(234, 159);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(124, 25);
+            this.label69.TabIndex = 25;
+            this.label69.Text = "Комментарий";
+            // 
+            // CompComment
+            // 
+            this.CompComment.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompComment.Location = new System.Drawing.Point(239, 187);
+            this.CompComment.Multiline = true;
+            this.CompComment.Name = "CompComment";
+            this.CompComment.Size = new System.Drawing.Size(339, 128);
+            this.CompComment.TabIndex = 24;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label67.ForeColor = System.Drawing.Color.Red;
+            this.label67.Location = new System.Drawing.Point(356, 90);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(20, 25);
+            this.label67.TabIndex = 23;
+            this.label67.Text = "*";
+            // 
+            // CompName
+            // 
+            this.CompName.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompName.Location = new System.Drawing.Point(239, 118);
+            this.CompName.Name = "CompName";
+            this.CompName.Size = new System.Drawing.Size(327, 32);
+            this.CompName.TabIndex = 21;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label68.Location = new System.Drawing.Point(234, 90);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(129, 25);
+            this.label68.TabIndex = 22;
+            this.label68.Text = "Имя компании";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label48.Location = new System.Drawing.Point(552, 98);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(124, 25);
+            this.label48.TabIndex = 74;
+            this.label48.Text = "Номер Фонда";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(198, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Литер Фонда";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(22, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 25);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "Имя Фонда";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(22, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 25);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Количество описей";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(395, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 25);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "Дата заведения";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(594, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 25);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Дата закрытия";
+            // 
+            // Fund_Num_btn
+            // 
+            this.Fund_Num_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Fund_Num_btn.Location = new System.Drawing.Point(557, 126);
+            this.Fund_Num_btn.Name = "Fund_Num_btn";
+            this.Fund_Num_btn.Size = new System.Drawing.Size(210, 32);
+            this.Fund_Num_btn.TabIndex = 73;
+            // 
+            // Fund_Lit_btn
+            // 
+            this.Fund_Lit_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Fund_Lit_btn.Location = new System.Drawing.Point(203, 198);
+            this.Fund_Lit_btn.Name = "Fund_Lit_btn";
+            this.Fund_Lit_btn.Size = new System.Drawing.Size(168, 32);
+            this.Fund_Lit_btn.TabIndex = 75;
+            // 
+            // Fund_Name_btn
+            // 
+            this.Fund_Name_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Fund_Name_btn.Location = new System.Drawing.Point(27, 128);
+            this.Fund_Name_btn.Name = "Fund_Name_btn";
+            this.Fund_Name_btn.Size = new System.Drawing.Size(224, 32);
+            this.Fund_Name_btn.TabIndex = 77;
+            // 
+            // Fund_Inv_Count_btn
+            // 
+            this.Fund_Inv_Count_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Fund_Inv_Count_btn.Location = new System.Drawing.Point(27, 198);
+            this.Fund_Inv_Count_btn.Name = "Fund_Inv_Count_btn";
+            this.Fund_Inv_Count_btn.Size = new System.Drawing.Size(168, 32);
+            this.Fund_Inv_Count_btn.TabIndex = 79;
+            // 
+            // Fund_comboBox_Comp
+            // 
+            this.Fund_comboBox_Comp.DataSource = this.companiesBindingSource;
+            this.Fund_comboBox_Comp.DisplayMember = "Comp_Name";
+            this.Fund_comboBox_Comp.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.Fund_comboBox_Comp.FormattingEnabled = true;
+            this.Fund_comboBox_Comp.Location = new System.Drawing.Point(284, 126);
+            this.Fund_comboBox_Comp.Name = "Fund_comboBox_Comp";
+            this.Fund_comboBox_Comp.Size = new System.Drawing.Size(248, 33);
+            this.Fund_comboBox_Comp.TabIndex = 90;
+            this.Fund_comboBox_Comp.ValueMember = "Comp_ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(574, 215);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 25);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(673, 98);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 25);
+            this.label10.TabIndex = 85;
+            this.label10.Text = "*";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(121, 100);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 25);
+            this.label11.TabIndex = 86;
+            this.label11.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(533, 187);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 25);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "*";
+            // 
+            // Fund_Year_St
+            // 
+            this.Fund_Year_St.CustomFormat = "yyyy";
+            this.Fund_Year_St.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Fund_Year_St.Location = new System.Drawing.Point(400, 221);
+            this.Fund_Year_St.Name = "Fund_Year_St";
+            this.Fund_Year_St.Size = new System.Drawing.Size(168, 20);
+            this.Fund_Year_St.TabIndex = 88;
+            // 
+            // Fund_Year_End
+            // 
+            this.Fund_Year_End.CustomFormat = "yyyy";
+            this.Fund_Year_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Fund_Year_End.Location = new System.Drawing.Point(599, 221);
+            this.Fund_Year_End.Name = "Fund_Year_End";
+            this.Fund_Year_End.Size = new System.Drawing.Size(168, 20);
+            this.Fund_Year_End.TabIndex = 89;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label64.ForeColor = System.Drawing.Color.Red;
+            this.label64.Location = new System.Drawing.Point(367, 99);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(19, 25);
+            this.label64.TabIndex = 92;
+            this.label64.Text = "*";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label65.Location = new System.Drawing.Point(282, 98);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(92, 25);
+            this.label65.TabIndex = 91;
+            this.label65.Text = "Компания";
+            // 
+            // companiesBindingSource
+            // 
+            this.companiesBindingSource.DataMember = "Companies";
+            this.companiesBindingSource.DataSource = this.iPSArchiveDataSet;
+            // 
+            // companiesTableAdapter
+            // 
+            this.companiesTableAdapter.ClearBeforeFill = true;
+            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1188,6 +1369,11 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
+            this.CompPage.ResumeLayout(false);
+            this.CompPage.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1196,27 +1382,11 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage FundPage;
-        private System.Windows.Forms.DateTimePicker Fund_Year_End;
-        private System.Windows.Forms.DateTimePicker Fund_Year_St;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button addFund_btn;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Fund_Comment_btn;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Fund_Inv_Count_btn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Fund_Name_btn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Fund_Lit_btn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Fund_Num_btn;
         private System.Windows.Forms.TabPage InvPage;
         private System.Windows.Forms.DateTimePicker Inv_Year_End_dateTimePicker;
         private System.Windows.Forms.DateTimePicker Inv_Year_St_dateTimePicker;
@@ -1291,5 +1461,36 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.BindingSource fKInventoryFundBindingSource;
+        private System.Windows.Forms.TabPage CompPage;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox CompComment;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox CompName;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.ComboBox Fund_comboBox_Comp;
+        private System.Windows.Forms.DateTimePicker Fund_Year_End;
+        private System.Windows.Forms.DateTimePicker Fund_Year_St;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Fund_Inv_Count_btn;
+        private System.Windows.Forms.TextBox Fund_Name_btn;
+        private System.Windows.Forms.TextBox Fund_Lit_btn;
+        private System.Windows.Forms.TextBox Fund_Num_btn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.BindingSource companiesBindingSource;
+        private IPSArchiveDataSetTableAdapters.CompaniesTableAdapter companiesTableAdapter;
     }
 }

@@ -26,7 +26,7 @@ namespace Archive_Demo
             addFund_btn.BackColor = Color.Khaki;
 
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0)";
+            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0, '" + Fund_comboBox_Comp.SelectedValue + "')";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -158,6 +158,8 @@ namespace Archive_Demo
 
         private void WorkerForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Companies". При необходимости она может быть перемещена или удалена.
+            this.companiesTableAdapter.Fill(this.iPSArchiveDataSet.Companies);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Inventory". При необходимости она может быть перемещена или удалена.
             this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.UnitTypes". При необходимости она может быть перемещена или удалена.
@@ -223,7 +225,7 @@ namespace Archive_Demo
             DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.OK)
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 string sql = $"UPDATE Users SET Exit_Time = '{DateTime.Now}' WHERE ID = '" + ID_User + "'";
                 connection.Open();
@@ -236,6 +238,40 @@ namespace Archive_Demo
                 loginForm.Show();
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Companies(Comp_Name, Year_St, Comment, IPS_Created) VALUES ('" + CompName.Text + "','" + DateTime.Now.ToString("yyyy") + "','" + CompComment.Text + "', 0)";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+            CompName.Text = "";
+            CompComment.Text = "";
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            Fund_comboBox_Comp.SelectedItem = null;
         }
     }
 }
