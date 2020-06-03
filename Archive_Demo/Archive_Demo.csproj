@@ -58,6 +58,7 @@
     <Compile Include="AddData.Designer.cs">
       <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArchiveDataSet.Designer.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Fund_search.cs">
       <SubType>Form</SubType>
@@ -82,6 +83,9 @@
     </Compile>
     <Compile Include="Inv_table.Designer.cs">
       <DependentUpon>Inv_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IPSArchiveDataSet.cs">
+      <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="IPSArchiveDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -168,6 +172,13 @@
     <EmbeddedResource Include="WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ArchiveDataSet.xsc">
+      <DependentUpon>ArchiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ArchiveDataSet.xsd" />
+    <None Include="ArchiveDataSet.xss">
+      <DependentUpon>ArchiveDataSet.xsd</DependentUpon>
+    </None>
     <None Include="IPSArchiveDataSet.xsc">
       <DependentUpon>IPSArchiveDataSet.xsd</DependentUpon>
     </None>

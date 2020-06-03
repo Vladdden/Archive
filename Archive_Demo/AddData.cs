@@ -39,8 +39,8 @@ namespace Archive_Demo
         {
             addFund_btn.BackColor = Color.Khaki;
             
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0)";
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0, '" + Fund_comboBox_Comp.SelectedValue + "')";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -61,8 +61,8 @@ namespace Archive_Demo
                 connection.Close();
                 Console.WriteLine("Подключение закрыто...");
             }
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
 
-            
             Fund_Num_btn.Text = "";
             Fund_Lit_btn.Text = "";
             Fund_Name_btn.Text = "";
@@ -70,8 +70,7 @@ namespace Archive_Demo
             Fund_Year_St.Value = DateTime.Today;
             Fund_Year_End.Value = DateTime.Today.AddDays(365);
             Fund_Comment_btn.Text = "";
-
-            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+            Fund_comboBox_Comp.SelectedItem = null;
             Inv_Fund_ID_comboBox.SelectedItem = null;
             Inv_Fund_ID_comboBox.Text = "----Выберите----";
         }
@@ -80,7 +79,7 @@ namespace Archive_Demo
         {
             addInv_btn.BackColor = Color.Khaki;
 
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO Inventory (Fund_ID, Inv_Num, Inv_Lit, Inv_Vol, Inv_Name, Year_St, Year_End, Dates, Unit_Count, Comment, Deleted) VALUES ('" + Inv_Fund_ID_comboBox.SelectedValue + "','" + Inv_Num.Text + "','" + Inv_Lit.Text + "','" + Inv_Vol.Text + "','" + Inv_Name.Text + "','" + Inv_Year_St_dateTimePicker.Text + "','" + Inv_Year_End_dateTimePicker.Text + "','" + Inv_Dates.Text + "','" + Inv_Unit_Count.Text + "','" + Inv_Comment.Text + "', 0)";
             SqlConnection connection = new SqlConnection(connectionString);
             try
@@ -129,7 +128,7 @@ namespace Archive_Demo
             addUnit_btn.BackColor = Color.Khaki;
 
             
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO Unit (Unit_Num, Unit_Lit, Dates, Unit_Name, P_Count, DateCreate, Comment, Inv_ID, Deleted, Unit_Type, Year_St, Year_End) VALUES ('" + Unit_Num.Text + "','" + Unit_Lit.Text + "','" + Unit_Dates.Text + "','" + Unit_Name.Text + "','" + Unit_P_Count.Text + "', @Unit_Date_Create_dateTimePicker,'" + Unit_Comment.Text + "','" + Unit_Inv_comboBox.SelectedValue + "',0,'" + Unit_Type.SelectedValue + "','" + Unit_Year_St_dateTimePicker.Text + "','" + Unit_Year_End_dateTimePicker.Text + "')";
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -179,7 +178,7 @@ namespace Archive_Demo
             if (Admin_checkBox.Checked) flag = 1;
             else flag = 0;
            
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = "INSERT INTO users VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', '" + flag + "');";
             SqlConnection connection = new SqlConnection(connectionString);
              try
@@ -244,6 +243,8 @@ namespace Archive_Demo
 
         private void AddData_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Companies". При необходимости она может быть перемещена или удалена.
+            this.companiesTableAdapter.Fill(this.iPSArchiveDataSet.Companies);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "iPSArchiveDataSet.Unit". При необходимости она может быть перемещена или удалена.
             this.unitTableAdapter.Fill(this.iPSArchiveDataSet.Unit);
 
@@ -265,7 +266,10 @@ namespace Archive_Demo
             Unit_Inv_comboBox.Text = "-----Выберите-----";
             Unit_Type.SelectedItem = null;
             Unit_Type.Text = "---Выберите---";
-
+            CompSelect.SelectedItem = null;
+            Fund_comboBox_Comp.SelectedItem = null;
+            DataTable table = new DataTable();
+            Company_dataGridView_Funds.DataSource = table;
 
             UserInfo usrInfo = new UserInfo("111", "222", "333", "444", "555", "666");
             BinaryFormatter formatter = new BinaryFormatter();
@@ -319,9 +323,13 @@ namespace Archive_Demo
             Disconnect();
         }
 
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Disconnect();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = "SELECT * FROM Unit WHERE (DateCreate >= @X1) AND (DateCreate <= @X2)";
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -372,10 +380,9 @@ namespace Archive_Demo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = sql_field.Text;
             SqlConnection connection = new SqlConnection(connectionString);
-
             try
             {
                 connection.Open();
@@ -498,7 +505,7 @@ namespace Archive_Demo
 
         private void Create_IPS_btn_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             string sql = $"INSERT INTO IPS_Clients VALUES ('" + Company_Name_IPS.Text + "','" + Company_ID_IPS.Text + "','" + Admin_Login_IPS.Text + "','" + Admin_Pass_IPS.Text + "','" + User_Login_IPS.Text + "','" + User_Pass_IPS.Text + "','" + DateTime.Now + "','" + ID_User + "');";
             SqlConnection connection = new SqlConnection(connectionString);
             try
@@ -532,7 +539,7 @@ namespace Archive_Demo
             DialogResult dr = MessageBox.Show("Хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.OK)
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 string sql = $"UPDATE Users SET Exit_Time = '{DateTime.Now}' WHERE ID = '" + ID_User + "'";
                 connection.Open();
@@ -545,6 +552,60 @@ namespace Archive_Demo
                 loginForm.Show();
             }
 
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Fund_ID,Fund_Name,Comment FROM Fund WHERE Comp_ID='" + CompSelect.SelectedValue + "'", connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            Company_dataGridView_Funds.DataSource = table;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+            string sql = "INSERT INTO Companies(Comp_Name, Year_St, Comment, IPS_Created) VALUES ('" + CompName.Text + "','" + DateTime.Now.ToString("yyyy") + "','" + CompComment.Text + "', 0)";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Подключение: Да");
+                SqlCommand command = new SqlCommand(sql, connection);
+                int number = command.ExecuteNonQuery();
+                Console.WriteLine("Добавлено объектов: {0}", number);
+                MessageBox.Show("Данные успешно добавлены.");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                Console.WriteLine("Подключение закрыто...");
+            }
+            this.companiesTableAdapter.Fill(this.iPSArchiveDataSet.Companies);
+            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+            CompName.Text = "";
+            CompComment.Text = "";
+            CompSelect.SelectedItem = null;
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            this.companiesTableAdapter.Fill(this.iPSArchiveDataSet.Companies);
+            CompSelect.SelectedItem = null;
+            DataTable table = new DataTable();
+            Company_dataGridView_Funds.DataSource = table;
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            Fund_comboBox_Comp.SelectedItem = null;
         }
     }
     [DataContract]

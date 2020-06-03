@@ -120,7 +120,7 @@ namespace Archive_Demo
             string UserLogin = LoginField.Text;
             string UserPass = PassField.Text;
 
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.ArchiveConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
