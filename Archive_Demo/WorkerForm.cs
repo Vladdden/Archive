@@ -23,137 +23,142 @@ namespace Archive_Demo
 
         private void addFund_btn_Click(object sender, EventArgs e)
         {
-            addFund_btn.BackColor = Color.Khaki;
-
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0, '" + Fund_comboBox_Comp.SelectedValue + "')";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
+            if ((Fund_Num_btn.Text != "") && (Fund_Name_btn.Text != "") && (Fund_comboBox_Comp.SelectedValue != null))
             {
-                connection.Open();
-                Console.WriteLine("Подключение: Да");
-                SqlCommand command = new SqlCommand(sql, connection);
-                int number = command.ExecuteNonQuery();
-                Console.WriteLine("Добавлено объектов: {0}", number);
-                MessageBox.Show("Данные успешно добавлены.");
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+                addFund_btn.BackColor = Color.Khaki;
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+                string sql = "INSERT INTO Fund VALUES ('" + Fund_Num_btn.Text + "','" + Fund_Lit_btn.Text + "','" + Fund_Name_btn.Text + "','" + Fund_Inv_Count_btn.Text + "','" + Fund_Year_St.Text + "','" + Fund_Year_End.Text + "','" + Fund_Comment_btn.Text + "', 0, '" + Fund_comboBox_Comp.SelectedValue + "')";
+                SqlConnection connection = new SqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Подключение: Да");
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    int number = command.ExecuteNonQuery();
+                    Console.WriteLine("Добавлено объектов: {0}", number);
+                    MessageBox.Show("Данные успешно добавлены.");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    Console.WriteLine("Подключение закрыто...");
+                }
 
-            
-            Fund_Num_btn.Text = "";
-            Fund_Lit_btn.Text = "";
-            Fund_Name_btn.Text = "";
-            Fund_Inv_Count_btn.Text = "";
-            Fund_Year_St.Value = DateTime.Today;
-            Fund_Year_End.Value = DateTime.Today.AddDays(365);
-            Fund_Comment_btn.Text = "";
 
-            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
-            Inv_Fund_ID_comboBox.SelectedItem = null;
-            Inv_Fund_ID_comboBox.Text = "----Выберите----";
-
+                Fund_Num_btn.Text = "";
+                Fund_Lit_btn.Text = "";
+                Fund_Name_btn.Text = "";
+                Fund_Inv_Count_btn.Text = "";
+                Fund_Year_St.Value = DateTime.Today;
+                Fund_Year_End.Value = DateTime.Today.AddDays(365);
+                Fund_Comment_btn.Text = "";
+                this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+                Inv_Fund_ID_comboBox.SelectedItem = null;
+                Inv_Fund_ID_comboBox.Text = "----Выберите----";
+            }
+            else MessageBox.Show("Необходимо заполнить все обязательные поля для добавления в базу!");
         }
 
         private void addInv_btn_Click(object sender, EventArgs e)
         {
-            addInv_btn.BackColor = Color.Khaki;
-
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Inventory (Fund_ID, Inv_Num, Inv_Lit, Inv_Vol, Inv_Name, Year_St, Year_End, Dates, Unit_Count, Comment, Deleted) VALUES ('" + Inv_Fund_ID_comboBox.SelectedValue + "','" + Inv_Num.Text + "','" + Inv_Lit.Text + "','" + Inv_Vol.Text + "','" + Inv_Name.Text + "','" + Inv_Year_St_dateTimePicker.Text + "','" + Inv_Year_End_dateTimePicker.Text + "','" + Inv_Dates.Text + "','" + Inv_Unit_Count.Text + "','" + Inv_Comment.Text + "', 0)";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
+            if ((Inv_Fund_ID_comboBox.SelectedItem != null) && (Inv_Num.Text != "") && (Inv_Name.Text != ""))
             {
-                connection.Open();
-                Console.WriteLine("Подключение: Да");
-                SqlCommand command = new SqlCommand(sql, connection);
-                int number = command.ExecuteNonQuery();
-                Console.WriteLine("Добавлено объектов: {0}", number);
-                MessageBox.Show("Данные успешно добавлены.");
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+                addInv_btn.BackColor = Color.Khaki;
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+                string sql = "INSERT INTO Inventory (Fund_ID, Inv_Num, Inv_Lit, Inv_Vol, Inv_Name, Year_St, Year_End, Dates, Unit_Count, Comment, Deleted) VALUES ('" + Inv_Fund_ID_comboBox.SelectedValue + "','" + Inv_Num.Text + "','" + Inv_Lit.Text + "','" + Inv_Vol.Text + "','" + Inv_Name.Text + "','" + Inv_Year_St_dateTimePicker.Text + "','" + Inv_Year_End_dateTimePicker.Text + "','" + Inv_Dates.Text + "','" + Inv_Unit_Count.Text + "','" + Inv_Comment.Text + "', 0)";
+                SqlConnection connection = new SqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Подключение: Да");
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    int number = command.ExecuteNonQuery();
+                    Console.WriteLine("Добавлено объектов: {0}", number);
+                    MessageBox.Show("Данные успешно добавлены.");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    Console.WriteLine("Подключение закрыто...");
+                }
 
-            
-            Inv_Fund_ID_comboBox.SelectedItem = null;
-            Inv_Fund_ID_comboBox.Text = "----Выберите----";
-            Inv_Num.Text = "";
-            Inv_Lit.Text = "";
-            Inv_Vol.Text = "";
-            Inv_Name.Text = "";
-            Inv_Year_St_dateTimePicker.Value = DateTime.Today;
-            Inv_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
-            Inv_Dates.Text = "";
-            Inv_Unit_Count.Text = "";
-            Inv_Comment.Text = "";
 
-            this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
-            Unit_Inv_comboBox.SelectedItem = null;
-            Unit_Inv_comboBox.Text = "-----Выберите-----";
+                Inv_Fund_ID_comboBox.SelectedItem = null;
+                Inv_Fund_ID_comboBox.Text = "----Выберите----";
+                Inv_Num.Text = "";
+                Inv_Lit.Text = "";
+                Inv_Vol.Text = "";
+                Inv_Name.Text = "";
+                Inv_Year_St_dateTimePicker.Value = DateTime.Today;
+                Inv_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+                Inv_Dates.Text = "";
+                Inv_Unit_Count.Text = "";
+                Inv_Comment.Text = "";
+
+                this.inventoryTableAdapter.Fill(this.iPSArchiveDataSet.Inventory);
+                Unit_Inv_comboBox.SelectedItem = null;
+                Unit_Inv_comboBox.Text = "-----Выберите-----";
+            }
+            else MessageBox.Show("Необходимо заполнить все обязательные поля для добавления в базу!");
         }
 
         private void addUnit_btn_Click(object sender, EventArgs e)
         {
-            addUnit_btn.BackColor = Color.Khaki;
-
-
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Unit (Unit_Num, Unit_Lit, Dates, Unit_Name, P_Count, DateCreate, Comment, Inv_ID, Deleted, Unit_Type, Year_St, Year_End) VALUES ('" + Unit_Num.Text + "','" + Unit_Lit.Text + "','" + Unit_Dates.Text + "','" + Unit_Name.Text + "','" + Unit_P_Count.Text + "', @Unit_Date_Create_dateTimePicker,'" + Unit_Comment.Text + "','" + Unit_Inv_comboBox.SelectedValue + "',0,'" + Unit_Type.SelectedValue + "','" + Unit_Year_St_dateTimePicker.Text + "','" + Unit_Year_End_dateTimePicker.Text + "')";
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            try
+            if ((Unit_Inv_comboBox.SelectedItem != null) && (Unit_Type.SelectedItem != null) && (Unit_Fund_comboBox.SelectedItem != null) && (Unit_Num.Text != "") && (Unit_Name.Text != ""))
             {
-                connection.Open();
-                Console.WriteLine("Подключение: Да");
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.Add("@Unit_Date_Create_dateTimePicker", SqlDbType.Date).Value = Unit_Date_Create_dateTimePicker.Value.Date;
-                int number = command.ExecuteNonQuery();
-                Console.WriteLine("Добавлено объектов: {0}", number);
-                MessageBox.Show("Данные успешно добавлены.");
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
+                addUnit_btn.BackColor = Color.Khaki;
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+                string sql = "INSERT INTO Unit (Unit_Num, Unit_Lit, Dates, Unit_Name, P_Count, DateCreate, Comment, Inv_ID, Deleted, Unit_Type, Year_St, Year_End) VALUES ('" + Unit_Num.Text + "','" + Unit_Lit.Text + "','" + Unit_Dates.Text + "','" + Unit_Name.Text + "','" + Unit_P_Count.Text + "', @Unit_Date_Create_dateTimePicker,'" + Unit_Comment.Text + "','" + Unit_Inv_comboBox.SelectedValue + "',0,'" + Unit_Type.SelectedValue + "','" + Unit_Year_St_dateTimePicker.Text + "','" + Unit_Year_End_dateTimePicker.Text + "')";
+                SqlConnection connection = new SqlConnection(connectionString);
 
-            }
-            finally
-            {
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Подключение: Да");
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.Add("@Unit_Date_Create_dateTimePicker", SqlDbType.Date).Value = Unit_Date_Create_dateTimePicker.Value.Date;
+                    int number = command.ExecuteNonQuery();
+                    Console.WriteLine("Добавлено объектов: {0}", number);
+                    MessageBox.Show("Данные успешно добавлены.");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
 
-           
-            Unit_Num.Text = "";
-            Unit_Lit.Text = "";
-            Unit_Dates.Text = "";
-            Unit_Name.Text = "";
-            Unit_P_Count.Text = "";
-            Unit_Date_Create_dateTimePicker.Value = DateTime.Now;
-            Unit_Comment.Text = "";
-            Unit_Inv_comboBox.SelectedItem = null;
-            Unit_Inv_comboBox.Text = "-----Выберите-----";
-            Unit_Type.SelectedItem = null;
-            Unit_Type.Text = "---Выберите---";
-            Unit_Year_St_dateTimePicker.Value = DateTime.Today;
-            Unit_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+                }
+                finally
+                {
+                    connection.Close();
+                    Console.WriteLine("Подключение закрыто...");
+                }
 
+
+                Unit_Num.Text = "";
+                Unit_Lit.Text = "";
+                Unit_Dates.Text = "";
+                Unit_Name.Text = "";
+                Unit_P_Count.Text = "";
+                Unit_Date_Create_dateTimePicker.Value = DateTime.Now;
+                Unit_Comment.Text = "";
+                Unit_Inv_comboBox.SelectedItem = null;
+                Unit_Inv_comboBox.Text = "-----Выберите-----";
+                Unit_Type.SelectedItem = null;
+                Unit_Type.Text = "---Выберите---";
+                Unit_Year_St_dateTimePicker.Value = DateTime.Today;
+                Unit_Year_End_dateTimePicker.Value = DateTime.Today.AddDays(365);
+            }
+            else MessageBox.Show("Необходимо заполнить все обязательные поля для добавления в базу!");
         }
 
         private void WorkerForm_Load(object sender, EventArgs e)
@@ -242,36 +247,47 @@ namespace Archive_Demo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO Companies(Comp_Name, Year_St, Comment, IPS_Created) VALUES ('" + CompName.Text + "','" + DateTime.Now.ToString("yyyy") + "','" + CompComment.Text + "', 0)";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
+            if ((CompName.Text != ""))
             {
-                connection.Open();
-                Console.WriteLine("Подключение: Да");
-                SqlCommand command = new SqlCommand(sql, connection);
-                int number = command.ExecuteNonQuery();
-                Console.WriteLine("Добавлено объектов: {0}", number);
-                MessageBox.Show("Данные успешно добавлены.");
+                var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
+                string sql = "INSERT INTO Companies(Comp_Name, Year_St, Comment, IPS_Created) VALUES ('" + CompName.Text + "','" + DateTime.Now.ToString("yyyy") + "','" + CompComment.Text + "', 0)";
+                SqlConnection connection = new SqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Подключение: Да");
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    int number = command.ExecuteNonQuery();
+                    Console.WriteLine("Добавлено объектов: {0}", number);
+                    MessageBox.Show("Данные успешно добавлены.");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    Console.WriteLine("Подключение закрыто...");
+                }
+                this.companiesTableAdapter.Fill(this.iPSArchiveDataSet.Companies);
+                this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
+                
+                CompName.Text = "";
+                CompComment.Text = "";
             }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
-            this.fundTableAdapter.Fill(this.iPSArchiveDataSet.Fund);
-            CompName.Text = "";
-            CompComment.Text = "";
+            else MessageBox.Show("Необходимо заполнить все обязательные поля для добавления в базу!");
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             Fund_comboBox_Comp.SelectedItem = null;
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Disconnect();
         }
     }
 }

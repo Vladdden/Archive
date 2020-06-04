@@ -95,7 +95,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Inv_search";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inv_search";
+            this.Text = "Поиск";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

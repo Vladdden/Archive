@@ -30,7 +30,7 @@ namespace Archive_Demo
 
         private void addUser_MouseMove(object sender, MouseEventArgs e)
         {
-            addUser.ForeColor = Color.DarkGray;
+            addUser.ForeColor = Color.Silver;
         }
 
         private void NameField_Enter(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace Archive_Demo
         private void addUser_Click(object sender, EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Archive_Demo.Properties.Settings.IPSArchiveConnectionString"].ConnectionString;
-            string sql = "INSERT INTO users VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', 0);";
+            string sql = "INSERT INTO Users(Name,Surname,Login,Password,Status,Log_Time) VALUES ('" + NameField.Text + "','" + SurField.Text + "','" + LoginField.Text + "','" + PassField.Text + "', 0, '" + DateTime.Now  + "');";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

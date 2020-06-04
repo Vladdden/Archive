@@ -186,7 +186,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "Users_table";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Users_table";
+            this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.Users_table_Load);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

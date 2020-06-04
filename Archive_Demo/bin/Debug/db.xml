@@ -1,1 +1,1 @@
-<UserInfo xmlns="http://schemas.datacontract.org/2004/07/Archive_Demo" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AdmLogin>111</AdmLogin><AdmPass>111</AdmPass><CompanyID>12</CompanyID><CompanyName>333</CompanyName><UsrLogin>222</UsrLogin><UsrPass>222</UsrPass></UserInfo>
+<UserInfo xmlns="http://schemas.datacontract.org/2004/07/Archive_Demo" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AdmLogin>Admin</AdmLogin><AdmPass>12345</AdmPass><CompanyID>Yandex_1</CompanyID><CompanyName>Yandex</CompanyName><UsrLogin>User</UsrLogin><UsrPass>12354</UsrPass></UserInfo>

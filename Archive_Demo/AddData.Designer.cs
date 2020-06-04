@@ -88,6 +88,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.UserPage = new System.Windows.Forms.TabPage();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
             this.checkUsers_btn = new System.Windows.Forms.Button();
             this.addUser_btn = new System.Windows.Forms.Button();
             this.Admin_checkBox = new System.Windows.Forms.CheckBox();
@@ -222,6 +224,10 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.companiesTableAdapter = new Archive_Demo.IPSArchiveDataSetTableAdapters.CompaniesTableAdapter();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPSArchiveDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitTypesBindingSource1)).BeginInit();
@@ -325,6 +331,8 @@
             // 
             // IPSPage
             // 
+            this.IPSPage.Controls.Add(this.label74);
+            this.IPSPage.Controls.Add(this.label73);
             this.IPSPage.Controls.Add(this.GenIPS_comboBox);
             this.IPSPage.Controls.Add(this.Connect_IPS_btn);
             this.IPSPage.Controls.Add(this.groupBox4);
@@ -375,6 +383,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label75);
             this.groupBox4.Controls.Add(this.User_Pass_IPS);
             this.groupBox4.Controls.Add(this.User_Login_IPS);
             this.groupBox4.Controls.Add(this.label60);
@@ -385,7 +394,7 @@
             this.groupBox4.Size = new System.Drawing.Size(277, 148);
             this.groupBox4.TabIndex = 60;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Пользователь";
+            this.groupBox4.Text = "Пользователь   ";
             // 
             // User_Pass_IPS
             // 
@@ -405,7 +414,7 @@
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label60.Location = new System.Drawing.Point(18, 45);
+            this.label60.Location = new System.Drawing.Point(18, 48);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(55, 20);
             this.label60.TabIndex = 54;
@@ -426,6 +435,7 @@
             this.groupBox3.Controls.Add(this.Admin_Pass_IPS);
             this.groupBox3.Controls.Add(this.Admin_Login_IPS);
             this.groupBox3.Controls.Add(this.label58);
+            this.groupBox3.Controls.Add(this.label77);
             this.groupBox3.Controls.Add(this.label59);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.Location = new System.Drawing.Point(368, 165);
@@ -433,7 +443,7 @@
             this.groupBox3.Size = new System.Drawing.Size(277, 148);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Администратор";
+            this.groupBox3.Text = "Администратор    ";
             // 
             // Admin_Pass_IPS
             // 
@@ -453,7 +463,7 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label58.Location = new System.Drawing.Point(18, 45);
+            this.label58.Location = new System.Drawing.Point(18, 48);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(55, 20);
             this.label58.TabIndex = 54;
@@ -501,9 +511,9 @@
             // 
             this.groupBox2.Controls.Add(this.label63);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 74);
+            this.groupBox2.Location = new System.Drawing.Point(17, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(340, 347);
+            this.groupBox2.Size = new System.Drawing.Size(340, 357);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Правила генерации ИПС";
@@ -511,11 +521,12 @@
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(6, 128);
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label63.Location = new System.Drawing.Point(5, 31);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(748, 24);
+            this.label63.Size = new System.Drawing.Size(329, 320);
             this.label63.TabIndex = 0;
-            this.label63.Text = "Функционал админа и пользователя и правила и порядок действий для создания";
+            this.label63.Text = resources.GetString("label63.Text");
             // 
             // Create_IPS_btn
             // 
@@ -756,6 +767,8 @@
             // 
             // UserPage
             // 
+            this.UserPage.Controls.Add(this.label72);
+            this.UserPage.Controls.Add(this.label70);
             this.UserPage.Controls.Add(this.checkUsers_btn);
             this.UserPage.Controls.Add(this.addUser_btn);
             this.UserPage.Controls.Add(this.Admin_checkBox);
@@ -776,6 +789,28 @@
             this.UserPage.TabIndex = 3;
             this.UserPage.Text = "Пользователи";
             this.UserPage.UseVisualStyleBackColor = true;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label72.ForeColor = System.Drawing.Color.Red;
+            this.label72.Location = new System.Drawing.Point(623, 182);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(19, 25);
+            this.label72.TabIndex = 75;
+            this.label72.Text = "*";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label70.ForeColor = System.Drawing.Color.Red;
+            this.label70.Location = new System.Drawing.Point(608, 96);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(19, 25);
+            this.label70.TabIndex = 74;
+            this.label70.Text = "*";
             // 
             // checkUsers_btn
             // 
@@ -1000,7 +1035,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
             this.label46.ForeColor = System.Drawing.Color.Red;
-            this.label46.Location = new System.Drawing.Point(251, 67);
+            this.label46.Location = new System.Drawing.Point(242, 67);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(19, 25);
             this.label46.TabIndex = 73;
@@ -2230,6 +2265,50 @@
             // 
             this.companiesTableAdapter.ClearBeforeFill = true;
             // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label73.ForeColor = System.Drawing.Color.Red;
+            this.label73.Location = new System.Drawing.Point(502, 91);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(19, 25);
+            this.label73.TabIndex = 74;
+            this.label73.Text = "*";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label74.ForeColor = System.Drawing.Color.Red;
+            this.label74.Location = new System.Drawing.Point(864, 91);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(19, 25);
+            this.label74.TabIndex = 75;
+            this.label74.Text = "*";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Location = new System.Drawing.Point(131, 0);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(19, 25);
+            this.label77.TabIndex = 76;
+            this.label77.Text = "*";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Arial Narrow", 15.75F);
+            this.label75.ForeColor = System.Drawing.Color.Red;
+            this.label75.Location = new System.Drawing.Point(121, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(19, 25);
+            this.label75.TabIndex = 76;
+            this.label75.Text = "*";
+            // 
             // AddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2238,7 +2317,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AddData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddData";
+            this.Text = "Администратор";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddData_FormClosed);
             this.Load += new System.EventHandler(this.AddData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fundBindingSource)).EndInit();
@@ -2493,5 +2572,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fundNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox GenIPS_comboBox;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label77;
     }
 }

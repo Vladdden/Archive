@@ -282,7 +282,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registration";
+            this.Text = "Регистрация";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

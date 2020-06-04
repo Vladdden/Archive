@@ -95,7 +95,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Fund_search";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fund_search";
+            this.Text = "Поиск";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
