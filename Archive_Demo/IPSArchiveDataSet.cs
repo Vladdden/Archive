@@ -1,6 +1,8 @@
-﻿namespace Archive_Demo {
-    
-    
-    public partial class IPSArchiveDataSet {
+﻿namespace Archive_Demo
+{
+
+
+    public partial class IPSArchiveDataSet
+    {
     }
 }

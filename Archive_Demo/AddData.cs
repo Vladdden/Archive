@@ -447,7 +447,7 @@ namespace Archive_Demo
                 listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 listener.Start();
                 Console.WriteLine("Ожидание подключений...");
-
+                MessageBox.Show("Режим передачи активирован. Ожидание подключений...");
                 while (true)
                 {
                     TcpClient client = listener.AcceptTcpClient();

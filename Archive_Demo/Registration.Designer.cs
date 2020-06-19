@@ -112,13 +112,16 @@
             // 
             // addUser
             // 
+            this.addUser.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.addUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.addUser.Location = new System.Drawing.Point(241, 265);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(292, 51);
             this.addUser.TabIndex = 4;
             this.addUser.Text = "Регистрация";
-            this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.UseVisualStyleBackColor = false;
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             this.addUser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.addUser_MouseMove);
             // 

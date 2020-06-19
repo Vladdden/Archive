@@ -10,7 +10,6 @@ C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Arc
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.exe
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.pdb
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.AddData.resources
-C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\MySql.Data.dll
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\Google.Protobuf.dll
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\Ubiety.Dns.Core.dll
@@ -25,3 +24,9 @@ C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Arc
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Fund_search.resources
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Inv_search.resources
 C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\obj\Debug\Archive_Demo.Unit_search.resources
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\EntityFramework.dll
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\EntityFramework.xml
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Владислав\source\repos\Archive_Demo\Archive_Demo\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

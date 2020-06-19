@@ -30,7 +30,7 @@ namespace Archive_Demo
 
         private void addUser_MouseMove(object sender, MouseEventArgs e)
         {
-            addUser.ForeColor = Color.Silver;
+            addUser.ForeColor = Color.Black;
         }
 
         private void NameField_Enter(object sender, EventArgs e)
